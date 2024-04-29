@@ -10,6 +10,6 @@ To get started with our community, please refer to our [Contributing file](CONTR
 
 ## Maintainer
 
-This project is maintained by [Harun Bekri](https://github.com/haribk). If you have any questions or need help with a pull request, feel free to reach out to me.
+This project is maintained by [Harun Bekri](https://github.com/hariyebk). If you have any questions or need help with a pull request, feel free to reach out to me.
 
 Thank you for your interest
