@@ -6,4 +6,7 @@
     .slider-buttons {
         @apply bg-navy p-3 rounded-full shadow text-white focus:outline-none
     }
+    .tags {
+        @apply px-3 py-2 border border-navy text-sm text-navy rounded-lg font-semibold
+    }
 }

@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         button: "#F6F7F9", 
         navy: "#003159",
+        orangeRed: "#CC3700",
         secondary: "#B6CDDF",
       }
     },
