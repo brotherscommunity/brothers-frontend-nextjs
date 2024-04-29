@@ -24,7 +24,7 @@ Unacceptable behavior may result in removal from the project, including but not 
 
 **Reporting Unacceptable Behavior**
 
-If you experience or witness unacceptable behavior, please report it to [harunbekri6@gmail.com].
+If you experience or witness unacceptable behavior, please report it to harunbekri6@gmail.com.
 
 **Acknowledgement**
 
