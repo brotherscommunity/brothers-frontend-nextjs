@@ -15,7 +15,6 @@ export default function Pagination({TotalNumberOfResults}: PaginationProps) {
     const currentPage = parseInt(searchParams.get("page") || "1")
     const {replace} = useRouter()
     const Total_Number_OF_PAGES =  Math.ceil(TotalNumberOfResults / PAGE_SIZE)
-    console.log(Total_Number_OF_PAGES)
     /**
      * A function that chnages the current page into the Next page.
      */

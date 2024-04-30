@@ -11,16 +11,13 @@ export const Languages = [
     'Mandarin',
     'Russian'
 ]
-
 export enum QUERY_PARAMS {
     search = "search",
     page = "page"
 }
-
 export const Slides = [
     image1
 ]
-
 export const Visitors = [
     {
         timePeriod: "Yearly",
@@ -55,13 +52,10 @@ export const Visitors = [
         Number_of_Viewers: 10
     }
 ]
-
 export const PAGE_SIZE = 6
-
 export const PAGE_NUMBERS = [
     1,2,3,4,5,6,'...',12
 ]
-
 export const TERMS_AND_CONDITIONS = [
     {
         title: "Acceptance of Terms",
@@ -114,3 +108,16 @@ export const TERMS_AND_CONDITIONS = [
         description: "If you have any questions or concerns about these Terms and Conditions, please contact us at brothersinternationalcommunity@gmail.com. By using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. Thank you for visiting our social media blog!"
     },
 ]
+export type GLOBAL_STATE_TYPES = {
+    isAuthenticated: boolean,
+    user: USER | null
+}
+export type USER = {
+    email: string,
+    username: string,
+    firstName: string,
+    lastName: string,
+    referalId: string | null,
+    city: string,
+    country: string
+}

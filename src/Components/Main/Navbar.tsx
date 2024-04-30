@@ -7,15 +7,17 @@ import { CiSearch } from "react-icons/ci";
 import { Languages, QUERY_PARAMS } from "@/constants";
 import { TfiWorld } from "react-icons/tfi";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import NavButtons from "./NavButtons";
+import useAuth from "@/Context/hook";
 
 
 export default function Navbar() {
 
     const [selectedLanguage, setSelectedLanguage] = useState('')
     const [searchValue, setSearchValue] = useState("")
+    const {isAuthenticated, user} = useAuth()
     const searchParams = useSearchParams()
     const {replace, push} = useRouter()
     const pathname = usePathname()
@@ -34,7 +36,6 @@ export default function Navbar() {
     }
 
     // When the user types something on the search input field, we first update the current state then we add a search query into the URI
-
     function handleSearch(){
         const param = new URLSearchParams(searchParams)
         if(searchValue){
@@ -48,18 +49,17 @@ export default function Navbar() {
 
         // TODO: Make an APi call to query the posts
     }       
-    
 
     return (
         <nav className='relative inset-x-0 top-0 w-full mt-5 px-20'>
             <div className="flex items-center">
                 <span className="flex gap-2 ml-2">
-                    <Image src={Logo} alt="logo" width={40} height={40} style={{width: "auto", height: "auto"}} />
+                    <Image src={Logo} alt="logo" width={30} height={30} style={{width: "auto", height: "auto"}} />
                     <button>
                         <RiArrowDropDownLine />
                     </button>
                 </span>
-                <div className="px-3 py-2 ml-5 bg-button flex items-center gap-3">
+                <div className="px-3 py-2 ml-3 bg-button flex items-center gap-3">
                     <TfiWorld className="w-4 h-3" />
                     <select value={selectedLanguage} onChange={handleChange} className="bg-button focus-visible:outline-none text-sm">
                         {Languages.map((language) => {
@@ -72,16 +72,13 @@ export default function Navbar() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleSearch()
-                }} className="flex items-center justify-between bg-button w-[450px] h-[48px] ml-28 px-5 rounded-sm">
+                }} className={`flex items-center justify-between bg-button ${isAuthenticated && user ? "w-[420px]" : "w-[490px]"} h-[48px] ml-24 px-5 rounded-md`}>
                     <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button w-[400px] p-2 text-sm focus-visible:outline-none" />
                     <button type="submit" onClick={handleSearch} className="mr-5">
                         <CiSearch className="w-5 h-5" />
                     </button>
                 </form>
-                <div className="flex items-center gap-10 ml-24 text-sm">
-                    <Link href='/register' className="border border-navy px-5 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> Create Post </Link>
-                    <Link href='/sign-in' className="bg-navy text-white px-6 py-3 text-sm focus-visible:outline-none rounded-md font-semibold"> Sign In </Link>
-                </div>
+                <NavButtons />
             </div>
         </nav>
     )

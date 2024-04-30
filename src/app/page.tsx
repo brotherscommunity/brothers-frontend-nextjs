@@ -20,7 +20,7 @@ export default function Home() {
             <PostList />
             {/* FAKE VALUE TO SIMULATE TOTAL NUMBER OF POSTS */}
             <Pagination TotalNumberOfResults={15}/>
-            <Ad />
+            <Ad title="Google Ad Spot" buttonLabel="View" />
           </div>
         </div>
         <VisitorsBanner />
