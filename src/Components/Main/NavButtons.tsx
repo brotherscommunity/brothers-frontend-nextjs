@@ -14,6 +14,7 @@ import {
 } from "@/Components/ui/popover"
 import Avatar from "../Small Pieces/Avatar";
 import Spinner from "../Small Pieces/Spinner";
+import { useRouter } from "next/navigation";
 
 
 export default function NavButtons(){
@@ -50,7 +51,7 @@ export default function NavButtons(){
                             </PopoverTrigger>
                             {openPopUp && <PopoverContent className="w-[250px] h-[220px] py-5 mr-7 mt-5 focus-visible:outline-none">
                                     <div className="flex flex-col justify-start px-6">
-                                        <Avatar />
+                                        <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
                                         <div className="flex items-center gap-10 mt-4">
                                             <h3 className="text-base text-black font-medium"> {user.firstName} </h3>
                                             <MdKeyboardArrowRight className="w-5 h-5 mt-1" />

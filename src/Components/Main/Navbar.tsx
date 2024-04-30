@@ -11,6 +11,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import NavButtons from "./NavButtons";
 import useAuth from "@/Context/hook";
+import Link from "next/link";
 
 
 export default function Navbar() {
@@ -54,7 +55,9 @@ export default function Navbar() {
         <nav className='relative inset-x-0 top-0 w-full mt-5 px-20'>
             <div className="flex items-center">
                 <span className="flex gap-2 ml-2">
-                    <Image src={Logo} alt="logo" width={30} height={30} style={{width: "auto", height: "auto"}} />
+                    <Link href="/">
+                        <Image src={Logo} alt="logo" width={30} height={30} style={{width: "auto", height: "auto"}} />
+                    </Link>
                     <button>
                         <RiArrowDropDownLine />
                     </button>

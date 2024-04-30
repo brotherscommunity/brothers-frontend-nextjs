@@ -3,12 +3,11 @@ import Footer from "@/Components/Main/Footer";
 import Header from "@/Components/Main/Header";
 import Pagination from "@/Components/Main/Pagination";
 import PostList from "@/Components/Main/Post/PostList";
-import VisitorsBanner from "@/Components/Main/VisitorsBanner";
 
 
 export default function Home() {
   return (
-    <main>
+    <main className="mb-10">
         <div className="mx-20">
           <Header />
           <div className="mx-7 mt-20 mb-28">
@@ -19,11 +18,12 @@ export default function Home() {
             </div>
             <PostList />
             {/* FAKE VALUE TO SIMULATE TOTAL NUMBER OF POSTS */}
-            <Pagination TotalNumberOfResults={15}/>
+            <div className="mr-10">
+              <Pagination TotalNumberOfResults={15}/>
+            </div>
             <Ad title="Google Ad Spot" buttonLabel="View" />
           </div>
         </div>
-        <VisitorsBanner />
         <Footer />
     </main>
   );

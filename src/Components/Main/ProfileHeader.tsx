@@ -1,0 +1,58 @@
+"use client"
+
+import useAuth from "@/Context/hook"
+import { usePathname } from "next/navigation"
+import Avatar from "../Small Pieces/Avatar"
+import Link from "next/link"
+import { CiEdit } from "react-icons/ci"
+import { Profile_Links } from "@/constants"
+import Footer from "./Footer"
+import Ad from "../Ad"
+
+interface ProfileHeaderProps {
+    children: React.ReactNode
+}
+
+export default function ProfileHeader({children}: ProfileHeaderProps){
+
+    const pathname = usePathname()
+    const {user} = useAuth()
+
+    return (
+        <main className="mt-20 mb-10">
+            <div className="mx-20">
+                <div className="flex items-center justify-between mr-12">
+                    <span className="flex items-start gap-7">
+                        <Avatar width="w-[60px]" height="h-[60px]" iconWidth="w-[25px]" iconHeight="h-[25px]" />
+                        <h2 className="text-xl mt-4 text-black font-semibold"> {user?.firstName}  {user?.lastName} </h2>
+                    </span>
+                    <Link href="/edit-profile" className="w-[150px] flex items-center gap-2 border border-navy rounded-md px-4 py-2 ">
+                        <CiEdit className="w-4 h-4 text-navy" />
+                        <p className="text-navy text-sm font-semibold"> Edit Profile </p>
+                    </Link> 
+                </div>
+                <div className="mr-12">
+                    <div className="w-full px-20 py-6 mt-10 flex gap-16 items-center justify-start bg-button border-none focus-visible:outline-none ">
+                        {Profile_Links.map((item) => {
+                            return (
+                                <div key={item.path}>
+                                    <span className="flex justify-center">
+                                        <Link href={`${item.path}`} className="text-base font-medium pl-3"> {item.label} </Link>
+                                    </span>
+                                    {pathname === item.path &&<hr className="mt-1 border-t-[3px] border-navy w-[95px] ml-3.5" />}
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+                <section className="mt-5">
+                    {children}
+                </section>
+                <Ad title="Google Ad Spot" buttonLabel="View" />
+            </div>
+            <div className="mt-28">
+                <Footer />
+            </div>
+        </main>
+    )
+}

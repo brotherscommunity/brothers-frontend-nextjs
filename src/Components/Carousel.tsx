@@ -63,7 +63,7 @@ export default function Carousel({slides, autoSlide=false, autoSlideInterval=200
                 </div>
             </div>
             <div className="absolute top-44 right-0 left-0 text-white flex flex-col items-center justify-center">
-                <h2 className="text-4xl bg-clip-text"> Welcome to Brotherhood International Community! </h2> 
+                <h2 className="text-4xl bg-clip-text"> Welcome to Brothers International Community! </h2> 
                 <p className="w-[550px] mt-3 text-center text-lg leading-7"> Join us in fostering a community of brotherhood, collaboration, and knowledge-sharing. Explore the diverse perspectives and engage with fellow members. </p>
             </div>
         </section>

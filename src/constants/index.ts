@@ -1,7 +1,6 @@
 import image1 from "/public/slides/image1.jpg"
 
 
-
 export const Languages = [
     'English',
     'Spanish',
@@ -121,3 +120,18 @@ export type USER = {
     city: string,
     country: string
 }
+export const Profile_Links = [
+    {
+        path: "/profile",
+        label: "Bio"
+    },
+    {
+        path: "/profile/blog",
+        label: "Blog"
+    },
+    {
+        path: "/profile/videos",
+        label: "Videos"
+    },
+]
+export const PROFILE_PAGE_PATH = "/profile"
