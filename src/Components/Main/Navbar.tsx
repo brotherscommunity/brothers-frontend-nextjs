@@ -10,15 +10,16 @@ import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import NavButtons from "./NavButtons";
-import useAuth from "@/Context/hook";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 
 export default function Navbar() {
 
     const [selectedLanguage, setSelectedLanguage] = useState('')
     const [searchValue, setSearchValue] = useState("")
-    const {isAuthenticated, user} = useAuth()
+    const {isAuthenticated, isLoading, data} = useSelector((state: RootState) => state.user)
     const searchParams = useSearchParams()
     const {replace, push} = useRouter()
     const pathname = usePathname()
@@ -75,13 +76,13 @@ export default function Navbar() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleSearch()
-                }} className={`flex items-center justify-between bg-button ${isAuthenticated && user ? "w-[420px]" : "w-[490px]"} h-[48px] ml-24 px-5 rounded-md`}>
+                }} className={`flex items-center justify-between bg-button ${isAuthenticated && data ? "w-[420px]" : "w-[490px]"} h-[48px] ml-24 px-5 rounded-md`}>
                     <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button w-[400px] p-2 text-sm focus-visible:outline-none" />
                     <button type="submit" onClick={handleSearch} className="mr-5">
                         <CiSearch className="w-5 h-5" />
                     </button>
                 </form>
-                <NavButtons />
+                {!isLoading && <NavButtons />}
             </div>
         </nav>
     )

@@ -19,11 +19,9 @@ export default function Carousel({slides, autoSlide=false, autoSlideInterval=200
      * A function to move the slide to the previous
      */
     const handlePrevious = () => {
-        console.log("prev")
         setCurrentSlide((currentslide) => currentslide === 0 ? slides?.length - 1 : currentSlide - 1 )
     }
     const handleNext = () => {
-        console.log("next")
         setCurrentSlide((curslide) => curslide === slides.length -1 ? 0 : curslide + 1)
     }
 

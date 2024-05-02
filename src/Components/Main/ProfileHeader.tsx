@@ -1,6 +1,5 @@
 "use client"
 
-import useAuth from "@/Context/hook"
 import { usePathname } from "next/navigation"
 import Avatar from "../Small Pieces/Avatar"
 import Link from "next/link"
@@ -8,6 +7,8 @@ import { CiEdit } from "react-icons/ci"
 import { Profile_Links } from "@/constants"
 import Footer from "./Footer"
 import Ad from "../Ad"
+import { useSelector } from "react-redux"
+import { RootState } from "@/redux/store"
 
 interface ProfileHeaderProps {
     children: React.ReactNode
@@ -16,7 +17,7 @@ interface ProfileHeaderProps {
 export default function ProfileHeader({children}: ProfileHeaderProps){
 
     const pathname = usePathname()
-    const {user} = useAuth()
+    const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
 
     return (
         <main className="mt-20 mb-10">
@@ -24,7 +25,7 @@ export default function ProfileHeader({children}: ProfileHeaderProps){
                 <div className="flex items-center justify-between mr-12">
                     <span className="flex items-start gap-7">
                         <Avatar width="w-[60px]" height="h-[60px]" iconWidth="w-[25px]" iconHeight="h-[25px]" />
-                        <h2 className="text-xl mt-4 text-black font-semibold"> {user?.firstName}  {user?.lastName} </h2>
+                        <h2 className="text-xl mt-4 text-black font-semibold"> {data?.firstName}  {data?.lastName} </h2>
                     </span>
                     <Link href="/edit-profile" className="w-[150px] flex items-center gap-2 border border-navy rounded-md px-4 py-2 ">
                         <CiEdit className="w-4 h-4 text-navy" />

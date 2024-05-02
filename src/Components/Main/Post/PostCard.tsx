@@ -7,11 +7,12 @@ import { AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/a
 import { IoStatsChartOutline } from "react-icons/io5";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Link from "next/link";
-import useAuth from "@/Context/hook";
 import { usePathname } from "next/navigation";
 import { CiEdit } from "react-icons/ci";
 import { PROFILE_PAGE_PATH } from "@/constants";
 import { formatNumber } from "@/utils";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 
 interface PostCardProps {
     postedBy: string,
@@ -30,9 +31,9 @@ interface PostCardProps {
 
 export default function PostCard({postedBy, date, title, description, tags, likes, dislikes, comments, totalViews, isVideoPost=false} : PostCardProps) {
 
-    const {isAuthenticated, user} = useAuth()
+    const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
     const pathname = usePathname()
-    const isProfilePage = isAuthenticated && user && pathname.startsWith(PROFILE_PAGE_PATH)
+    const isProfilePage = isAuthenticated && data && pathname.startsWith(PROFILE_PAGE_PATH)
     const viewCount = formatNumber(totalViews)
 
     function handleLike(){

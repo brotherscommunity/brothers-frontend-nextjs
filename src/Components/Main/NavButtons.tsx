@@ -1,6 +1,6 @@
 'use client'
 
-import useAuth from "@/Context/hook"
+
 import Link from "next/link"
 import { IoMdNotifications } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -14,13 +14,14 @@ import {
 } from "@/Components/ui/popover"
 import Avatar from "../Small Pieces/Avatar";
 import Spinner from "../Small Pieces/Spinner";
-import { useRouter } from "next/navigation";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 
 
 export default function NavButtons(){
 
     const [openPopUp, setOpenPopUp] = useState<boolean>(false)
-    const {isAuthenticated, user} = useAuth()
+    const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
      // Logout function
@@ -31,9 +32,9 @@ export default function NavButtons(){
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && user ? "gap-7" : "gap-10"}  ml-20 text-sm`}>
+        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"}  ml-20 text-sm`}>
             <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="border border-navy px-5 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
-            {isAuthenticated && user ? (
+            {isAuthenticated && data ? (
                 <div className="flex items-center gap-4">
                     {/* TODO: Create a route for Notifications */}
                     <Link href={"/notifications"} className="relative">
@@ -42,7 +43,7 @@ export default function NavButtons(){
                     </Link>
                     <Avatar />
                     <div className="flex gap-2">
-                        <h3 className="text-base text-black font-medium"> {user.firstName} </h3>
+                        <h3 className="text-base text-black font-medium"> {data.firstName} </h3>
                         <Popover>
                             <PopoverTrigger>
                                 <div onClick={() => setOpenPopUp(true)}>
@@ -53,7 +54,7 @@ export default function NavButtons(){
                                     <div className="flex flex-col justify-start px-6">
                                         <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
                                         <div className="flex items-center gap-10 mt-4">
-                                            <h3 className="text-base text-black font-medium"> {user.firstName} </h3>
+                                            <h3 className="text-base text-black font-medium"> {data?.firstName} </h3>
                                             <MdKeyboardArrowRight className="w-5 h-5 mt-1" />
                                         </div>
                                     </div>

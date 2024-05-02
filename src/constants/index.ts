@@ -107,10 +107,6 @@ export const TERMS_AND_CONDITIONS = [
         description: "If you have any questions or concerns about these Terms and Conditions, please contact us at brothersinternationalcommunity@gmail.com. By using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. Thank you for visiting our social media blog!"
     },
 ]
-export type GLOBAL_STATE_TYPES = {
-    isAuthenticated: boolean,
-    user: USER | null
-}
 export type USER = {
     email: string,
     username: string,
@@ -135,3 +131,12 @@ export const Profile_Links = [
     },
 ]
 export const PROFILE_PAGE_PATH = "/profile"
+export const Registration_Sections = [
+    1,
+    2,
+    3
+]
+
+export enum ACTION_TYPES {
+    set_current_user = "User/Set",
+}
