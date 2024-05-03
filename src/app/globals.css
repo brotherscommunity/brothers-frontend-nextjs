@@ -18,6 +18,12 @@
   .formLabel {
     @apply text-[14px] text-black font-medium
   }
+  .filterCheckbox {
+    @apply w-4 h-4 text-navy rounded-full
+  }
+  .checkboxFlex {
+    @apply flex items-center gap-3
+  }
   .formContainer {
     @apply flex flex-1 flex-col justify-start gap-3
   }

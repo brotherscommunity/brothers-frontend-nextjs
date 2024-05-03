@@ -12,7 +12,16 @@ export const Languages = [
 ]
 export enum QUERY_PARAMS {
     search = "search",
-    page = "page"
+    page = "page",
+    order="order",
+    filterBy="filterBy"
+}
+export enum QUERY_STRING_VALUES {
+    date = "date",
+    visitors = "visitors",
+    comments = "comments",
+    ascending = "asc",
+    descending = "desc"
 }
 export const Slides = [
     image1
