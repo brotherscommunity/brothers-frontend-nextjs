@@ -19,14 +19,18 @@ export default function Pagination({TotalNumberOfResults}: PaginationProps) {
      * A function that chnages the current page into the Next page.
      */
     function handlePreviousPostsPage(){
-
+        if(currentPage === 1) return
+        const newPrevPage = currentPage - 1
+        handleSetNewPage(newPrevPage)
     }
 
     /**
      * A function that chnages the current page into the previous page.
      */
     function handleNextPostsPage (){
-
+        if(currentPage === Total_Number_OF_PAGES) return
+        const newNextPage = currentPage + 1
+        handleSetNewPage(newNextPage)
     }
 
     /**
@@ -42,19 +46,23 @@ export default function Pagination({TotalNumberOfResults}: PaginationProps) {
 
     return (
         <section className='w-full mt-14 flex justify-end'>
-            <button onClick={handlePreviousPostsPage} className="mr-6">
-                <IoIosArrowBack className="w-5 h-5 text-navy" />
-            </button>
-            <div className="flex items-center gap-5">
-                {Total_Number_OF_PAGES === 1 ? null : Array.from({length: Total_Number_OF_PAGES}, (_, index) => index + 1).map((page_number) => {
-                    return (
-                        <button key={page_number} onClick={() => handleSetNewPage(page_number)}  className={`text-sm text-black ${currentPage === page_number ? "px-4 py-1.5 bg-navy text-white rounded-md" : null}`} > {page_number} </button>
-                    )
-                })}
-            </div>
-            <button onClick={handleNextPostsPage} className="ml-6">
-                <IoIosArrowForward className="w-5 h-5 text-navy" />
-            </button>
+            {Total_Number_OF_PAGES  <= 1  ? null : 
+            <>
+                <button onClick={handlePreviousPostsPage} className="mr-6">
+                    <IoIosArrowBack className="w-5 h-5 text-navy" />
+                </button>
+                <div className="flex items-center gap-5">
+                    {Array.from({length: Total_Number_OF_PAGES}, (_, index) => index + 1).map((page_number) => {
+                        return (
+                            <button key={page_number} onClick={() => handleSetNewPage(page_number)}  className={`text-sm text-black ${currentPage === page_number ? "px-4 py-1.5 bg-navy text-white rounded-md" : null}`} > {page_number} </button>
+                        )
+                    })}
+                </div>
+                <button onClick={handleNextPostsPage} className="ml-6">
+                    <IoIosArrowForward className="w-5 h-5 text-navy" />
+                </button>
+            </>
+            }
         </section>
     )
 }

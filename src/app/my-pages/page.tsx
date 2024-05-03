@@ -1,4 +1,5 @@
 import Ad from "@/Components/Ad";
+import Pagination from "@/Components/Main/Pagination";
 import Filters from "@/Components/Small Pieces/Filters";
 import { QUERY_STRING_VALUES } from "@/constants";
 import Link from "next/link";
@@ -6,12 +7,14 @@ import Link from "next/link";
 interface MyPagesProps {
     searchParams: {
         filterBy: string,
-        order: string
+        order: string,
+        page: string
     }
 }
 export default function page({searchParams}: MyPagesProps) {
     const filterQuery = searchParams.filterBy || QUERY_STRING_VALUES.date
     const orderQuery = searchParams.order || QUERY_STRING_VALUES.descending
+    const pageQuery = searchParams.page || 1
     //TODO: Fetch all the pages of the current user by paasing the query strings to filter and sort pages
     // FAKE DATA
     const Pages = [
@@ -47,6 +50,7 @@ export default function page({searchParams}: MyPagesProps) {
                     )
                 })}
             </div>
+            <Pagination TotalNumberOfResults={Pages.length} />
         </main>
     )
 }
