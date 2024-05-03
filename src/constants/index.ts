@@ -122,7 +122,7 @@ export const Profile_Links = [
         label: "Bio"
     },
     {
-        path: "/profile/blog",
+        path: "/profile/blogs",
         label: "Blog"
     },
     {

@@ -1,9 +1,14 @@
+import Ad from "@/Components/Ad";
+import Signinform from "@/Components/Main/forms/Signinform";
 
 
 export default function page() {
     return (
-        <main className='w-[1280px] h-[695px] rounded-xl'>
-            
+        <main className='mx-24'>
+            <Ad title="Ad Spot" buttonLabel="View" />
+            <div className="flex justify-center mt-8">
+                <Signinform />
+            </div>
         </main>
     )
 }

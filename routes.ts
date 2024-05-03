@@ -11,7 +11,8 @@ export const PUBLIC_ROUTES = [
 
 export const PROTECTED_ROUTES = [
     "/profile",
-    "edit-profile",
+    "/edit-profile",
+    "/profile/blogs",
     "/profile/videos",
     "/create-post"
 ]

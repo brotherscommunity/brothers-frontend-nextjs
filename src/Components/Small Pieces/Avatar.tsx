@@ -21,12 +21,12 @@ export default function Avatar({width, height, iconWidth, iconHeight, closePopUp
         // Close The pop-up before redirecting to the profile page
         if(closePopUp && setOpenPopUp){
             setOpenPopUp(false)
+            push("/profile")
         }
-        push("/profile")
     }
 
     return (
-        <div onClick={handleProfileNavigation} className={`${ width && height ? `${width} ${height}` : "w-[40px] h-[40px]"} relative hover:cursor-pointer rounded-full bg-navy border-none focus-visible:outline-none`}>
+        <div onClick={handleProfileNavigation} className={`${ width && height ? `${width} ${height}` : "w-[40px] h-[40px]"} ${closePopUp &&  "hover:cursor-pointer"} relative rounded-full bg-navy border-none focus-visible:outline-none`}>
             <div className={`absolute flex items-center justify-center ${iconWidth && iconHeight ? "pt-3.5 px-4" : "pt-2.5 px-3"}`}>
                 <FaRegUser className={`${iconWidth && iconHeight ? `${iconWidth} ${iconHeight} right-3` : "w-[16px] h-[16px]"} text-white`} />
             </div>

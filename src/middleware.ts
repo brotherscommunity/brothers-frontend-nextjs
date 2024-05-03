@@ -10,7 +10,7 @@ import {set_current_user} from "@/redux/features/UserSlice"
 export function middleware(request: NextRequest){
 
     // Check if there is an Auth token in the request cookie request.cookies.get("authToken")
-    const token = null // FAKE TOKEN
+    const token = "heyheyheyheyheyheyhe" // FAKE TOKEN
     // Autorization: Protecting our special routes that are accessible only for Authenticated users
     if(PROTECTED_ROUTES.includes(request.nextUrl.pathname)){
         if(!token){
@@ -26,7 +26,7 @@ export function middleware(request: NextRequest){
         return NextResponse.next();
     }
     // Allow the request to pass for all Public Routes
-    return NextResponse.next();
+    return NextResponse.next()
 }
 
 // For all routes except these matchers the middleware will be excuted
