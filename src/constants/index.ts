@@ -145,7 +145,13 @@ export const Registration_Sections = [
     2,
     3
 ]
-
 export enum ACTION_TYPES {
     set_current_user = "User/Set",
 }
+export const HTTPS = "https://"
+
+export const HTTP = "http://"
+
+export const PREVIEW_BUTTON_DATA = "preview"
+
+export const BUTTON_ATTRIBUTE_NAME = "data-button-data"

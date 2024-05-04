@@ -10,9 +10,8 @@ export const Section1FormSchema = z.object({
     languagesWishToLearn: z.string().min(2, {message: "This field is required"}),
     birthDate: z.string().min(2, {message: "birth date is required"})
 })
-
 export const Section2FormSchema = z.object({
-    email: z.string().email(),
+    email: z.string().email().min(2, {message: "email is required"}),
     telegramUsername: z.string().optional(),
     phoneNumber: z.string().max(15, {message: "phone number is too long"}).optional(),
     facebookId: z.string().optional(),
@@ -23,10 +22,9 @@ export const Section2FormSchema = z.object({
     state: z.string().min(2, {message: "state is required"}),
     city: z.string().optional()
 })
-
 export const Section3FormSchema = z.object({
     password: z.string().min(5, {message: "password must be greater than 5 characters"}),
-    confirmPassword: z.string(),
+    confirmPassword: z.string().min(1, {message: "You need to re-enter your password"}),
     referalId: z.number().optional()
 }).refine(
     (values) => {
@@ -37,14 +35,18 @@ export const Section3FormSchema = z.object({
         path: ["confirmPassword"],
     }
 )
-
 export const SignFormSchema = z.object({
-    username: z.string(),
-    password: z.string()
+    username: z.string().min(1, {message: "username is required"}),
+    password: z.string().min(1, {message: "password is required"})
 })
-
 export const EditProfileSchema = z.object({
     ...Section1FormSchema.shape,
     ...Section2FormSchema.shape,
     file: z.custom<File[]>(),
+})
+export const BlogPostSchema = z.object({
+    content: z.string().min(3, {message: "You need to provide the content"}), 
+    image: z.custom<File[]>(),
+    references: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
 })

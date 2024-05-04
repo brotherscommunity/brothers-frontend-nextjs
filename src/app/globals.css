@@ -16,7 +16,7 @@
     @apply w-[350px] px-3 py-2.5 bg-button border-none rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm
   }
   .formLabel {
-    @apply text-[14px] text-black font-medium
+    @apply text-[15px] text-black font-medium
   }
   .filterCheckbox {
     @apply w-4 h-4 text-navy rounded-full

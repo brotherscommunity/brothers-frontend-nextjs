@@ -9,9 +9,6 @@ interface StroreProviderProps {
     children: React.ReactNode
 }
 
-// Don't let the component gets cached
-
-const dynamic = 'force-dynamic'
 export default function StoreProvider({children} : StroreProviderProps) {
     
     const fetchUser = useCallback( async () => {

@@ -17,5 +17,4 @@ export const PROTECTED_ROUTES = [
     "/create-post",
     "/referals",
     "/my-pages",
-    "/founder-ranking"
 ]

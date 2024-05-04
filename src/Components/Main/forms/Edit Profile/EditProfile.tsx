@@ -377,7 +377,7 @@ export default function EditProfile({userData} : EditProfileProps) {
                         </div>
                     </section>
                     <span className="flex justify-center mt-20">
-                        <button type="submit" className="bg-navy text-white text-sm font-semibold rounded-md px-6 py-2.5"> 
+                        <button type="submit" className="bg-navy text-white text-base font-semibold rounded-md px-6 py-2.5"> 
                         {isLoading ? <Spinner loading={isLoading} /> : "Save Changes"} </button>
                     </span>
                 </form>
