@@ -1,6 +1,7 @@
 
 
-// Bio of the user is written in Markdown
+
+// TODO: TO convert the HTML string into a React element use the <DisplayContent /> compnent 
 export default function Bio() {
     return (
         <section className='bg-button border-none w-full h-[250px] px-10 py-6 '>

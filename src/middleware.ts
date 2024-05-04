@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { DEFAULT_REDIRECT_ROUTE, PROTECTED_ROUTES, PUBLIC_ROUTES } from '../routes'
+import { DEFAULT_REDIRECT_ROUTE, PREVIEW_ROUTE, PROTECTED_ROUTES, PUBLIC_ROUTES } from '../routes'
 import store from './redux/store'
 import {set_current_user} from "@/redux/features/UserSlice"
 
@@ -12,7 +12,7 @@ export function middleware(request: NextRequest){
     // Check if there is an Auth token in the request cookie request.cookies.get("authToken")
     const token = "heyheyheyheyheyheyhe" // FAKE TOKEN
     // Autorization: Protecting our special routes that are accessible only for Authenticated users
-    if(PROTECTED_ROUTES.includes(request.nextUrl.pathname)){
+    if(PROTECTED_ROUTES.includes(request.nextUrl.pathname) || request.nextUrl.pathname.startsWith(PREVIEW_ROUTE)){
         if(!token){
             return NextResponse.redirect(new URL(DEFAULT_REDIRECT_ROUTE, request.url))
         }

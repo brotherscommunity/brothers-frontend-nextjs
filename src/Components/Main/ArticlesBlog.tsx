@@ -19,7 +19,7 @@ export default function ArticlesBlog() {
 
     const [isPreviewLoading, setIsPreviewLoading] = useState<boolean>(false)
     const [isSaveLoading, setIsSaveLoading] = useState<boolean>(false)
-    const {push} = useRouter()
+    const {push, refresh} = useRouter()
     const buttonRef = useRef<HTMLButtonElement | null>(null)
     const form = useForm<z.infer<typeof BlogPostSchema>>({
         resolver: zodResolver(BlogPostSchema),
@@ -51,8 +51,8 @@ export default function ArticlesBlog() {
         push(`/preview-post/${postId}`)
     }
     function handleClearForm(){
-        // reload the page to clear the form. form.reset() doesn't work
-        push("/create-post")
+        // refresh the page to clear the form. form.reset() doesn't work
+        refresh()
     }
 
     async function onSubmit(values: z.infer<typeof BlogPostSchema>){

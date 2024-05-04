@@ -18,3 +18,5 @@ export const PROTECTED_ROUTES = [
     "/referals",
     "/my-pages",
 ]
+
+export const PREVIEW_ROUTE = "/preview-post"
