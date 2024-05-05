@@ -33,7 +33,7 @@ export default function ThumbnailUploader({fieldchange, title, mediaUrl}: Thumbn
     }, [file])
 
     return (
-        <div className="flex flex-col justify-start gap-6 mt-10">
+        <div className="flex flex-col justify-start gap-6 max-sm:mt-14 mt-10">
             <h3 className="text-xl text-black font-semibold mb-3"> {title} </h3>
             {isImageSelected ? (
                 <Image {...getRootProps()} src={fileUrl}  alt='tumbnail-image' width={200} height={100} className='cursor-pointer focus:outline-none' />

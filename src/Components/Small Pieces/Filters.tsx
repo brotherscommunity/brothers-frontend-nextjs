@@ -39,8 +39,8 @@ export default function Filters() {
     }
 
     return (
-        <section className="mt-8 flex items-center justify-between">
-            <div className="flex items-center justify-start gap-10">
+        <section className="mt-8 flex flex-wrap max-sm:gap-4 items-center justify-between">
+            <div className="flex items-center justify-start max-md:gap-6 gap-10">
                 <span className="checkboxFlex">
                     <Checkbox checked={currentFilter === QUERY_STRING_VALUES.date} onClick={handleFilterByDate} className="filterCheckbox" />
                     <p> Date </p>
@@ -54,7 +54,7 @@ export default function Filters() {
                     <p> Comments </p>
                 </span>
             </div>
-            <div className="flex items-center gap-10">
+            <div className="flex items-center max-md:gap-6 gap-10">
                 <span className="checkboxFlex">
                     <Checkbox checked={currentOrder === QUERY_STRING_VALUES.ascending} onClick={handleOrderAsc} className="filterCheckbox" />
                     <p> Ascending </p>

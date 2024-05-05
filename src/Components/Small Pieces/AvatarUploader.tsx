@@ -36,7 +36,7 @@ export default function AvatarUploader({fieldchange, mediaUrl, firstName, lastNa
     }, [file])
 
     return (
-        <div className="flex items-start gap-6">
+        <div className="flex items-start gap-10">
             {isImageSelected ? (
                 <img {...getRootProps()} src={fileUrl}  alt='profile-image' className='w-20 h-20 rounded-full cursor-pointer focus:outline-none' />
             ) : <Avatar width="w-[75px]" height="h-[75px]" iconWidth="w-[45px]" iconHeight="h-[35px]" />}

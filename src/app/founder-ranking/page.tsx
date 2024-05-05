@@ -50,7 +50,7 @@ export default function page({searchParams} : FounderRankingProps) {
         },
     ]
     return (
-        <main className="mx-24 mt-16">
+        <main className="max-md:px-5 md:px-7 xl:px-20 mt-16">
             <h2 className="text-2xl text-black font-semibold"> Founder Ranking Page </h2>
             <RankingTable rankData={rankData} />
             <Pagination TotalNumberOfResults={rankData.length} />

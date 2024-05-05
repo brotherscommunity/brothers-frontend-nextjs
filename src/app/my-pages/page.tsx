@@ -32,7 +32,7 @@ export default function page({searchParams}: MyPagesProps) {
         }
     ]
     return (
-        <main className='mx-24 mt-20 mb-28'>
+        <main className='max-md:px-5 md:px-7 xl:px-20 mt-20 mb-28'>
             <Ad title="Ad Spot" buttonLabel="View" />
             <div className="mt-14">
                 <h2 className="text-2xl text-black font-medium"> My Pages </h2>

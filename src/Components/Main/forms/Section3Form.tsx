@@ -8,6 +8,8 @@ import { Checkbox } from "@/Components/ui/checkbox"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/Components/ui/form"
 import { USER } from "./Registrationform";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface Section3FormProps {
     userData: USER | undefined,
@@ -17,6 +19,7 @@ interface Section3FormProps {
 
 export default function Section3Form({userData, setCurrentlySelected, setFilledSection } : Section3FormProps) {
 
+    const [acceptedTos, setAcceptedTos] = useState<boolean>(false)
     const {push} = useRouter()
     const form = useForm<z.infer<typeof Section3FormSchema>>({
         resolver: zodResolver(Section3FormSchema),
@@ -34,6 +37,10 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
     }
 
     function onSubmit(values: z.infer<typeof Section3FormSchema>){
+        if(!acceptedTos){
+            toast.error("Please accept the terms and conditions")
+            return
+        }
         // We finally collected all the form data as one
         const finalData = {
             ...userData,
@@ -46,11 +53,11 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
     }
 
     return (
-        <section className='mt-10'>
+        <section className='registrationFormContainer'>
             <h2 className="text-navy text-xl text-center font-semibold"> Account Information </h2>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="mt-14">
-                    <div className="flex flex-col items-center gap-3 ">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col items-center gap-3 mt-14">
+                    <div className="flex flex-col gap-3">
                         <FormField
                         control={form.control}
                         name="password"
@@ -89,8 +96,7 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
                         render={({ field }) => (
                             <FormItem className="formContainer mt-6">
                             <FormLabel className="formLabel"> 
-                            Referal Id
-                            <span className="astrics"> * </span>
+                                Referal Id
                             </FormLabel>
                             <FormControl>
                                 <input type="text" placeholder="Referal Id"  className="formInput" {...field}/> 
@@ -99,18 +105,22 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
                             </FormItem>
                         )}
                         />
-                        <span className="flex items-center gap-6 mt-8 ml-12">
-                            <Checkbox className="rounded-full text-navy w-5 h-5" />
-                            <p className="text-base w-[360px]"> I have read and accepted the terms and conditions of this community </p>
+                        <span className="flex items-center gap-6 mt-8 xl:ml-12">
+                            <Checkbox onClick={() => setAcceptedTos((accepted) => !accepted)} className="rounded-full text-navy w-5 h-5" />
+                            <p className="text-base max-sm:w-[200px] sm:w-[250px] md:w-[300px] xl:w-[360px]"> I have read and accepted the terms and conditions of this community </p>
                         </span>
                     </div>
-                    <div className="mt-16 px-20 flex items-center justify-center gap-28">
-                        <button type="button" onClick={handleBack} className="formBackButton">
-                            Back
-                        </button>
-                        <button type="submit" className="formNextButton">
-                            Done
-                        </button>
+                    <div className="mt-16 xl:px-20 flex items-center justify-center gap-28">
+                        <span>
+                            <button type="button" onClick={handleBack} className="formBackButton">
+                                Back
+                            </button>
+                        </span>
+                        <span>
+                            <button type="submit" className="formNextButton">
+                                Done
+                            </button>
+                        </span>
                     </div>
                 </form>
             </Form>

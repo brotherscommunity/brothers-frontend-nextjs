@@ -49,11 +49,11 @@ export default function PostCard({postedBy, date, title, description, tags, like
     return (
         <section className='border border-grey-200 mt-8 flex items-start gap-14 rounded-xl p-8'>
             {isVideoPost ? (
-                <Link href={'/'}>
-                    <Image src={VideoImage} alt="post-image" width={200} height={250} /> 
+                <Link href={'/'} className="max-lg:hidden">
+                    <Image src={VideoImage} alt="post-image" width={200} height={250}/> 
                 </Link>
             ) : (
-                <Image src={postImage} alt="post-image" width={200} height={200} className="rounded-sm" />
+                <Image src={postImage} alt="post-image" width={200} height={200} className="max-lg:hidden rounded-sm" />
             )}
             <div className="flex flex-1 flex-col justify-start">
                 <div className="flex items-start justify-between">
@@ -83,10 +83,10 @@ export default function PostCard({postedBy, date, title, description, tags, like
                             )
                         })}
                     </span>
-                    {isProfilePage && <span className="mr-4">
-                        <button className="w-[140px] bg-navy px-4 py-2 rounded-md text-white text-base focus-visible:outline-none flex items-center gap-2">
+                    {isProfilePage && <span className="xl:mr-4">
+                        <button className="maxw-[140px] bg-navy px-4 py-2 rounded-md text-white text-base focus-visible:outline-none flex items-center gap-2">
                             <CiEdit className="w-4 h-4 text-white" />
-                            <p className="text-white text-sm"> Edit Blog </p>
+                            <p className="text-white text-sm"> Edit </p>
                         </button>
                     </span>}
 

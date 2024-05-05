@@ -1,5 +1,6 @@
-import image1 from "/public/slides/image1.jpg"
-
+import slide1 from "/public/slides/slide1.jpg"
+import slide2 from "/public/slides/slide2.png"
+import slide3 from "/public/slides/slide3.png"
 
 export const Languages = [
     'English',
@@ -24,7 +25,9 @@ export enum QUERY_STRING_VALUES {
     descending = "desc"
 }
 export const Slides = [
-    image1
+    slide1,
+    slide2,
+    slide3
 ]
 export const Visitors = [
     {
@@ -148,6 +151,54 @@ export const Registration_Sections = [
 export enum ACTION_TYPES {
     set_current_user = "User/Set",
 }
+export const NON_AUTHENTICATED_SIDEBAR_NAV_LINKS = [
+    {
+        label: "Home",
+        path: "/"
+    },
+    {
+        label: "Register",
+        path: "/register"
+    },
+    {
+        label: "Terms of service",
+        path: "/terms-and-conditions"
+    },
+    {
+        label: "Founder Ranking",
+        path: "/founder-ranking"
+    }
+]
+export const AUTHENTICATED_SIDEBAR_NAV_LINKS = [
+    {
+        label: "Home",
+        path: "/"
+    },
+    {
+        label: "My pages",
+        path: "/my-pages"
+    },
+    {
+        label: "Profile",
+        path: "/profile"
+    },
+    {
+        label: "Edit Profile",
+        path: "/edit-profile"
+    },
+    {
+        label: "Referals",
+        path: "/referals"
+    },
+    {
+        label: "Create Post",
+        path: "/create-post"
+    },
+    {
+        label: "Create Video Blog",
+        path: "/create-video-blog"
+    }
+]
 export const HTTPS = "https://"
 
 export const HTTP = "http://"

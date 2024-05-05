@@ -28,33 +28,48 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
             userName: userData?.userName || "",
             nickName: userData?.nickName || "",
             sex: userData?.sex || "",
-            languagesSpoken: userData?.languagesSpoken || "",
-            languagesWishToLearn: userData?.languagesWishToLearn || "",
+            languagesSpoken: userData?.languagesSpoken?.join(",") || "",
+            languagesWishToLearn: userData?.languagesWishToLearn?.join(",") || "",
             birthDate: userData?.birthDate || ""
         },
     })
 
     function onSubmit(values: z.infer<typeof Section1FormSchema>){
-        push("#main")
+        // Check if comma is used to seprate each languages
+        const LanguageSpokenComma = /,/.test(values.languagesSpoken)
+        if(!LanguageSpokenComma){
+            form.setError("languagesSpoken", {
+                message: "you forgot to use comma"
+            })
+            return
+        }
+        const LanguageWishTLComma = /,/.test(values.languagesWishToLearn)
+        if(!LanguageWishTLComma){
+            form.setError("languagesWishToLearn", {
+                message: "you forgot to use comma"
+            })
+            return
+        }
         setUserData({
             firstName: values.firstName,
             lastName: values.lastName,
             userName: values.userName,
             nickName: values.nickName,
             sex: values.sex,
-            languagesSpoken: values.languagesSpoken,
-            languagesWishToLearn: values.languagesWishToLearn,
+            languagesSpoken: values.languagesSpoken.split(","),
+            languagesWishToLearn: values.languagesWishToLearn.split(","),
             birthDate: values.birthDate
         })
         setFilledSection((filledSections) => [...filledSections, 2])
         setCurrentlySelected(2)
+        push("#main")
     }
 
     return (
-        <section className='mt-10'>
+        <section className='registrationFormContainer'>
             <h2 className="text-navy text-xl text-center font-semibold"> Personal Information </h2>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-3 mt-14">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="registrationForm">
                     <FormRow fieldname1="firstName" fieldname2="lastName" control={form.control} label1="First Name" label2="Last Name" inputType1="text" inputType2="text" placeholder1="Smith" placeholder2="Sand" needTopMargin={false} />
                     <FormRow fieldname1="nickName" fieldname2="userName" control={form.control} label1="Nickname" label2="username" inputType1="text" inputType2="text" placeholder1="sagu" placeholder2="Sadusmith23"/>
                     <div className="formRow mt-6">
@@ -70,7 +85,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                             </FormLabel>
                             <Select onValueChange= {field.onChange} defaultValue={field.value}>
                                     <FormControl className="focus:border-none focus-visible:outline-none py-4">
-                                        <SelectTrigger {...field} className="bg-button w-[350px] px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button">
+                                        <SelectTrigger {...field} className="bg-button max-md:w-[280px] md:w-[300px] lg:w-[350px] xl:w-[360px] px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                                             <SelectValue placeholder="Select gender"/>
                                         </SelectTrigger>
                                     </FormControl>
@@ -94,7 +109,10 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                             <span className="astrics"> * </span>
                             </FormLabel>
                             <FormControl>
-                                <input type="text" placeholder="English , French, German"  className="formInput" {...field}/> 
+                                <div className="flex flex-col justify-start gap-2">
+                                    <p className="text-xs"> use comma to separate each entries </p>
+                                    <input type="text" placeholder="English , French, German"  className="formInput" {...field}/> 
+                                </div>
                             </FormControl>
                             <FormMessage  className='text-sm text-red-500' />
                             </FormItem>
@@ -113,7 +131,10 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                             <span className="astrics"> * </span>
                             </FormLabel>
                             <FormControl>
-                                <input type="text" placeholder="English , French, German" className="formInput" {...field}/> 
+                                <div className="flex flex-col justify-start gap-2">
+                                    <p className="text-xs"> use comma to separate each entries </p>
+                                    <input type="text" placeholder="English , French, German" className="formInput" {...field}/> 
+                                </div>
                             </FormControl>
                             <FormMessage className='text-sm text-red-500' />
                             </FormItem>
@@ -137,7 +158,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                         )}
                         />
                     </div>
-                    <span className="mt-14 -mr-10 flex items-center justify-end ">
+                    <span className="mt-14 w-full flex justify-end">
                         <button type="submit" className="formNextButton"> Next </button>
                     </span>
                 </form>

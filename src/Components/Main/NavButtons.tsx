@@ -32,8 +32,8 @@ export default function NavButtons(){
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"}  ml-20 text-sm`}>
-            <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="border border-navy px-5 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
+        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 text-sm`}>
+            <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="max-lg:hidden border border-navy max-sm:px-3 sm:px-5 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
             {isAuthenticated && data ? (
                 <div className="flex items-center gap-4">
                     {/* TODO: Create a route for Notifications */}
@@ -50,7 +50,7 @@ export default function NavButtons(){
                                     <IoIosArrowDown className="mt-2" />
                                 </div>
                             </PopoverTrigger>
-                            {openPopUp && <PopoverContent className="w-[250px] h-[220px] py-5 mr-7 mt-5 focus-visible:outline-none">
+                            {openPopUp && <PopoverContent className="max-sm:w-[200px] max-sm:h-[200px] sm:w-[250px] sm:h-[250px] py-5 mr-7 mt-5 focus-visible:outline-none">
                                     <div className="flex flex-col justify-start px-6">
                                         <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
                                         <div className="flex items-center gap-10 mt-4">
@@ -59,7 +59,7 @@ export default function NavButtons(){
                                         </div>
                                     </div>
                                     <hr className="border-t border-gray-400 w-full my-4" />
-                                    <button className="w-[150px] flex justify-center items-center py-2.5 mx-6 mt-5 bg-navy text-sm text-white rounded-md">
+                                    <button className="max-sm:w-[100px] sm:w-[150px] flex justify-center items-center py-2.5 mx-6 mt-5 bg-navy text-sm text-white rounded-md">
                                         {isLoading ?
                                         <Spinner loading={isLoading} size={18} />
                                         : 
@@ -75,7 +75,7 @@ export default function NavButtons(){
                     </div>
                 </div>
             ) :
-            <Link href='/sign-in' className="bg-navy text-white px-6 py-3 text-sm focus-visible:outline-none rounded-md font-semibold"> Sign In </Link> 
+            <Link href='/sign-in' className="bg-navy text-white px-6 max-sm:py-2 sm:py-3  text-sm focus-visible:outline-none rounded-md font-semibold"> Sign In </Link> 
             }
         </section>
     )

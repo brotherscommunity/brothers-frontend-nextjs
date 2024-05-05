@@ -21,9 +21,9 @@ export default function ProfileHeader({children}: ProfileHeaderProps){
 
     return (
         <main className="mt-20 mb-10">
-            <div className="mx-20">
-                <div className="flex items-center justify-between mr-12">
-                    <span className="flex items-start gap-7">
+            <div className="max-md:mx-5 md:mx-7 xl:mx-20">
+                <div className="flex items-center justify-between xl:mr-12">
+                    <span className="flex items-start max-md:gap-3 gap-7">
                         <Avatar width="w-[60px]" height="h-[60px]" iconWidth="w-[25px]" iconHeight="h-[25px]" />
                         <h2 className="text-xl mt-4 text-black font-semibold"> {data?.firstName}  {data?.lastName} </h2>
                     </span>
@@ -32,8 +32,8 @@ export default function ProfileHeader({children}: ProfileHeaderProps){
                         <p className="text-navy text-sm font-semibold"> Edit Profile </p>
                     </Link> 
                 </div>
-                <div className="mr-12">
-                    <div className="w-full px-20 py-6 mt-10 flex gap-16 items-center justify-start bg-button border-none focus-visible:outline-none ">
+                <div className="xl:mr-12">
+                    <div className="max-sm:px-5 sm:px-7 md:px-10 lg:px-20 py-6 mt-10 flex gap-16 items-center justify-start bg-button border-none focus-visible:outline-none ">
                         {Profile_Links.map((item) => {
                             return (
                                 <div key={item.path}>

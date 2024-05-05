@@ -1,6 +1,5 @@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/Components/ui/form"
 
-
 interface FormRowProps {
     fieldname1: string,
     fieldname2: string,
@@ -13,7 +12,7 @@ interface FormRowProps {
     placeholder2?: string,
     optional1?: boolean,
     optional2?: boolean,
-    needTopMargin?: boolean
+    needTopMargin?: boolean,
 }
 
 export default function FormRow({fieldname1, fieldname2, control, label1, label2,  inputType1, inputType2, placeholder1, placeholder2, needTopMargin=true, optional1=false, optional2=false}: FormRowProps) {

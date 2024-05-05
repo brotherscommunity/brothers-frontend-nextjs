@@ -99,7 +99,7 @@ export default function ArticlesBlog() {
                                     Title
                                 </FormLabel>
                                 <FormControl>
-                                    <input type="text" placeholder="Title of your blog" {...field} className="w-[350px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
+                                    <input type="text" placeholder="Title of your blog" {...field} className="max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
                                 </FormControl>
                                 <FormMessage className='text-sm text-red-500' />
                             </FormItem>

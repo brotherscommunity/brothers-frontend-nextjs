@@ -13,8 +13,8 @@ export interface USER {
     userName?: string,
     nickName?: string,
     sex?: string,
-    languagesSpoken?: string,
-    languagesWishToLearn?: string,
+    languagesSpoken?: string[],
+    languagesWishToLearn?: string[],
     birthDate?: string,
     email?: string,
     telegramUsername?: string,
@@ -43,7 +43,7 @@ export default function Registrationform(){
     }
 
     return (
-        <section id="main"  className="mainContainer">
+        <section id="main"  className="md:mx-24 mt-16 mb-48 pt-6 pb-20 px-20 shadow-lg bg-white">
             <h3 className="text-xl text-black text-center font-semibold"> Join the Brothers Community </h3>
             <span className=" flex justify-center">
                 <p className="w-[230px] text-center text-sm leading-6 mt-3"> Becoming a Member is Just a Few Steps Away. Register Now </p>
@@ -61,7 +61,7 @@ export default function Registrationform(){
                     )
                 })}
             </div>
-            <div className="w-[700px] ml-14 mt-14">
+            <div className="mt-14">
                 {currentLySelected === 1 && <Section1Form userData={userData} setUserData={setUserData} setCurrentlySelected={setCurrentlySelected} setFilledSection={setFilledSection} />}
                 {currentLySelected === 2 && <Section2Form userData={userData} setUserData={setUserData} setCurrentlySelected={setCurrentlySelected} setFilledSection={setFilledSection} />}
                 {currentLySelected === 3 && <Section3Form userData={userData} setFilledSection={setFilledSection} setCurrentlySelected={setCurrentlySelected}/>}
@@ -70,8 +70,8 @@ export default function Registrationform(){
                     <Link href={"/sign-in"} className="text-navy pl-2 font-semibold"> Sign in </Link>
                 </p>
             </div>
-            <div className="ml-8 mt-14">
-                <div className="w-full py-3 bg-button flex items-center justify-center text-base text-navy font-semibold rounded-md border-none focus-visible:outline-none">
+            <div className="xl:ml-8 mt-14">
+                <div className="max-md:w-[300px] md:w-full px-5 py-3 bg-button flex items-center justify-center max-sm:text-sm text-base text-navy font-semibold rounded-md border-none focus-visible:outline-none">
                     <h4> * Mandatory to complete these fields </h4>
                 </div>
             </div>

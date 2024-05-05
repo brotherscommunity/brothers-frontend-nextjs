@@ -12,7 +12,7 @@ export default function PostList({isVideoPost=false}: PostListProps) {
         )
     })
     return (
-        <main className="mt-10 pr-10">
+        <main className="mt-10 xl:pr-10">
             {/*  Simulating an array of Posts fetched from the Database */}
             { Posts }
         </main>

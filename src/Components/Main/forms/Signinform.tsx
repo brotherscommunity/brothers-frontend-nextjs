@@ -28,7 +28,7 @@ export default function Signinform() {
     return (
         <section className="mainContainer">
             <h2 className="text-2xl text-black text-center font-semibold mt-10"> Welcome Back! </h2>
-            <p className="mt-3 ml-16 w-[250px] text-base text-center leading-6"> Becoming a Member is Just a Few Steps Away. Register Now </p>
+            <p className="mt-3 ml-16 w-[250px] max-sm:text-sm sm:text-base text-center leading-6"> Becoming a Member is Just a Few Steps Away. Register Now </p>
             <div className="mt-10 ml-6">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>

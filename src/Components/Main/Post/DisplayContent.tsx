@@ -9,7 +9,7 @@ export default function DisplayContent({content} : DsiplayContentProps) {
     const reactElement = parse(content)
 
     return (
-        <section className='mt-56'>
+        <section className=''>
             {reactElement}
         </section>
     )

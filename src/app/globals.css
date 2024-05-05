@@ -9,11 +9,20 @@
   .tags {
       @apply px-3 py-2 border border-navy text-sm text-navy rounded-lg font-semibold
   }
+  .editProfileFormContainer {
+    @apply flex max-xl:flex-wrap gap-8 mt-10
+  }
+  .registrationFormContainer {
+    @apply mt-10 flex flex-1 flex-col flex-wrap mx-auto
+  }
+  .registrationForm {
+    @apply flex flex-col items-center gap-3 mt-14
+  }
   .formRow {
-    @apply flex items-center justify-start gap-12
+    @apply flex max-xl:flex-col justify-start max-md:gap-6 md:gap-10 lg:gap-12
   }
   .formInput {
-    @apply w-[350px] px-3 py-2.5 bg-button border-none rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm
+    @apply max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 bg-button border-none rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm
   }
   .formLabel {
     @apply text-[15px] text-black font-medium
@@ -37,6 +46,6 @@
     @apply border border-navy px-8 py-2 rounded-md text-navy text-base font-semibold focus-visible:outline-none
   }
   .mainContainer {
-    @apply mx-24 mt-16 mb-48 pt-6 pb-20 px-20 shadow-lg bg-white
+    @apply md:mx-24 max-sm:mx-20 sm:mx-14 mt-16 mb-48 pt-6 pb-20 px-20 shadow-lg bg-white
   }
 }

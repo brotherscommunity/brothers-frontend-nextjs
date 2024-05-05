@@ -6,11 +6,11 @@ export default function page() {
     const userData = {
         firstName: "Abebe",
         lastName: "Balcha",
-        city: "Dire Dawa",
+        city: "Addis Ababa",
         country: "Ethiopia"
     }
     return (
-        <main className="mx-24 mt-20 mb-28">
+        <main className="max-md:px-5 md:px-7 xl:px-20 mt-20 mb-28">
             <EditProfile userData={userData} />
         </main>
     )

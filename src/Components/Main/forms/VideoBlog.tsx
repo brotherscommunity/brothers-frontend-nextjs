@@ -97,7 +97,7 @@ export default function VideoBlog() {
                                     Title
                                 </FormLabel>
                                 <FormControl>
-                                    <input type="text" placeholder="Title of your blog" {...field} className="w-[350px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
+                                    <input type="text" placeholder="Title of your blog" {...field} className="max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
                                 </FormControl>
                                 <FormMessage className='text-sm text-red-500' />
                             </FormItem>
@@ -108,12 +108,12 @@ export default function VideoBlog() {
                         control={form.control}
                         name="videoLink"
                         render={({ field }) => (
-                            <FormItem className="flex items-center gap-8 mt-10">
-                                <FormLabel className="text-lg text-black font-medium"> 
-                                    Enter the video link
+                            <FormItem className="flex items-center gap-6 mt-10">
+                                <FormLabel className="text-lg text-black pt-3 font-medium"> 
+                                    Enter video link
                                 </FormLabel>
                                 <FormControl>
-                                    <input type="text" placeholder="https://www.youtube.com/tutorial" {...field} className="w-[350px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
+                                    <input type="text" placeholder="https://www.youtube.com/tutorial" {...field} className="max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
                                 </FormControl>
                                 <FormMessage className='text-sm text-red-500' />
                             </FormItem>

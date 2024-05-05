@@ -4,9 +4,9 @@ import { Visitors } from "@/constants";
 export default function VisitorsBanner() {
     return (
         <section className='mt-10'>
-            <div className="w-full h-[300px] bg-navy px-28 pt-16">
-                <h2 className="text-3xl text-white font-semibold"> Visitor’s Counter </h2>
-                <div className="flex items-center">
+            <div className="w-full max-sm:h-[450px] sm:h-[400px] md:h-[350px] lg:h-[340px] xl:h-[300px] bg-navy max-sm:px-10 sm:px-14 md:px-16 lg:px-20 xl:px-28 pt-16">
+                <h2 className="max-md:text-2xl md:text-3xl text-white font-semibold"> Visitor’s Counter </h2>
+                <div className="flex flex-wrap items-center">
                     {Visitors.map((item, i) => {
                         return (
                             <span key={i} className="flex items-center relative mt-16 text-white">
@@ -23,7 +23,7 @@ export default function VisitorsBanner() {
                     })}
                 </div>
             </div>
-            <div className=" mt-10 px-28 flex gap-3 text-navy text-sm"> 
+            <div className=" mt-10 max-md:px-10 md:px-20 lg:px-24 xl:px-28 flex gap-3 text-navy text-sm"> 
                 <span className="font-bold"> Note! </span> 
                 <p className="font-semibold"> Visits counts are only accepted from a registered member’s visit and only once per day. </p> 
                 </div>
