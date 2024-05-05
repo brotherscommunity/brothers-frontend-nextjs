@@ -15,6 +15,7 @@ export const PROTECTED_ROUTES = [
     "/profile/blogs",
     "/profile/videos",
     "/create-post",
+    "/create-video-blog",
     "/referals",
     "/my-pages",
 ]

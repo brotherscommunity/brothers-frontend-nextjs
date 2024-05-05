@@ -1,36 +1,40 @@
 'use client'
 
-import TextEditor from "./TextEditor"
-import References from "../Small Pieces/References"
-import ThumbnailUploader from "../Small Pieces/ThumbnailUploader"
-import { BlogPostSchema } from "@/lib/validation"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/Components/ui/form"
+import { VideoBlogSchema } from "@/lib/validation"
+import { RootState } from "@/redux/store"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form"
+import { useSelector } from "react-redux"
 import { z } from "zod"
-import Tags from "../Small Pieces/Tags"
+import TextEditor from "../TextEditor"
+import References from "@/Components/Small Pieces/References"
+import ThumbnailUploader from "@/Components/Small Pieces/ThumbnailUploader"
+import Tags from "@/Components/Small Pieces/Tags"
 import { useRouter } from "next/navigation"
-import { useRef, useState } from "react"
-import { BUTTON_ATTRIBUTE_NAME, PREVIEW_BUTTON_DATA } from "@/constants"
-import Spinner from "../Small Pieces/Spinner"
+import { useState } from "react"
+import Spinner from "@/Components/Small Pieces/Spinner"
 
+export default function VideoBlog() {
 
-export default function ArticlesBlog() {
-
+    const {data} = useSelector((state: RootState) => state.user)
     const [isPreviewLoading, setIsPreviewLoading] = useState<boolean>(false)
     const [isSaveLoading, setIsSaveLoading] = useState<boolean>(false)
-    const {push, refresh} = useRouter()
-    const buttonRef = useRef<HTMLButtonElement | null>(null)
-    const form = useForm<z.infer<typeof BlogPostSchema>>({
-        resolver: zodResolver(BlogPostSchema),
+    const {refresh, push} = useRouter()
+
+    const form = useForm<z.infer<typeof VideoBlogSchema>>({
+        resolver: zodResolver(VideoBlogSchema),
         defaultValues: {
-            content: "",
+            description: "",
             references: [],
-            image: [],
+            title: "",
+            thumbnail: [],
+            videoLink: "",
+            postedBy: `${data?.firstName} ${data?.lastName}`,
             tags: [],
+            created_at: new Date()
         },
     })
-
 
     async function handlePreview(){
         const postData = form.getValues()
@@ -54,12 +58,15 @@ export default function ArticlesBlog() {
         // refresh the page to clear the form. form.reset() doesn't work
         refresh()
     }
-
-    async function onSubmit(values: z.infer<typeof BlogPostSchema>){
+    async function onSubmit(values: z.infer<typeof VideoBlogSchema>){
         const postData = {
-            content: values.content,
+            postedBy: values.postedBy,
+            created_at: values.created_at,
+            description: values.description,
+            title: values.title,
+            videoLink: values.videoLink,
             references: values.references,
-            image: values.image[0],
+            thumbnail: values.thumbnail[0],
             tags: values.tags
         }
         setIsSaveLoading(false)
@@ -77,28 +84,63 @@ export default function ArticlesBlog() {
     }
 
     return (
-        <section>
+        <section className='mt-10'>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
-                    {/* WYSIWYG editor */}
+                    {/* TITLE */}
+                    <FormField
+                        control={form.control}
+                        name="title"
+                        render={({ field }) => (
+                            <FormItem className="flex items-center gap-10">
+                                <FormLabel className="text-lg text-black font-medium"> 
+                                    Title
+                                </FormLabel>
+                                <FormControl>
+                                    <input type="text" placeholder="Title of your blog" {...field} className="w-[350px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
+                                </FormControl>
+                                <FormMessage className='text-sm text-red-500' />
+                            </FormItem>
+                        )}
+                    />
+                    {/* VIDEO LINK */}
+                    <FormField
+                        control={form.control}
+                        name="videoLink"
+                        render={({ field }) => (
+                            <FormItem className="flex items-center gap-8 mt-10">
+                                <FormLabel className="text-lg text-black font-medium"> 
+                                    Enter the video link
+                                </FormLabel>
+                                <FormControl>
+                                    <input type="text" placeholder="https://www.youtube.com/tutorial" {...field} className="w-[350px] px-3 py-2.5 border border-gray-400 focus-visible:outline-none rounded-md bg-button" />
+                                </FormControl>
+                                <FormMessage className='text-sm text-red-500' />
+                            </FormItem>
+                        )}
+                    />
+                    {/* Description */}
                     <FormField
                     control={form.control}
-                    name="content"
+                    name="description"
                     render={({ field }) => (
-                        <FormItem>
-                        <FormControl>
-                            <TextEditor fieldchange={field.onChange} />
-                        </FormControl>
-                        <FormMessage className='text-sm text-red-500' />
+                        <FormItem className="mt-14 flex flex-col justify-start gap-3">
+                            <FormLabel className="text-lg text-black font-medium"> 
+                                Description
+                            </FormLabel>
+                            <FormControl>
+                                <TextEditor fieldchange={field.onChange} />
+                            </FormControl>
+                            <FormMessage className='text-sm text-red-500' />
                         </FormItem>
                     )}
                     />
-                    {/* Adding Citations for the Post */}
+                    {/* REFERENCES */}
                     <FormField
                     control={form.control}
                     name="references"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="mt-14">
                         <FormControl>
                             <References fieldchange={field.onChange} />
                         </FormControl>
@@ -106,12 +148,11 @@ export default function ArticlesBlog() {
                         </FormItem>
                     )}
                     />
-                    {/* Uploading the Image */}
                     <FormField
                     control={form.control}
-                    name="image"
+                    name="thumbnail"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="mt-14">
                         <FormControl>
                             <ThumbnailUploader fieldchange={field.onChange} title="Featured Image" mediaUrl="./public/postImage.png" />
                         </FormControl>
@@ -124,7 +165,7 @@ export default function ArticlesBlog() {
                     control={form.control}
                     name="tags"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="mt-10">
                         <FormControl>
                             <Tags fieldchange={field.onChange} title="Add tags to your Post" />
                         </FormControl>
@@ -132,7 +173,7 @@ export default function ArticlesBlog() {
                         </FormItem>
                     )}
                     />
-                    <div className="flex items-center gap-16 mt-14">
+                    <div className="flex items-center gap-16 mt-16">
                         <button type="button" onClick={handlePreview} className="border border-orangeRed text-base text-orangeRed font-semibold px-4 py-2 rounded-md focus-visible:outline-none" >
                             {isPreviewLoading ? <Spinner loading={isPreviewLoading} color="#000000" size={15} /> : "Preview Page"}
                         </button>

@@ -5,6 +5,9 @@ import PostHeader  from "/Public/blogPostHeader.jpg"
 import DisplayContent from "@/Components/Main/Post/DisplayContent"
 import PostFooter from "@/Components/Small Pieces/PostFooter"
 import { formatNumber } from "@/utils"
+import Link from "next/link"
+import Comment from "@/Components/Small Pieces/Comment"
+import Decide from "@/Components/Small Pieces/Decide"
 
 interface Props {
     params: {
@@ -12,10 +15,19 @@ interface Props {
     }
 }
 
+//NOTE: Since This is a Preview Page the actions (like, dislike, comment) should not work. it's only for showing how it might look like.
+
 export default function page({params} : Props) {
     const postId = params.id
     // TODO: Fetch the post by id
     // FAKE DATA
+    const references = [
+        "https://react-icons.github.io/react-icons/",
+        "https://react-icons.github.io/react-icons/",
+        "https://react-icons.github.io/react-icons/",
+        "https://react-icons.github.io/react-icons/"
+    ]
+
     return (
         <main className="mx-24 mb-28">
             <Ad title="Ad Spot" buttonLabel="View" />
@@ -36,6 +48,21 @@ export default function page({params} : Props) {
                 <DisplayContent content="<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, nisi sed consequat cursus, lectus justo ullamcorper quam, id tincidunt nisl risus vel velit. Sed eu nulla sed leo convallis vestibulum. Quisque non quam euismod, sollicitudin ex id, mattis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus vel nisi dictum, cursus elit ut, fermentum justo. Integer rutrum tortor vel sapien dapibus ullamcorper. Cras in nisi consequat, varius risus at, molestie enim. Nullam fermentum diam et dui vehicula, sit amet hendrerit justo suscipit. Nunc auctor mauris vitae sapien vehicula, in interdum lacus vestibulum. Curabitur ac nunc in felis feugiat tempor. </p>" />
             </div>
             <PostFooter tags={["tech", "freelance"]} likes={25} dislikes={0} comments={5} views={formatNumber(1200)}  />
+            <div className="mt-14">
+                <h2 className="text-xl text-black font-semibold"> Refrences </h2>
+                <div className="flex flex-col justify-start gap-4 mt-4">
+                    {references.map((citation, i) => {
+                        return (
+                            <span key={citation} className="flex items-center gap-2 max-w-[350px] text-base text-black hover:text-blue-500">
+                                <p> {i + 1} </p>
+                                <Link  href={citation} target="_blank"> {citation} </Link>
+                            </span>
+                        )
+                    })}
+                </div>
+            </div>
+            <Comment />
+            <Decide postId={postId} />
         </main>
     )
 }

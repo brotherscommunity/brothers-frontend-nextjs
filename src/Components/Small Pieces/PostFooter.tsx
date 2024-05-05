@@ -26,19 +26,19 @@ export default function PostFooter({tags, likes, dislikes, comments, views} : Po
             <div className="flex items-center gap-3">
                 {/* TODO: Refactor this likes, dislikes, comments */}
                 <span className="flex items-center gap-2">
-                    <IoStatsChartOutline className="w-5 h-5 text-stone-600" />
+                    <IoStatsChartOutline className="w-5 h-5 text-black font-semibold" />
                     <p> {views} </p>
                 </span>
                 <span className="flex items-center gap-2">
-                    <AiOutlineComment className="w-5 h-5 text-stone-600" />
+                    <AiOutlineComment className="w-5 h-5 text-black font-semibold" />
                     <p> {comments} </p>
                 </span>
                 <span className="flex items-center gap-2">
-                    <AiOutlineLike className="w-5 h-5 text-stone-600" />
+                    <AiOutlineLike className="w-5 h-5 text-black font-semibold" />
                     <p> {likes} </p>
                 </span>
                 <span className="flex items-center gap-2">
-                    <AiOutlineDislike className="w-5 h-5 text-stone-600" />
+                    <AiOutlineDislike className="w-5 h-5 text-black font-semibold" />
                     <p> {dislikes} </p>
                 </span>
             </div>

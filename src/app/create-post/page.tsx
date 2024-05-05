@@ -1,5 +1,5 @@
 import Ad from "@/Components/Ad";
-import ArticlesBlog from "@/Components/Main/ArticlesBlog";
+import ArticlesBlog from "@/Components/Main/forms/ArticlesBlog";
 
 
 export default function page() {

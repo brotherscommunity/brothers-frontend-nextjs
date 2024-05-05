@@ -45,8 +45,21 @@ export const EditProfileSchema = z.object({
     file: z.custom<File[]>(),
 })
 export const BlogPostSchema = z.object({
+    postedBy: z.string().optional(),
     content: z.string().min(3, {message: "You need to provide the content"}), 
+    title: z.string().min(2, {message: "title for your post is required"}).max(40, {message: "Title is too long"}),
     image: z.custom<File[]>(),
+    references: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
+    created_at: z.date(),
+})
+export const VideoBlogSchema = z.object({
+    postedBy: z.string().optional(),
+    created_at: z.date(),
+    title: z.string().min(2, {message: "title for your post is required"}).max(40, {message: "Title is too long"}),
+    videoLink: z.string().min(2, {message: "Link is required"}),
+    thumbnail: z.custom<File[]>(),
+    description:  z.string().min(3, {message: "description is required"}),
     references: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
 })
