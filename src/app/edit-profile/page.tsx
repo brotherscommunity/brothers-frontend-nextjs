@@ -1,7 +1,7 @@
 import EditProfile from "@/Components/Main/forms/Edit Profile/EditProfile";
 
 
-export default function page() {
+export default async function page() {
     //TODO: Fetch All the User's Data -> getAllUserData
     const userData = {
         firstName: "Abebe",

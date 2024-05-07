@@ -24,7 +24,6 @@ export default function Home() {
             <Ad title="Google Ad Spot" buttonLabel="View" />
           </div>
         </div>
-        <Footer />
     </main>
   );
 }
