@@ -1,17 +1,15 @@
-import Ad from "@/Components/Ad";
+import Pagination from "@/Components/Main/Pagination";
 import Table from "@/Components/Main/Tabel"
+import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
 import { Referals } from "@/constants";
 
 // TODO: Fetch users referals
 export default async function page() {
     return (
         <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
-            <Ad title="Ad Spot" buttonLabel="View" />
-            <div className="mt-20">
-                <h2 className="max-sm:text-xl sm:text-2xl text-black font-semibold"> My Referals Page </h2>
-                <p className="max-sm:text-sm sm:text-base mt-6"> Those who register under your referral is recorded here. </p>
-            </div>
+            <TopPageHeader pageCode="PG32" pageName="My Referals Page" pageDescription="Those who register under your referal will be recoreded here" />
             <Table referals={Referals} />
+            <Pagination TotalNumberOfResults={12} />
         </main>
     )
 }

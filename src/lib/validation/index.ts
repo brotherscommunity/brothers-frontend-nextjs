@@ -43,6 +43,8 @@ export const EditProfileSchema = z.object({
     ...Section1FormSchema.shape,
     ...Section2FormSchema.shape,
     file: z.custom<File[]>(),
+    newPassword: z.string().min(5, {message: "password must be greater than 5 characters"}),
+    confirmPassword: z.string().min(1, {message: "You need to re-enter your password"}),
 })
 export const BlogPostSchema = z.object({
     postedBy: z.string().optional(),

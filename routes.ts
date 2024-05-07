@@ -6,7 +6,8 @@ export const PUBLIC_ROUTES = [
     "/",
     "/register",
     "/sign-in",
-    "/terms-and-conditions"
+    "/terms-and-conditions",
+    "/followers-list"
 ]
 
 export const PROTECTED_ROUTES = [
@@ -18,6 +19,7 @@ export const PROTECTED_ROUTES = [
     "/create-video-blog",
     "/referals",
     "/my-pages",
+    "/privacy-settings"
 ]
 
 export const PREVIEW_ROUTE = "/preview-post"

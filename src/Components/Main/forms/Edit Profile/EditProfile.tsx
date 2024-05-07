@@ -30,8 +30,8 @@ export default function EditProfile({userData} : EditProfileProps) {
             userName: userData.userName,
             sex: userData.sex,
             birthDate: userData.birthDate,
-            languagesSpoken: userData.languagesSpoken,
-            languagesWishToLearn: userData.languagesWishToLearn,
+            languagesSpoken: userData.languagesSpoken?.join(","),
+            languagesWishToLearn: userData.languagesWishToLearn?.join(","),
             nickName: userData.nickName,
             phoneNumber: userData.phoneNumber,
             email: userData.email,
@@ -40,7 +40,9 @@ export default function EditProfile({userData} : EditProfileProps) {
             weChatId: userData.weChatId,
             vkId: userData.vkId,
             telegramUsername: userData.telegramUsername,
-            city: userData.city
+            city: userData.city,
+            newPassword: "",
+            confirmPassword: "",
         },
     })
 
@@ -54,6 +56,16 @@ export default function EditProfile({userData} : EditProfileProps) {
         const isNothingChanges = areObjectsEqual(newUserData, values)
         if(isNothingChanges) return
         //TODO: Update the user data by making a request to the right end-point
+        setIsLoading(true)
+        try{
+
+        }
+        catch(error: any){
+
+        }
+        finally{
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -373,6 +385,41 @@ export default function EditProfile({userData} : EditProfileProps) {
                                     </FormControl>
                                     <FormMessage  className='text-sm text-red-500' />
                                     </FormItem>
+                                )}
+                                />
+                            </div>
+                        </section>
+                        <section className="mt-14">
+                            <h2 className="text-xl text-black mb-4 font-semibold"> Account Information</h2>
+                            <div className="editProfileFormContainer">
+                                <FormField
+                                control={form.control}
+                                name="newPassword"
+                                render={({ field }) => (
+                                <FormItem className="formContainer">
+                                    <FormLabel className="formLabel"> 
+                                        New Password
+                                    </FormLabel>
+                                    <FormControl>
+                                        <input type="password" placeholder="**********"  className="formInput" {...field}/> 
+                                    </FormControl>
+                                    <FormMessage className='text-sm text-red-500' />
+                                </FormItem>
+                                )}
+                                />
+                                <FormField
+                                control={form.control}
+                                name="confirmPassword"
+                                render={({ field }) => (
+                                <FormItem className="formContainer">
+                                    <FormLabel className="formLabel"> 
+                                        Confirm Password
+                                    </FormLabel>
+                                    <FormControl>
+                                        <input type="password" placeholder="**********"  className="formInput" {...field}/> 
+                                    </FormControl>
+                                    <FormMessage className='text-sm text-red-500' />
+                                </FormItem>
                                 )}
                                 />
                             </div>

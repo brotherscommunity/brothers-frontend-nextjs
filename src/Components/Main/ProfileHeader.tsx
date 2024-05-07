@@ -8,6 +8,7 @@ import { Profile_Links } from "@/constants"
 import Ad from "../Ad"
 import { useSelector } from "react-redux"
 import { RootState } from "@/redux/store"
+import TopPageHeader from "../Small Pieces/TopPageHeader"
 
 interface ProfileHeaderProps {
     children: React.ReactNode
@@ -16,11 +17,12 @@ interface ProfileHeaderProps {
 export default function ProfileHeader({children}: ProfileHeaderProps){
 
     const pathname = usePathname()
-    const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
+    const {data} = useSelector((state: RootState) => state.user)
 
     return (
-        <main className="mt-20 mb-10">
-            <div className="max-md:mx-5 md:mx-7 xl:mx-20">
+        <main className="max-md:mx-5 md:mx-7 xl:mx-20 mb-10">
+            <TopPageHeader pageCode="PG32" pageName={`${data?.firstName || ""} ${data?.lastName || ""}`} pageDescription="All information about the profile" />
+            <div className="mt-14">
                 <div className="flex items-center justify-between xl:mr-12">
                     <span className="flex items-start max-md:gap-3 gap-7">
                         <Avatar width="w-[60px]" height="h-[60px]" iconWidth="w-[25px]" iconHeight="h-[25px]" />

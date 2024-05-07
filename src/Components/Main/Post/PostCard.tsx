@@ -47,7 +47,7 @@ export default function PostCard({postedBy, date, title, description, tags, like
     }
 
     return (
-        <section className='border border-grey-200 mt-8 flex items-start gap-14 rounded-xl p-8'>
+        <section className='border border-grey-200 mt-8 flex items-start gap-10 rounded-xl p-8'>
             {isVideoPost ? (
                 <Link href={'/'} className="max-lg:hidden">
                     <Image src={VideoImage} alt="post-image" width={200} height={250}/> 
@@ -69,7 +69,7 @@ export default function PostCard({postedBy, date, title, description, tags, like
                 </div>
                 <span className="mt-4">
                     <h2 className="text-[20px] text-black font-bold"> {title} </h2>
-                    <p className="text-sm mt-2 leading-6 max-w-[750px]"> 
+                    <p className="max-sm:text-sm text-[15px] mt-2 leading-6 max-w-[750px]"> 
                         {description}
                     </p>
                 </span>

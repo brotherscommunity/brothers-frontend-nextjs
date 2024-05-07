@@ -15,7 +15,8 @@ export enum QUERY_PARAMS {
     search = "search",
     page = "page",
     order="order",
-    filterBy="filterBy"
+    filterBy="filterBy",
+    code = "code"
 }
 export enum QUERY_STRING_VALUES {
     date = "date",
@@ -28,6 +29,28 @@ export const Slides = [
     slide1,
     slide2,
     slide3
+]
+export const FAKE_BLOG_CATAGORIES = [
+    {
+        total: 5,
+        catagoryName: "Nigerian Festival"
+    },
+    {
+        total: 1,
+        catagoryName: "RPG Games"
+    },
+    {
+        total: 1,
+        catagoryName: "Lumber Jack"
+    },
+    {
+        total: 1,
+        catagoryName: "Tech Trend today"
+    },
+    {
+        total: 1,
+        catagoryName: "Mindfull Musings"
+    }
 ]
 export const Visitors = [
     {
@@ -206,7 +229,7 @@ export const Referals = [
         joinedDate: "28/3/24",
         country: "India"
     }
-]      
+]  
 export const HTTPS = "https://"
 
 export const HTTP = "http://"

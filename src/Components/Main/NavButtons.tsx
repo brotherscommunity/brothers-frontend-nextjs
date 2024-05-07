@@ -5,6 +5,10 @@ import Link from "next/link"
 import { IoMdNotifications } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
+import { GiLinkedRings } from "react-icons/gi";
+import { FiAnchor } from "react-icons/fi";
+import { MdOutlineContentCopy } from "react-icons/md";
 import { useState } from "react";
 import { SlLogout } from "react-icons/sl";
 import {
@@ -32,8 +36,8 @@ export default function NavButtons(){
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 text-sm`}>
-            <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="max-lg:hidden border border-navy max-sm:px-3 sm:px-5 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
+        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 xl:ml-36 text-sm`}>
+            <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="max-lg:hidden border border-navy max-sm:px-3 sm:px-4 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
             {isAuthenticated && data ? (
                 <div className="flex items-center gap-4">
                     {/* TODO: Create a route for Notifications */}
@@ -50,16 +54,35 @@ export default function NavButtons(){
                                     <IoIosArrowDown className="mt-2" />
                                 </div>
                             </PopoverTrigger>
-                            {openPopUp && <PopoverContent className="max-sm:w-[200px] max-sm:h-[200px] sm:w-[250px] sm:h-[250px] py-5 mr-7 mt-5 focus-visible:outline-none">
+                            {openPopUp && <PopoverContent className="max-sm:w-[200px]  sm:w-[250px] h-auto py-5 mt-5 focus-visible:outline-none">
                                     <div className="flex flex-col justify-start px-6">
                                         <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
-                                        <div className="flex items-center gap-10 mt-4">
+                                        <div className="flex items-start gap-10 mt-4">
                                             <h3 className="text-base text-black font-medium"> {data?.firstName} </h3>
-                                            <MdKeyboardArrowRight className="w-5 h-5 mt-1" />
+                                            <MdKeyboardArrowRight className="w-5 h-5" />
                                         </div>
                                     </div>
                                     <hr className="border-t border-gray-400 w-full my-4" />
-                                    <button className="max-sm:w-[100px] sm:w-[150px] flex justify-center items-center py-2.5 mx-6 mt-5 bg-navy text-sm text-white rounded-md">
+                                    {/* LINKS TO OTHER PAGES */}
+                                    <div className="flex flex-col justify-start gap-3 mt-3">
+                                        <span className="flex items-center gap-2">
+                                            <FiAnchor className="w-4 h-4" />
+                                            <p className="text-[15px] text-black font-palanquin"> Functions </p>
+                                        </span>
+                                        <span className="flex items-center gap-2">
+                                            <GiLinkedRings className="w-4 h-4" />
+                                            <p className="text-[15px] text-black"> My Referals </p>
+                                        </span>
+                                        <span className="flex items-center gap-2">
+                                            <MdOutlineContentCopy className="w-4 h-4" />
+                                            <p className="text-[15px] text-black"> My Pages </p>
+                                        </span>
+                                        <span className="flex items-center gap-2">
+                                            <IoSettingsOutline className="w-4 h-4" />
+                                            <p className="text-[15px] text-black"> Privacy Setting </p>
+                                        </span>
+                                    </div>
+                                    <button className="max-sm:w-[100px] sm:w-[150px] flex justify-center items-center py-2.5 mx-6 mt-6 bg-navy text-sm text-white rounded-md">
                                         {isLoading ?
                                         <Spinner loading={isLoading} size={18} />
                                         : 

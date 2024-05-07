@@ -23,6 +23,14 @@ const config = {
         navy: "#003159",
         orangeRed: "#CC3700",
         secondary: "#B6CDDF",
+        header: "#dce2e8",
+      },
+      fontFamily: {
+        sans: ['Arial', 'Helvetica', 'Roboto', 'system-ui', 'sans-serif'],
+        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        mono: ['Courier New', 'monospace'],
+        palanquin: ['Palanquin', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
