@@ -11,7 +11,7 @@ interface MyPagesProps {
         page: string
     }
 }
-export default function page({searchParams}: MyPagesProps) {
+export default async function page({searchParams}: MyPagesProps) {
     const filterQuery = searchParams.filterBy || QUERY_STRING_VALUES.date
     const orderQuery = searchParams.order || QUERY_STRING_VALUES.descending
     const pageQuery = searchParams.page || 1

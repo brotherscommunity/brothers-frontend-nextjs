@@ -7,7 +7,7 @@ interface FounderRankingProps {
     }
 }
 
-export default function page({searchParams} : FounderRankingProps) {
+export default async function page({searchParams} : FounderRankingProps) {
     const pageQuery = searchParams.page || 1
     // TODO: Make an Http request to fetch the founders ranking. is should recieve the page parameter
     // FAKE DATA

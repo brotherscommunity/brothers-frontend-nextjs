@@ -5,7 +5,6 @@ import Avatar from "../Small Pieces/Avatar"
 import Link from "next/link"
 import { CiEdit } from "react-icons/ci"
 import { Profile_Links } from "@/constants"
-import Footer from "./Footer"
 import Ad from "../Ad"
 import { useSelector } from "react-redux"
 import { RootState } from "@/redux/store"
@@ -49,10 +48,9 @@ export default function ProfileHeader({children}: ProfileHeaderProps){
                 <section className="mt-5">
                     {children}
                 </section>
-                <Ad title="Google Ad Spot" buttonLabel="View" />
-            </div>
-            <div className="mt-28">
-                <Footer />
+                <div className="mb-24">
+                    <Ad title="Google Ad Spot" buttonLabel="View" />
+                </div>
             </div>
         </main>
     )

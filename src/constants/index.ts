@@ -199,6 +199,14 @@ export const AUTHENTICATED_SIDEBAR_NAV_LINKS = [
         path: "/create-video-blog"
     }
 ]
+export const Referals = [
+    {
+        id: 1,
+        name: "Toshiro",
+        joinedDate: "28/3/24",
+        country: "India"
+    }
+]      
 export const HTTPS = "https://"
 
 export const HTTP = "http://"

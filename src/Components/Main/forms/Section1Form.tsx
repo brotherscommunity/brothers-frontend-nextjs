@@ -50,6 +50,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
             })
             return
         }
+        // TODO: If comma is add at end we need to remove it
         setUserData({
             firstName: values.firstName,
             lastName: values.lastName,

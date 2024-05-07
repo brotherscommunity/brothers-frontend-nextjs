@@ -8,7 +8,7 @@ interface AdProps {
 
 export default function Ad({title, buttonLabel}: AdProps) {
     return (
-        <section className='mt-20'>
+        <section className='max-sm:mt-10 sm:mt-14 md:mt-20'>
             <div className="max-sm:w-[450px] max-sm:h-[190px] sm:w-[600px] sm:h-[190px] md:w-[740px] md:h-[210px] lg:w-[1060px] lg:h-[250px] xl:w-[1110px] xl:h-[257px] relative rounded-xl">
                 {/* <Image src={ad} alt="ad" width={1130} height={120} className="rounded-xl" /> */}
                 <div className="absolute inset-0 bg-black opacity-90 rounded-[20px]"></div>
