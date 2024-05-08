@@ -31,6 +31,8 @@ To submit a pull request, please follow these steps:
 
 * **Do not push code directly to the `master` branch.** We need to ensure that code is bug-free before merging it to the `master` branch.
 * Only submit pull requests to the `part-time` branch. I will review and merge pull requests into this branch.
+* **Do not Install a new package**
+* * **Avoid creating new pages**
 
 **Maintainer**
 
