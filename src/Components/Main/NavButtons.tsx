@@ -47,7 +47,7 @@ export default function NavButtons(){
                     </Link>
                     <Avatar />
                     <div className="flex gap-2">
-                        <h3 className="text-base text-black font-medium"> {data.firstName} </h3>
+                        <h3 className="text-base text-black font-semibold"> {data.firstName} </h3>
                         <Popover>
                             <PopoverTrigger>
                                 <div onClick={() => setOpenPopUp(true)}>

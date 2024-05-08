@@ -16,7 +16,8 @@ export enum QUERY_PARAMS {
     page = "page",
     order="order",
     filterBy="filterBy",
-    code = "code"
+    code = "code",
+    catagory= "catagory"
 }
 export enum QUERY_STRING_VALUES {
     date = "date",
