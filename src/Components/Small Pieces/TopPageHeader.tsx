@@ -40,13 +40,13 @@ export default function TopPageHeader({pageCode, pageName, pageDescription} : To
     return (
         <section className="mt-10 w-full h-[180px] rounded-lg bg-header px-6 pt-4">
             <div className="flex items-center justify-between">
-                <p className="text-base text-navy font-medium"> Page Code: {pageCode} </p>
-                <div className="w-[200px] flex items-start border-none rounded-md bg-white px-3 py-2.5 text-sm">
+                <p className="max-sm:text-sm sm:text-base text-navy font-medium"> Page Code: {pageCode} </p>
+                <div className="max-sm:w-[170px] sm:w-[200px] flex items-start border-none rounded-md bg-white px-3 py-2.5 text-sm">
                     <form onSubmit={(e) => {
                         e.preventDefault()
                         handleSearch()
                     }}>
-                        <input type="text" onChange={(e) => setControlledValue(e.target.value)} placeholder="Search by code" className="border-none focus-visible:outline-none w-full h-full" />
+                        <input type="text" onChange={(e) => setControlledValue(e.target.value)} placeholder="Search by code" className="border-none focus-visible:outline-none text-sm w-full h-full" />
                     </form>
                     <button onClick={handleSearch}>
                         <CiSearch className="w-5 h-5 text-navy" />

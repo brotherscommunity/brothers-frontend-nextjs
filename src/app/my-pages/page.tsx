@@ -50,7 +50,7 @@ export default async function page({searchParams}: MyPagesProps) {
                     )
                 })}
             </div>
-            <Pagination TotalNumberOfResults={Pages.length} />
+            <Pagination TotalNumberOfResults={Pages.length} pageSize={5} />
         </main>
     )
 }

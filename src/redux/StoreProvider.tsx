@@ -19,6 +19,8 @@ export default function StoreProvider({children} : StroreProviderProps) {
                 username: "abebe232",
                 firstName: "Abebe",
                 lastName: "Balcha",
+                followers: 208,
+                following: 128,
                 referalId: "42501225585",
                 city: "Addis Ababa",
                 country: "Ethiopia"

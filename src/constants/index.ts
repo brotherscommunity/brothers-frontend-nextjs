@@ -147,6 +147,8 @@ export type USER = {
     username: string,
     firstName: string,
     lastName: string,
+    followers: number,
+    following: number,
     referalId: string | null,
     city: string,
     country: string
@@ -198,20 +200,8 @@ export const AUTHENTICATED_SIDEBAR_NAV_LINKS = [
         path: "/"
     },
     {
-        label: "My pages",
-        path: "/my-pages"
-    },
-    {
-        label: "Profile",
-        path: "/profile"
-    },
-    {
         label: "Edit Profile",
         path: "/edit-profile"
-    },
-    {
-        label: "Referals",
-        path: "/referals"
     },
     {
         label: "Create Post",
@@ -234,6 +224,10 @@ export const HTTPS = "https://"
 
 export const HTTP = "http://"
 
+export enum FOLLOW_STATE {
+    following = "following",
+    followers = "followers"
+}
 export const PREVIEW_BUTTON_DATA = "preview"
 
 export const BUTTON_ATTRIBUTE_NAME = "data-button-data"

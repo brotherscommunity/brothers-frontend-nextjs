@@ -53,7 +53,7 @@ export default async function page({searchParams} : FounderRankingProps) {
         <main className="max-md:px-5 md:px-7 xl:px-20 mt-16">
             <h2 className="text-2xl text-black font-semibold"> Founder Ranking Page </h2>
             <RankingTable rankData={rankData} />
-            <Pagination TotalNumberOfResults={rankData.length} />
+            <Pagination TotalNumberOfResults={rankData.length} pageSize={10} />
         </main>
     )
 }

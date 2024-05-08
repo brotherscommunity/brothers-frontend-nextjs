@@ -1,20 +1,21 @@
 "use client"
 
-import { PAGE_NUMBERS, PAGE_SIZE, QUERY_PARAMS } from "@/constants";
+import { QUERY_PARAMS } from "@/constants";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 interface PaginationProps {
-    TotalNumberOfResults: number
+    TotalNumberOfResults: number,
+    pageSize: number
 }
 
-export default function Pagination({TotalNumberOfResults}: PaginationProps) {
+export default function Pagination({TotalNumberOfResults, pageSize}: PaginationProps) {
 
     const pathname = usePathname()
     const searchParams = useSearchParams()
     const currentPage = parseInt(searchParams.get("page") || "1")
     const {replace} = useRouter()
-    const Total_Number_OF_PAGES =  Math.ceil(TotalNumberOfResults / PAGE_SIZE)
+    const Total_Number_OF_PAGES =  Math.ceil(TotalNumberOfResults / pageSize)
     /**
      * A function that chnages the current page into the Next page.
      */
