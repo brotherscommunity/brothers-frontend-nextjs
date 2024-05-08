@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import { FaAngleRight } from "react-icons/fa";
 import Spinner from "./Spinner";
+import Link from "next/link";
 
 interface CatagoryProps {
     name: string,
@@ -35,7 +36,7 @@ export default function Catagory({name, followers, members, posts, catagoryPath}
     return (
         <section className='bg-button mt-5 rounded-md px-5 pt-4 pb-6 border-none focus:outline-none'>
             <div className="flex items-center justify-between">
-                <h3 className="text-lg text-navy font-semibold"> {name} </h3>
+                <Link href={`/blogCatagory/${name.replace(" ", "_")}`} className="text-lg text-navy font-semibold"> {name} </Link>
                 <button onClick={handleFollow} className="bg-navy text-white text-sm px-6 py-2 rounded-md focus-visible:outline-none"> 
                     {isFollowing ? <Spinner loading={isFollowing} /> : "Follow"}
                 </button>

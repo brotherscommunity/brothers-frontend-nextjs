@@ -25,7 +25,7 @@ export default function Footer() {
                         <FaFacebook className="w-[25px] h-[25px]" />
                     </Link>
                 </div>
-                <p className="mt-7 max-sm:text-sm sm:text-base text-black font-medium"> @2024 All rights reseved. Brotherhood International Community  </p>
+                <p className="mt-7 max-sm:text-sm sm:text-base text-black font-semibold"> @2024 All rights reseved. Brotherhood International Community  </p>
             </div>
         </section>
     )
