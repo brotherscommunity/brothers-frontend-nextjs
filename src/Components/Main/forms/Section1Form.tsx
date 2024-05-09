@@ -94,7 +94,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                                         <SelectItem value="male"> Male </SelectItem>
                                         <SelectItem value="female"> Female </SelectItem>
                                     </SelectContent>
-                                </Select>
+                            </Select>
                             <FormMessage className='text-sm text-red-500' />
                             </FormItem>
                         )}

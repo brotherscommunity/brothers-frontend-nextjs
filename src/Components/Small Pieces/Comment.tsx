@@ -4,17 +4,23 @@ import { useState } from "react"
 import Avatar from "./Avatar"
 
 interface CommentProps {
-    postId?: string
+    postId?: string,
+    blogCatagoryName?: string 
 }
 
-export default function Comment({postId} : CommentProps){
+export default function Comment({postId, blogCatagoryName} : CommentProps){
 
     const [commentInput, setCommentInput] = useState<string>("")
 
     async function handleSubmit(){
-        // If there is no postId provided for this component that means it is in preview state 
-        if(!postId) return
-        //TODO: Make an HTTP request to add the comment to the post. we have the post
+        if(!postId && !blogCatagoryName) return
+        if(postId){
+            //TODO: Make an HTTP request to add the comment to the post. we have the post
+
+        }
+        if(blogCatagoryName){
+            //TODO: add the comment into the blog catagory
+        }
     }
 
     return (

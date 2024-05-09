@@ -11,10 +11,11 @@ interface CatagoryProps {
     followers: number,
     members: number,
     posts: number,
-    catagoryPath: string[]
+    catagoryPath: string[],
+    code?: string
 }
 
-export default function Catagory({name, followers, members, posts, catagoryPath} : CatagoryProps) {
+export default function Catagory({name, followers, members, posts, catagoryPath, code} : CatagoryProps) {
 
     //TODO: Ask What the minus button does. Does it expand and collapse the tree structure of catagory ?
     const [showSubCatgories, setShowSubCatagories] = useState<boolean>(true)
@@ -66,6 +67,9 @@ export default function Catagory({name, followers, members, posts, catagoryPath}
                     {isJoining ? <Spinner loading={isJoining} /> : "Join"}
                 </button>
             </div>
+            { code && <p className="flex items-start justify-end mt-8 text-sm text-stone-400 font-semibold">
+                Code {code}
+            </p>}
         </section>
     )
 }

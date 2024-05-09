@@ -1,6 +1,7 @@
 import Pagination from "@/Components/Main/Pagination"
 import PostList from "@/Components/Main/Post/PostList"
 import Catagory from "@/Components/Small Pieces/Catagory"
+import Comment from "@/Components/Small Pieces/Comment"
 import FollowersProfile from "@/Components/Small Pieces/FollowersProfile"
 import List from "@/Components/Small Pieces/List"
 import TopPageHeader from "@/Components/Small Pieces/TopPageHeader"
@@ -21,7 +22,7 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
         <main className="max-md:mx-5 md:mx-7 xl:mx-20">
             <TopPageHeader pageCode="PG32" pageName={`Blog Catagory Description Page - ${blogCatagoryName}`} pageDescription="Blog Category Description and discussion for improvement in this page." />
              {/* FAKE DATA */}
-            <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} />
+            <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} code="Bc21" />
             <div className="bg-button w-full h-auto px-10 py-6 mt-10 border-none rounded-md focus-visible:outline-none">
                 {/* RULES FOR THE BLOG CATAGORY ARE LISTED HERE. AND THIS IS JUST A DUMMY DATA */}
                 <p className="text-sm text-stone-600 leading-6"> 
@@ -63,6 +64,9 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
                 <div className="mr-7">
                     <Pagination TotalNumberOfResults={20} pageSize={5} />
                 </div>
+            </div>
+            <div className="mt-5">
+                <Comment blogCatagoryName={blogCatagoryName} />
             </div>
         </main>
     )

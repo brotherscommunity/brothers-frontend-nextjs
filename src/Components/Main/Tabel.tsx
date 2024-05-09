@@ -19,7 +19,7 @@ interface TableProbs {
 export default function Tabel({referals} : TableProbs) {
     return (
         <section className="mt-10">
-            <Table>
+            <Table className="border border-gray-300">
                 <TableHeader>
                     <TableRow className="text-base font-medium">
                         <TableHead className="w-[100px]"> S/N </TableHead>

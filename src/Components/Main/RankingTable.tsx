@@ -20,7 +20,7 @@ interface RankingTableProps {
 export default function RankingTable({rankData} : RankingTableProps) {
     return (
         <section className='mt-16'>
-            <Table>
+            <Table className="border border-gray-300">
                 <TableHeader className="pb-3">
                     <TableRow className="text-base font-medium">
                         <TableHead className="w-[100px]"> Rank </TableHead>

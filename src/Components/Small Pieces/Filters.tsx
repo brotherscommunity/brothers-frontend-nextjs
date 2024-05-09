@@ -43,25 +43,25 @@ export default function Filters() {
             <div className="flex items-center justify-start max-md:gap-6 gap-10">
                 <span className="checkboxFlex">
                     <Checkbox checked={currentFilter === QUERY_STRING_VALUES.date} onClick={handleFilterByDate} className="filterCheckbox" />
-                    <p> Date </p>
+                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Date </p>
                 </span>
                 <span className="checkboxFlex">
                     <Checkbox checked={currentFilter === QUERY_STRING_VALUES.visitors} onClick={handleFilterByVisitors} className="filterCheckbox" />
-                    <p> Visitors </p>
+                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Visitors </p>
                 </span>
                 <span className="checkboxFlex">
                     <Checkbox checked={currentFilter === QUERY_STRING_VALUES.comments} onClick={handleFilterByComments} className="filterCheckbox" />
-                    <p> Comments </p>
+                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Comments </p>
                 </span>
             </div>
             <div className="flex items-center max-md:gap-6 gap-10">
                 <span className="checkboxFlex">
                     <Checkbox checked={currentOrder === QUERY_STRING_VALUES.ascending} onClick={handleOrderAsc} className="filterCheckbox" />
-                    <p> Ascending </p>
+                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Ascending </p>
                 </span>
                 <span className="checkboxFlex">
                     <Checkbox checked={currentOrder === QUERY_STRING_VALUES.descending} onClick={handleOrderDesc} className="filterCheckbox" />
-                    <p> Descending </p>
+                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Descending </p>
                 </span>
             </div>
         </section>

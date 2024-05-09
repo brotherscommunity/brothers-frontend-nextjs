@@ -6,7 +6,7 @@ import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 interface ListProps {
     title: string,
     children: React.ReactNode,
-    pagination: React.ReactNode
+    pagination?: React.ReactNode
 }
 
 export default function List({title, children, pagination} : ListProps) {

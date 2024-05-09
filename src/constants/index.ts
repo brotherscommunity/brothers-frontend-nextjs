@@ -19,6 +19,16 @@ export enum QUERY_PARAMS {
     code = "code",
     catagory= "catagory"
 }
+export const VISITOR_COLUMNS = [
+    "Monthly",
+    "Average Monthly",
+    "Weekly",
+    "Average Weekly",
+    "Daily",
+    "Average Daily",
+    "Hourly",
+    "Average Hourly",
+]
 export enum QUERY_STRING_VALUES {
     date = "date",
     visitors = "visitors",

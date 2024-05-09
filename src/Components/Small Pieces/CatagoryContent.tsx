@@ -1,0 +1,115 @@
+"use client"
+
+import { useState } from "react"
+import Pagination from "../Main/Pagination"
+import { Checkbox } from "../ui/checkbox"
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "../ui/table"
+import toast from "react-hot-toast"
+import Spinner from "./Spinner"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup} from "../ui/select"
+
+interface CatagoryTableProps {
+    totalResults: number,
+    contents: {
+        id: number,
+        type: string,
+        name: string,
+        publishedDate: string
+    }[],
+    postsNotSubmitted : string [],
+    postsPending: string[]
+}
+
+export default function CatagoryContent({totalResults, contents, postsNotSubmitted, postsPending} : CatagoryTableProps){
+
+    const [pendingSelected, setPendingSelected] = useState<string | null>(null)
+    const [toBeSubmitted, setTobeSubmitted] = useState<string | null>(null)
+    const [isRemoving, setIsRemoving] = useState<boolean>(false)
+    const [isSubmitting, setIsSubmitting ] = useState<boolean>(false)
+
+
+    function handleRemovePendingPost(){
+        if(!pendingSelected){
+            toast.error("Nothing was selected")
+        }
+        // TODO: Make an HTTP request to remove the post from catafory. the endpoint should recieve a parameter called title.
+        setIsRemoving(true)
+        try{
+
+        }
+        catch(error: any){
+
+        }
+        finally{
+            setIsRemoving(false)
+        }
+    }
+
+    function handleSubmitCatagory(){
+        console.log(toBeSubmitted)
+    }
+
+    return (
+        <section className='my-6 px-6'>
+            <Table className="border border-gray-300">
+                <TableHeader>
+                    <TableRow className="text-base font-medium">
+                        <TableHead> S/N </TableHead>
+                        <TableHead> Type </TableHead>
+                        <TableHead> Catagory </TableHead>
+                        <TableHead className="text-right"> Added date </TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {contents.map((element) => {
+                        return (
+                            <TableRow key={element.id}>
+                                <TableCell> {element.id} </TableCell>
+                                <TableCell> {element.type} </TableCell>
+                                <TableCell> {element.name} </TableCell>
+                                <TableCell className="text-right"> {element.publishedDate} </TableCell>
+                            </TableRow>
+                        )
+                    })}
+                </TableBody>
+            </Table>
+            <div className="mt-5 mb-7">
+                {/* TODO: Pass the number of results for the sapecific catagory */}
+                <Pagination TotalNumberOfResults={totalResults} pageSize={4} />
+            </div>
+            <div className="max-sm:mt-16 sm:mt-8">
+                <h3 className="text-black text-base font-semibold"> Submit to blog Catagory </h3> 
+                <Select onValueChange={(value) => setTobeSubmitted(value)}>
+                    <SelectTrigger className="w-[250px] mt-7 bg-button px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectValue placeholder="Select catagory" />
+                    </SelectTrigger>
+                    <SelectContent className="-pl-5">
+                        {postsNotSubmitted.map((postTitle) => {
+                            return (
+                                <SelectItem key={postTitle} value={postTitle} className="text-sm text-black font-palanquin"> {postTitle} </SelectItem>
+                            )
+                        })}
+                    </SelectContent>
+                </Select>
+                <button className="bg-navy mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white">
+                    {isSubmitting ? <Spinner loading={isSubmitting} /> : "Submit"}
+                </button>
+            </div>
+            <div className="mt-10">
+                <h3 className="text-black text-base font-semibold"> List of pending catagory submissions </h3>
+                <div className="mt-6 w-[350px] h-[200px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-l-md focus-visible:outline-none focus:border-none px-6 pt-2 pb-4"> 
+                    {/* All the posts that the user submitted to be included in the catagory, but they are in the pending state are placeed here. the user can remove them if he/she wants/  */}
+                    {postsPending.map((postTitle) => {
+                        return (
+                            <div key={postTitle} className="flex items-start justify-between mr-6 mt-3.5">
+                                <h4 className="text-sm text-black"> {postTitle} </h4>
+                                <Checkbox checked={pendingSelected === postTitle} onClick={() => pendingSelected === postTitle ? setPendingSelected(null) : setPendingSelected(postTitle)} className="text-blue-600 rounded-sm" />
+                            </div>
+                        )
+                    })}
+                </div>
+                <button onClick={handleRemovePendingPost} className="bg-navy mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white"> {isRemoving ? <Spinner loading={isRemoving} /> : "Remove"} </button>
+            </div>
+        </section>
+    )
+}
