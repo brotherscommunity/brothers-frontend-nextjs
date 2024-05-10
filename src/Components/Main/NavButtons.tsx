@@ -20,6 +20,7 @@ import Avatar from "../Small Pieces/Avatar";
 import Spinner from "../Small Pieces/Spinner";
 import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 
 export default function NavButtons(){
@@ -27,12 +28,18 @@ export default function NavButtons(){
     const [openPopUp, setOpenPopUp] = useState<boolean>(false)
     const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const {push} = useRouter()
 
      // Logout function
     function handleLogout(){
         if(isLoading) return
         setIsLoading(true)
         // TODO: Make an http request to hit the logout endpoint
+    }
+
+    function handleNavigation(route: string){
+        setOpenPopUp(false)
+        push(route)
     }
 
     return (
@@ -54,7 +61,7 @@ export default function NavButtons(){
                                     <IoIosArrowDown className="mt-2" />
                                 </div>
                             </PopoverTrigger>
-                            {openPopUp && <PopoverContent className="max-sm:w-[200px]  sm:w-[250px] h-auto py-5 my-5 focus-visible:outline-none">
+                            {openPopUp && <PopoverContent className="max-sm:w-[200px] sm:w-[250px] h-auto py-5 my-5 focus-visible:outline-none">
                                     <div className="flex flex-col justify-start px-6">
                                         <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
                                         <div className="flex items-start gap-10 mt-4">
@@ -64,22 +71,22 @@ export default function NavButtons(){
                                     </div>
                                     <hr className="border-t border-gray-400 w-full my-4" />
                                     {/* LINKS TO OTHER PAGES */}
-                                    <div className="flex flex-col justify-start gap-3 mt-3">
+                                    <div className="flex flex-col justify-start ml-4 gap-3 mt-3">
                                         <span className="flex items-center gap-2">
                                             <FiAnchor className="w-4 h-4" />
-                                            <p className="text-[15px] text-black font-palanquin"> Functions </p>
+                                            <button onClick={() => handleNavigation("/functions")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> Functions </button>
                                         </span>
                                         <span className="flex items-center gap-2">
                                             <GiLinkedRings className="w-4 h-4" />
-                                            <p className="text-[15px] text-black font-palanquin"> My Referals </p>
+                                            <button onClick={() => handleNavigation("/referals")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> My Referals </button>
                                         </span>
                                         <span className="flex items-center gap-2">
                                             <MdOutlineContentCopy className="w-4 h-4" />
-                                            <p className="text-[15px] text-black font-palanquin"> My Pages </p>
+                                            <button onClick={() => handleNavigation("/my-pages")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> My Pages </button>
                                         </span>
                                         <span className="flex items-center gap-2">
                                             <IoSettingsOutline className="w-4 h-4" />
-                                            <p className="text-[15px] text-black font-palanquin"> Privacy Setting </p>
+                                            <button onClick={() => handleNavigation("/privacy-settings")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> Privacy Setting </button>
                                         </span>
                                     </div>
                                     <button className="max-sm:w-[100px] sm:w-[150px] flex justify-center items-center py-2.5 mx-6 mt-6 bg-navy text-sm text-white rounded-md">

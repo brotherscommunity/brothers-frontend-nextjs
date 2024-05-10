@@ -29,6 +29,11 @@ export const VISITOR_COLUMNS = [
     "Hourly",
     "Average Hourly",
 ]
+export enum NOTIFICATIONS_STATE {
+    read = "read",
+    unread = "unread",
+    sent = "sent"
+}
 export enum QUERY_STRING_VALUES {
     date = "date",
     visitors = "visitors",

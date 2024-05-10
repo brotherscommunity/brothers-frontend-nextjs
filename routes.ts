@@ -19,7 +19,8 @@ export const PROTECTED_ROUTES = [
     "/create-video-blog",
     "/referals",
     "/my-pages",
-    "/privacy-settings"
+    "/privacy-settings",
+    "/notifications"
 ]
 
 export const PREVIEW_ROUTE = "/preview-post"

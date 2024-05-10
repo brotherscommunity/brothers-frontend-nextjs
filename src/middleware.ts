@@ -1,10 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { DEFAULT_REDIRECT_ROUTE, PREVIEW_ROUTE, PROTECTED_ROUTES, PUBLIC_ROUTES } from '../routes'
-import store from './redux/store'
-import {set_current_user} from "@/redux/features/UserSlice"
-
-
+import { DEFAULT_REDIRECT_ROUTE, PREVIEW_ROUTE, PROTECTED_ROUTES} from '../routes'
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest){

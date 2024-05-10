@@ -62,7 +62,7 @@ export default function Navbar() {
                     <RiMenuLine className="md:hidden w-8 h-8 text-navy" />
                 </button>
                 <span className="max-md:hidden flex gap-2 ml-2">
-                    <Link href="/">
+                    <Link href="/" className="w-[50px] h-[10px] mb-5">
                         <Image src={Logo} alt="logo" width={30} height={30} />
                     </Link>
                     <button>
