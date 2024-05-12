@@ -65,3 +65,11 @@ export const VideoBlogSchema = z.object({
     references: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
 })
+export const CreateBlogCatagorySchema = z.object({
+    name: z.string().min(1, {message: "Catagory name is required"}).max(25, {message: "Catagory name is too long"}),
+    parentCatagoryCode1: z.string().min(1, {message: "Parent catagory code is required"}),
+    parentCatagoryCode2: z.string().optional(),
+    parentCatagoryCode3: z.string().optional(),
+    description: z.string().min(2, {message: "Description is required"}),
+    catagories:  z.array(z.string()).optional()
+})

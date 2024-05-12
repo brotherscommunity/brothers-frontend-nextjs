@@ -174,14 +174,14 @@ export default function VideoBlog() {
                     )}
                     />
                     <div className="flex items-center gap-16 mt-16">
-                        <button type="button" onClick={handlePreview} className="border border-orangeRed text-base text-orangeRed font-semibold px-4 py-2 rounded-md focus-visible:outline-none" >
+                        <button type="button" onClick={handlePreview} className="border border-orangeRed w-[180px] h-auto text-base text-orangeRed font-semibold px-4 py-2 rounded-md focus-visible:outline-none" >
                             {isPreviewLoading ? <Spinner loading={isPreviewLoading} color="#000000" size={15} /> : "Preview Page"}
                         </button>
                         <div className="flex items-center gap-6">
                             <button type="button" onClick={handleClearForm} className="border border-navy text-navy text-base font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
                                 Cancel
                             </button>
-                            <button type="submit" className="bg-navy text-base text-white font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
+                            <button type="submit" className="bg-navy w-[100px] h-auto text-base text-white font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
                                 {isSaveLoading ? <Spinner loading={isSaveLoading} size={15} /> : "Save"}
                             </button>
                         </div>

@@ -41,6 +41,96 @@ export enum QUERY_STRING_VALUES {
     ascending = "asc",
     descending = "desc"
 }
+export const SETTING_OPTIONS = [
+    "Everyone",
+    "Followers",
+    "None"
+]
+export const PROFILE_DATA_SETTINGS = [
+    {
+        title: "Profile picture",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "profile_picture"
+    },
+    {
+        title: "Followers list",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "followers_list"
+    },
+    {
+        title: "Following list",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "following_list"
+    },
+    {
+        title: "Bio",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "bio"
+    },
+    {
+        title: "Blog Catagory member info",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "blog_catagory_member_info"
+    }
+]
+export const PUBLIC_DATA_SETTINGS = [
+    {
+        title: "Blog Catagory follow info",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "blog_catagory_follow_info"
+    },
+    {
+        title: "Blog Catagory member info",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "blog_catagory_member_info"
+    },
+    {
+        title: "Public follow list",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "public_follow_list"
+    },
+    {
+        title: "Department member info",
+        options: [
+            "Everyone",
+            "Followers",
+            "Noone"
+        ],
+        value: "department_member_info"
+    }
+]
 export const Slides = [
     slide1,
     slide2,
@@ -239,7 +329,28 @@ export const Referals = [
 export const HTTPS = "https://"
 
 export const HTTP = "http://"
-
+export const PAGES = [
+    {
+        value: "page1",
+        label: "Page 1",
+    },
+    {
+        value: "page2",
+        label: "Page 2",
+    },
+    {
+        value: "page3",
+        label: "Page 3",
+    },
+    {
+        value: "page4",
+        label: "Page 4",
+    },
+    {
+        value: "page5",
+        label: "Page 5",
+    }
+]
 export enum FOLLOW_STATE {
     following = "following",
     followers = "followers"

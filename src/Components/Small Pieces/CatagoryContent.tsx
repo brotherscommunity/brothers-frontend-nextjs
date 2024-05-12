@@ -91,7 +91,7 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                         })}
                     </SelectContent>
                 </Select>
-                <button className="bg-navy mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white">
+                <button className="bg-navy w-[100px] h-auto mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white">
                     {isSubmitting ? <Spinner loading={isSubmitting} /> : "Submit"}
                 </button>
             </div>
@@ -108,7 +108,7 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                         )
                     })}
                 </div>
-                <button onClick={handleRemovePendingPost} className="bg-navy mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white"> {isRemoving ? <Spinner loading={isRemoving} /> : "Remove"} </button>
+                <button onClick={handleRemovePendingPost} className="bg-navy w-[100px] h-auto mt-7 border-none focus-visible:outline-none rounded-md px-6 py-2.5 text-sm text-white"> {isRemoving ? <Spinner loading={isRemoving} /> : "Remove"} </button>
             </div>
         </section>
     )

@@ -106,7 +106,7 @@ export default function Notifications({notifications} : NotificationsProps) {
                     <button disabled={isDeleteingAll} onClick={() => setSelectAll(false)} className="border border-navy rounded-md px-5 py-2 text-navy text-base font-semibold disabled:cursor-not-allowed">
                         Unselect All
                     </button>
-                    {selectAll && <button disabled={isDeleteingAll} onClick={handleDeleteAll} className="bg-navy rounded-md text-base text-white px-5 py-2 focus-visible:outline-none">
+                    {selectAll && <button disabled={isDeleteingAll} onClick={handleDeleteAll} className="bg-navy w-[100px] h-auto rounded-md text-base text-white px-5 py-2 focus-visible:outline-none">
                         {isDeleteingAll ? <Spinner loading={isDeleteingAll} /> : "Delete"}
                     </button>}
                 </div>

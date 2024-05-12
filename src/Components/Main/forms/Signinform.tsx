@@ -65,8 +65,9 @@ export default function Signinform() {
                             <div className="flex justify-end mt-6">
                                 <Link href="/forgot-password" className="text-sm text-navy font-semibold"> Forgot password ? </Link>
                             </div>
-                            <button type="submit" className="bg-navy mt-7 w-full rounded-md text-white font-semibold py-2"> 
-                            {isLoading ? <Spinner loading={isLoading} /> : "SIGN IN"} </button>
+                            <button type="submit" className="bg-navy w-full mt-7 rounded-md text-white py-2"> 
+                                {isLoading ? <Spinner loading={isLoading} /> : "SIGN IN"} 
+                            </button>
                             <div className="flex items-center justify-center gap-2 mt-8">
                                 <p className="text-sm font-medium"> Don't have an account ? </p>
                                 <Link href="/register" className="text-sm text-navy font-semibold"> Sign up</Link>
