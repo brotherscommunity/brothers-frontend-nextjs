@@ -4,7 +4,7 @@ import { Checkbox } from "@/Components/ui/checkbox"
 import FeaturedImage from "/public/blogPostHeader.jpg"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem  } from "@/Components/ui/select"
 import { DEPARTMENTS } from "@/constants"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
 import Image from "next/image"
 
@@ -50,6 +50,10 @@ export default function AdministrationManagement() {
 
     const [state, setState] = useState<Functions>(InitialValue)
     const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    useEffect(() => {
+        //TODO: fetch the featured image of the blog post with this pagecode
+    }, [state.heroPageCode])
 
     async function handleCreateDepartment(){
         // Check if the data is provided
@@ -324,8 +328,9 @@ export default function AdministrationManagement() {
                 <input type="text" disabled={isLoading} onChange={(e) => setState({...state, heroCaption: e.target.value})} placeholder="Enter caption" className="mt-4 max-sm:w-[200px] sm:w-[300px] bg-button px-4 py-2 text-sm text-black rounded-md border border-gray-400 focus-visible:outline-none" />
                 {/* PREVIEW */}
                 <p className="mt-7 text-base text-black font-palanquin"> Preview </p>
-                {/* TODO: the Featured blog post Image to be placed in the hero is placed here */}
-                {/*  */}
+                {/* TODO: once the page code is inserted, we display the featured image for that blog post below */}
+                {/* TODO: the hero section can have around 7 images or more. we can delete one current image and put a new image. that's what we do here. */}
+                {/* FAKE FEATURED IMAGE */}
                 <Image src={FeaturedImage} alt="featured-image" width={180} height={130} className="rounded-sm mt-4" />
                 <button disabled={isLoading} onClick={handleHeroAddPage} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2.5 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
                     Add Page

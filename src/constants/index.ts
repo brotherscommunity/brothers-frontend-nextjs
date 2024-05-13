@@ -140,6 +140,10 @@ export const DEPARTMENTS = [
     "Public Relations Department",
     "Assesments and Missions Department"
 ]
+export const BLOG_CATAGORY_APPROVAL_LIST = [
+    "Nigerian Festivals",
+    "Science and it's derived benefits"
+]
 export const Slides = [
     slide1,
     slide2,

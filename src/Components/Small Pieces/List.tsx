@@ -20,7 +20,7 @@ export default function List({title, children, pagination} : ListProps) {
                     <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="p-3 rounded-full bg-green-50 flex justify-center">
                         {expand ?  <CiSquareMinus className="w-4 h-4 text-black" /> : <CiSquarePlus className="w-5 h-5 text-black" />}
                     </button>
-                    <button onClick={() => setExpand((isExpanded) => !isExpanded)}>
+                    <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="focus-visible:outline-none border-none">
                         <h3 className="text-lg text-black font-palanquin pt-2"> {title} </h3>
                     </button>
                 </div>
