@@ -21,7 +21,8 @@ export const PROTECTED_ROUTES = [
     "/my-pages",
     "/privacy-settings",
     "/notifications",
-    "/create-blog-catagory"
+    "/create-blog-catagory",
+    "/functions"
 ]
 
 export const PREVIEW_ROUTE = "/preview-post"

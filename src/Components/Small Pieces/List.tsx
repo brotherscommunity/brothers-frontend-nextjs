@@ -17,10 +17,12 @@ export default function List({title, children, pagination} : ListProps) {
         <section className='mt-8'>
             <div className="ListBar">
                 <div className="flex items-start gap-6">
-                    <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="p-3 rounded-full bg-green-100 flex justify-center">
+                    <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="p-3 rounded-full bg-green-50 flex justify-center">
                         {expand ?  <CiSquareMinus className="w-4 h-4 text-black" /> : <CiSquarePlus className="w-5 h-5 text-black" />}
                     </button>
-                    <h3 className="text-base text-black font-semibold pt-3"> {title} </h3>
+                    <button onClick={() => setExpand((isExpanded) => !isExpanded)}>
+                        <h3 className="text-lg text-black font-palanquin pt-2"> {title} </h3>
+                    </button>
                 </div>
             </div>
             {expand && <div className="mt-6">

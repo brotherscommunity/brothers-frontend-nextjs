@@ -34,7 +34,10 @@
     @apply flex items-center gap-3
   }
   .ListBar {
-    @apply bg-button w-full h-auto px-10 py-3 border-none rounded-md focus-visible:outline-none
+    @apply bg-button w-full h-auto max-sm:px-5 sm:px-7 md:px-10 py-5 border-none rounded-md focus-visible:outline-none
+  }
+  .functionsInput {
+    @apply max-sm:w-[150px] sm:w-[200px] bg-button px-4 py-2 text-sm text-black rounded-md border border-gray-400 focus-visible:outline-none
   }
   .formContainer {
     @apply flex flex-1 flex-col justify-start gap-3

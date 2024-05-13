@@ -131,6 +131,15 @@ export const PUBLIC_DATA_SETTINGS = [
         value: "department_member_info"
     }
 ]
+export const DEPARTMENTS = [
+    "Administration Department",
+    "Social Media Department",
+    "Community Web Page Department",
+    "Legal Department",
+    "Accounts Department",
+    "Public Relations Department",
+    "Assesments and Missions Department"
+]
 export const Slides = [
     slide1,
     slide2,
