@@ -4,6 +4,24 @@ import List from "@/Components/Small Pieces/List";
 import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
 
 export default function page() {
+
+    //TODO: FETCH BLOG CATAGORIES THAT NEED TO BE APPROVED OR REJECTED
+    // FAKE DATA
+    const blogCatagories = [
+        {
+            id: 1,
+            catagory: "Fulani Festival",
+            catagoryCode: "CTG03 Nigerian Festivals",
+            description: "festivals have great importance to fulanis"
+        },
+        {
+            id: 2,
+            catagory: "How to make money online",
+            catagoryCode: "CTG10 Digital income source",
+            description: "learning and teaching people how to make money online"
+        }
+    ]
+
     return (
         <main className="max-md:px-10 md:px-7 xl:px-24 mb-20">
             <TopPageHeader pageCode="PG32" pageName="Functions Page" pageDescription="In this page different managers of the website can assess their functions" />
@@ -14,7 +32,7 @@ export default function page() {
                 </List>
                  {/* BLOG CATAGORY GENERAL MANAGER */}
                 <List title="Blog Catagory General Manager">
-                    <BlogCatagoryGeneralManagement />
+                    <BlogCatagoryGeneralManagement blogCatagoryLists={blogCatagories} />
                 </List>
                 {/* BLOG CATAGORY MANAGER */}
                 <List title="Blog Catagory Manager">
