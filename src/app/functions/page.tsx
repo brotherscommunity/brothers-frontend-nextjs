@@ -1,3 +1,4 @@
+import AccountApprovalManagement from "@/Components/Main/AccountApprovalManagement";
 import AdministrationManagement from "@/Components/Main/AdministrationManagement";
 import BlogCatagoryGeneralManagement from "@/Components/Main/BlogCatagoryGeneralManagement";
 import BlogCatagoryManagement from "@/Components/Main/BlogCatagoryManagement";
@@ -22,6 +23,9 @@ export default function page() {
             description: "learning and teaching people how to make money online"
         }
     ]
+    //TODO: FETCH ALL THE ACCOUNTS LIST THAT NEED TO BE APPROVED OR REJECTED
+    // FAKE DATA
+    const accountsList = ["Jhon Albert", "Smith david"]
 
     return (
         <main className="max-md:px-10 md:px-7 xl:px-24 mb-20">
@@ -46,10 +50,8 @@ export default function page() {
                     </div>
                 </List>
                 {/* ACCOUNT APPROVED MANAGER */}
-                <List title="Account Approved Manager">
-                    <div>
-
-                    </div>
+                <List title="Account Approval Manager">
+                    <AccountApprovalManagement accountsLits={accountsList} />
                 </List>
                 {/* LEGISLATION MANAGER */}
                 <List title="Legislation Manager">

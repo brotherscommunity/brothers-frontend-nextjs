@@ -8,6 +8,7 @@ import Pagination from "./Pagination"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectItem } from "../ui/select"
 import { Checkbox } from "../ui/checkbox"
 import toast from "react-hot-toast"
+import ApproveReject from "../Small Pieces/ApproveReject"
 
 type BlogCatagoryState = {
     deleteSelectCatagory: string,
@@ -35,7 +36,7 @@ export default function BlogCatagoryManagement() {
     
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    async function handleApproveBlogCatagory(blogCatagoryName: string) {
+    async function handleApproveBlogCatagory(name: string) {
         // TODO: Make an HTTP request to the endpoint the approves this blog catagory
         setIsLoading(true)
         try{
@@ -49,7 +50,7 @@ export default function BlogCatagoryManagement() {
         }
     }
 
-    async function handleRejectBlogCatagory(blogCatagoryName: string) {
+    async function handleRejectBlogCatagory(name: string) {
         // TODO: Make an HTTP request to the endpoint the approves this blog catagory
         setIsLoading(true)
         try{
@@ -133,26 +134,8 @@ export default function BlogCatagoryManagement() {
             <div>
                 <h3 className="text-base text-black font-semibold"> F7: Approve Blog to Category </h3>
                 <p className="mt-7 text-base text-black font-palanquin"> Approve Waitlist </p>
-                {/* TODO: FETCH THE BLOG CATAGORIES THAT NEED TO BE APPROVED */}
-                {/* FAKE DATA */}
-                {BLOG_CATAGORY_APPROVAL_LIST.map((catagory, index) => {
-                    return (
-                        <div key={index} className="mt-10">
-                            <h4 className="tet-base text-black"> {index + 1}. {catagory} </h4>
-                            <div className="flex items-center gap-7 mt-4">
-                                <button onClick={() => handleApproveBlogCatagory(catagory)} className="bg-green-100 w-[150px] h-auto px-7 py-2.5 rounded-md focus-visible:outline border-none flex items-center gap-3">
-                                    <FaCheckCircle className="w-4 h-4 text-green-500" />
-                                    <p className="text-sm text-black font-semibold"> Aprrove </p>
-                                </button>
-                                <button onClick={() => handleRejectBlogCatagory(catagory)} className="bg-red-100  w-[150px] h-auto px-7 py-2.5 rounded-md focus-visible:outline border-none flex items-center gap-3">
-                                    <MdCancel className="w-4 h-4 text-red-600" />
-                                    <p className="text-sm text-black font-semibold"> Reject </p>
-                                </button>
-                            </div>
-                        </div>
-                    )
-                })}
-                <Pagination TotalNumberOfResults={10} pageSize={3} />
+                {/* TODO: FAKE DATA */}
+                <ApproveReject list={BLOG_CATAGORY_APPROVAL_LIST} handleApprove={handleApproveBlogCatagory} handleReject={handleRejectBlogCatagory} isLoading={isLoading}/>
             </div>
             {/* F8: DELETE BLOG FROM CATAGORY */}
             <div className="mt-10">
@@ -200,7 +183,7 @@ export default function BlogCatagoryManagement() {
                 })}
                 </div>
                 <p className="mt-10 text-base text-black font-palanquin"> List of Selected pages</p>
-                <div className="w-[200px] h-[150px] mt-6 border border-gray-400 overflow-y-scroll overflow-x-hidden rounded-md px-8 pb-3 pt-2 focus:outline-none">
+                <div className="w-[250px] h-[150px] mt-6 border border-gray-400 overflow-y-scroll overflow-x-hidden rounded-l-md px-8 pb-3 pt-2 focus:outline-none">
                     {state.subCatagoryPages.length > 0 && state.subCatagoryPages.map((page) => {
                         return (
                             <button key={page} onClick={() => handleRemovePageFromList(page)} className="flex items-center gap-4 mt-4">
