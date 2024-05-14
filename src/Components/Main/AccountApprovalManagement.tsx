@@ -49,7 +49,7 @@ export default function AccountApprovalManagement({accountsLits} : Props) {
     return (
         <section>
             <div className="mt-7">
-                <h3 className="text-base text-black font-semibold"> F15: Approve and Reject Profile </h3>
+                <h3 className="text-base text-black font-semibold"> F16: Approve and Reject Profile </h3>
                 <div className="mt-6">
                     <ApproveReject list={accountsLits} handleApprove={handleApproveAccount} handleReject={handleRejectAccount} isLoading={isLoading} details={true} handleDetails={handleDetails} />
                 </div>

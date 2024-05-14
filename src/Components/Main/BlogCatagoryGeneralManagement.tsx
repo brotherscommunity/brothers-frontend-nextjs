@@ -95,7 +95,7 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
                 <div className="mt-7">
                     <Table className="border border-gray-300">
                         <TableHeader>
-                            <TableRow className="text-base font-medium">
+                            <TableRow className="max-sm:text-sm sm:text-base font-medium">
                                 <TableHead> S/N </TableHead>
                                 <TableHead className="text-center"> Category </TableHead>
                                 <TableHead className="text-center"> Category Code </TableHead>

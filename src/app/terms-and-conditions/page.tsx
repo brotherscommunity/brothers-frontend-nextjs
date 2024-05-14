@@ -3,7 +3,8 @@ import { TERMS_AND_CONDITIONS } from "@/constants";
 import { CiSquareChevLeft } from "react-icons/ci";
 
 
-export default function page() {
+export default async function page() {
+    // TODO: FETCH THE TERMS AND CONDITIONS FROM THE DATABASE
     return (
         <main className="mb-20">
             <div className="max-md:px-7 md:px-10 xl:px-20 ">
@@ -17,6 +18,7 @@ export default function page() {
                 <p className="mt-4 text-base max-sm:text-justify font-palanquin"> 
                     These Terms and Conditions govern your use of our website and any associated services offered through it. By accessing or using our website, you agree to be bounded by these Terms and Conditions. Please read them carefully before proceeding. If you do not agree to these Terms and Conditions, you may not use our website.
                 </p>
+                {/* STATIC DATA */}
                 { TERMS_AND_CONDITIONS.map((term, index) => {
                     return (
                         <div key={term.title} className="flex flex-col justify-start mt-6 text-black font-palanquin">

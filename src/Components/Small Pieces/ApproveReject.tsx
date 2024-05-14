@@ -1,3 +1,5 @@
+'use client'
+
 import { CiSquarePlus } from "react-icons/ci"
 import { FaCheckCircle } from "react-icons/fa"
 import { MdCancel } from "react-icons/md"

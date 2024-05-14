@@ -2,8 +2,10 @@ import AccountApprovalManagement from "@/Components/Main/AccountApprovalManageme
 import AdministrationManagement from "@/Components/Main/AdministrationManagement";
 import BlogCatagoryGeneralManagement from "@/Components/Main/BlogCatagoryGeneralManagement";
 import BlogCatagoryManagement from "@/Components/Main/BlogCatagoryManagement";
+import LegislationManagement from "@/Components/Main/LegislationManagement";
 import List from "@/Components/Small Pieces/List";
 import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
+import { TERMS_AND_CONDITIONS } from "@/constants";
 
 export default function page() {
 
@@ -26,6 +28,30 @@ export default function page() {
     //TODO: FETCH ALL THE ACCOUNTS LIST THAT NEED TO BE APPROVED OR REJECTED
     // FAKE DATA
     const accountsList = ["Jhon Albert", "Smith david"]
+    //TODO: FETCH THE LEGAL TERMS UPDATE HISTORY
+    // FAKE DATA
+    const updateHistory = [
+        {
+            date: "2/03/24",
+            managerName: "Jhon Walter",
+            article: "legal term article one",
+            reason: "Introduction"
+        },
+        {
+            date: "2/02/24",
+            managerName: "Mike jason",
+            article: "legal term article three",
+            reason: "Project"
+        },
+        {
+            date: "2/01/24",
+            managerName: "Sara David",
+            article: "legal term article six",
+            reason: "Typo"
+        }
+    ]
+    // TODO: FETCH THE TERMS AND CONDITIONS FROM THE DATABASE AND PASS IT TO THE LEGISLATION MANAGEMNT COMPONENT
+
 
     return (
         <main className="max-md:px-10 md:px-7 xl:px-24 mb-20">
@@ -55,9 +81,7 @@ export default function page() {
                 </List>
                 {/* LEGISLATION MANAGER */}
                 <List title="Legislation Manager">
-                    <div>
-
-                    </div>
+                    <LegislationManagement history={updateHistory} termsAndConditions={TERMS_AND_CONDITIONS} />
                 </List>
                 {/* GENERAL FUNCTION */}
                 <List title="General Function">
