@@ -56,7 +56,7 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                     <TableRow className="text-base font-medium">
                         <TableHead> S/N </TableHead>
                         <TableHead> Type </TableHead>
-                        <TableHead> Catagory </TableHead>
+                        <TableHead> Category </TableHead>
                         <TableHead className="text-right"> Added date </TableHead>
                     </TableRow>
                 </TableHeader>
@@ -78,10 +78,10 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                 <Pagination TotalNumberOfResults={totalResults} pageSize={4} />
             </div>
             <div className="max-sm:mt-16 sm:mt-8">
-                <h3 className="text-black text-base font-semibold"> Submit to blog Catagory </h3> 
+                <h3 className="text-black text-base font-semibold"> Submit to blog Category </h3> 
                 <Select onValueChange={(value) => setTobeSubmitted(value)}>
                     <SelectTrigger className="w-[250px] mt-7 bg-button px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
-                    <SelectValue placeholder="Select catagory" />
+                    <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent className="-pl-5">
                         {postsNotSubmitted.map((postTitle) => {
@@ -96,7 +96,7 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                 </button>
             </div>
             <div className="mt-10">
-                <h3 className="text-black text-base font-semibold"> List of pending catagory submissions </h3>
+                <h3 className="text-black text-base font-semibold"> List of pending category submissions </h3>
                 <div className="mt-6 w-[350px] h-[200px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-l-md focus-visible:outline-none focus:border-none px-6 pt-2 pb-4"> 
                     {/* All the posts that the user submitted to be included in the catagory, but they are in the pending state are placeed here. the user can remove them if he/she wants/  */}
                     {postsPending.map((postTitle) => {

@@ -90,15 +90,15 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
         <section>
             {/* F5: APPROVE AND DELETE BLOG CATAGORY */}
             <div>
-                <h3 className="text-base text-black font-semibold"> F5: Approve and Delete Blog Catagory </h3>
+                <h3 className="text-base text-black font-semibold"> F5: Approve and Delete Blog Category </h3>
                 {/* TABLE */}
                 <div className="mt-7">
                     <Table className="border border-gray-300">
                         <TableHeader>
                             <TableRow className="text-base font-medium">
                                 <TableHead> S/N </TableHead>
-                                <TableHead className="text-center"> Catagory </TableHead>
-                                <TableHead className="text-center"> Catagory Code </TableHead>
+                                <TableHead className="text-center"> Category </TableHead>
+                                <TableHead className="text-center"> Category Code </TableHead>
                                 <TableHead className="text-center"> Description </TableHead>
                                 <TableHead className="text-right w-[150px]"> Function </TableHead>
                             </TableRow>
@@ -131,11 +131,11 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
             </div>
             {/* F6: ASSIGN AND REMOVE BLOG CATAGORY MANGER */}
             <div className="max-sm:mt-14 sm:mt-7">
-                <h3 className="text-base text-black font-semibold"> F6: Assign and Remove Blog Catagory Manager</h3>
+                <h3 className="text-base text-black font-semibold"> F6: Assign and Remove Blog Category Manager</h3>
                 <p className="mt-7 text-base text-black font-palanquin"> Assign Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} onChange={(e) => setManagerUsername(e.target.value)} placeholder="Enter username" className="functionsInput" />
-                    <input type="text" disabled={isLoading} onChange={(e) => setCatagoryCode(e.target.value)} placeholder="Enter catagory code" className="functionsInput" />
+                    <input type="text" disabled={isLoading} onChange={(e) => setCatagoryCode(e.target.value)} placeholder="Enter category code" className="functionsInput" />
                 </div>
                 <button disabled={isLoading} onClick={handleAssignManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
                     Assign
@@ -143,7 +143,7 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
                 <p className="mt-7 text-base text-black font-palanquin"> Remove Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} placeholder="Enter username" className="functionsInput" />
-                    <input type="text" disabled={isLoading} placeholder="Enter catagory code" className="functionsInput" />
+                    <input type="text" disabled={isLoading} placeholder="Enter category code" className="functionsInput" />
                 </div>
                 <button disabled={isLoading} onClick={handleRemoveManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
                     Remove

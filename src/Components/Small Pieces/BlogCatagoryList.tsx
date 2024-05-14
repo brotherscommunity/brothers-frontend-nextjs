@@ -1,4 +1,3 @@
-import Link from "next/link"
 
 interface Props {
     catagories: {
@@ -10,7 +9,7 @@ interface Props {
 export default function BlogCatagoryList({catagories} : Props) {
     return (
         <section className="mt-6">
-            <h3 className="text-lg text-navy font-palanquin"> Blog Catagory Members List</h3>
+            <h3 className="text-lg text-navy font-palanquin"> Blog Category Members List</h3>
             <div className="flex flex-1 flex-col justify-start gap-2.5 mt-4">
                 {catagories.map((element, i) => {
                     return (

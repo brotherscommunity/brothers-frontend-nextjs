@@ -17,7 +17,7 @@ export enum QUERY_PARAMS {
     order="order",
     filterBy="filterBy",
     code = "code",
-    catagory= "catagory"
+    catagory= "category"
 }
 export const VISITOR_COLUMNS = [
     "Monthly",
@@ -84,7 +84,7 @@ export const PROFILE_DATA_SETTINGS = [
         value: "bio"
     },
     {
-        title: "Blog Catagory member info",
+        title: "Blog Category member info",
         options: [
             "Everyone",
             "Followers",
@@ -95,7 +95,7 @@ export const PROFILE_DATA_SETTINGS = [
 ]
 export const PUBLIC_DATA_SETTINGS = [
     {
-        title: "Blog Catagory follow info",
+        title: "Blog Category follow info",
         options: [
             "Everyone",
             "Followers",
@@ -104,7 +104,7 @@ export const PUBLIC_DATA_SETTINGS = [
         value: "blog_catagory_follow_info"
     },
     {
-        title: "Blog Catagory member info",
+        title: "Blog Category member info",
         options: [
             "Everyone",
             "Followers",

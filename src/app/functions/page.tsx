@@ -1,5 +1,6 @@
 import AdministrationManagement from "@/Components/Main/AdministrationManagement";
 import BlogCatagoryGeneralManagement from "@/Components/Main/BlogCatagoryGeneralManagement";
+import BlogCatagoryManagement from "@/Components/Main/BlogCatagoryManagement";
 import List from "@/Components/Small Pieces/List";
 import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
 
@@ -31,14 +32,12 @@ export default function page() {
                     <AdministrationManagement />
                 </List>
                  {/* BLOG CATAGORY GENERAL MANAGER */}
-                <List title="Blog Catagory General Manager">
+                <List title="Blog Category General Manager">
                     <BlogCatagoryGeneralManagement blogCatagoryLists={blogCatagories} />
                 </List>
                 {/* BLOG CATAGORY MANAGER */}
-                <List title="Blog Catagory Manager">
-                    <div>
-
-                    </div>
+                <List title="Blog Category Manager">
+                    <BlogCatagoryManagement />
                 </List>
                 {/* DEPARTMENT MANAGER */}
                 <List title="Department Manager">

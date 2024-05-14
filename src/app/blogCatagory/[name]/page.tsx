@@ -20,7 +20,7 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
 
     return (
         <main className="max-md:mx-5 md:mx-7 xl:mx-20">
-            <TopPageHeader pageCode="PG32" pageName={`Blog Catagory Description Page - ${blogCatagoryName}`} pageDescription="Blog Category Description and discussion for improvement in this page." />
+            <TopPageHeader pageCode="PG32" pageName={`Blog Category Description Page - ${blogCatagoryName}`} pageDescription="Blog Category Description and discussion for improvement in this page." />
              {/* FAKE DATA */}
             <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} code="Bc21" />
             <div className="bg-button w-full h-auto px-10 py-6 mt-10 border-none rounded-md focus-visible:outline-none">

@@ -21,7 +21,7 @@ export const PROTECTED_ROUTES = [
     "/my-pages",
     "/privacy-settings",
     "/notifications",
-    "/create-blog-catagory",
+    "/create-blog-category",
     "/functions"
 ]
 

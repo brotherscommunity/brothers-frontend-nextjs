@@ -37,7 +37,7 @@ export default function Catagory({name, followers, members, posts, catagoryPath,
     return (
         <section className='bg-button mt-5 rounded-md px-5 pt-4 pb-6 border-none focus:outline-none'>
             <div className="flex items-center justify-between">
-                <Link href={`/blogCatagory/${name.replace(" ", "_")}`} className="text-lg text-navy font-semibold"> {name} </Link>
+                <Link href={`/blogCategory/${name.replace(" ", "_")}`} className="text-lg text-navy font-semibold"> {name} </Link>
                 <button onClick={handleFollow} className="bg-navy w-[100px] h-auto text-white text-sm px-6 py-2 rounded-md focus-visible:outline-none"> 
                     {isFollowing ? <Spinner loading={isFollowing} /> : "Follow"}
                 </button>

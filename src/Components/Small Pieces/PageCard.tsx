@@ -66,7 +66,7 @@ export default function PageCard({pages} : Props) {
                                     <div>
                                         <button onClick={() => handleCatagorySelection(page.title)} className={`flex items-start gap-2 ${currentCatgory === page.title ? "bg-orangeRed bg-opacity-10" : "bg-inherit"} rounded-md px-4 py-2`}>
                                             <CiFolderOn className="w-4 h-4 text-black" />
-                                            <p className="text-sm text-black font-semibold"> catagory </p>
+                                            <p className="text-sm text-black font-semibold"> category </p>
                                         </button>
                                         {currentCatgory === page.title && <hr className="border-2 border-t-orangeRed w-[50px] -mt-1 ml-10" />}
                                     </div>

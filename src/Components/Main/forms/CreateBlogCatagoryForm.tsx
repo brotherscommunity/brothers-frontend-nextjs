@@ -62,7 +62,7 @@ export default function CreateBlogCatagoryForm() {
         // Check if the catagories state is empty, which means the user didn't add the pages to the catagory.
         if(catagories.length === 0){
             form.setError("catagories", {
-                message: "No page has been added to the catagory"
+                message: "No page has been added to the category"
             })
             return 
         }
@@ -95,11 +95,11 @@ export default function CreateBlogCatagoryForm() {
                     render={({ field }) => (
                         <FormItem className="flex flex-col items-start gap-4">
                         <FormLabel className="text-base text-black font-semibold font-palanquin"> 
-                        Catagory name
+                        Category name
                         <span className="astrics"> * </span>
                         </FormLabel>
                         <FormControl>
-                            <input type="text" disabled={isLoading} placeholder="name of the catagory"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                            <input type="text" disabled={isLoading} placeholder="name of the category"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                         </FormControl>
                         <FormMessage  className='text-sm text-red-500' />
                         </FormItem>
@@ -112,11 +112,11 @@ export default function CreateBlogCatagoryForm() {
                     render={({ field }) => (
                         <FormItem className="flex flex-col items-start gap-4 mt-8">
                         <FormLabel className="text-base text-black font-semibold font-palanquin"> 
-                        Parent Catagory Code 1
+                        Parent Category Code 1
                         <span className="astrics"> * </span>
                         </FormLabel>
                         <FormControl>
-                            <input type="text" disabled={isLoading} placeholder="Parent catagory code"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                            <input type="text" disabled={isLoading} placeholder="Parent category code"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                         </FormControl>
                         <FormMessage  className='text-sm text-red-500' />
                         </FormItem>
@@ -129,10 +129,10 @@ export default function CreateBlogCatagoryForm() {
                         render={({ field }) => (
                             <FormItem className="flex flex-col items-start gap-4 mt-8">
                             <FormLabel className="text-base text-black font-semibold font-palanquin"> 
-                            Parent Catagory Code 2
+                            Parent Category Code 2
                             </FormLabel>
                             <FormControl>
-                                <input type="text" disabled={isLoading} placeholder="Parent catagory code 2"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                                <input type="text" disabled={isLoading} placeholder="Parent category code 2"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                             </FormControl>
                             <FormMessage  className='text-sm text-red-500' />
                             </FormItem>
@@ -146,17 +146,17 @@ export default function CreateBlogCatagoryForm() {
                         render={({ field }) => (
                             <FormItem className="flex flex-col items-start gap-4 mt-8">
                             <FormLabel className="text-base text-black font-semibold font-palanquin"> 
-                            Parent Catagory Code 3
+                            Parent Category Code 3
                             </FormLabel>
                             <FormControl>
-                                <input type="text" disabled={isLoading} placeholder="Parent catagory code 3"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                                <input type="text" disabled={isLoading} placeholder="Parent category code 3"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                             </FormControl>
                             <FormMessage  className='text-sm text-red-500' />
                             </FormItem>
                         )}
                         />
                     )}
-                    <button type="button" onClick={handleAddRemoveParentCatagory} className="text-[15px] text-black font-medium font-palanquin mt-5"> {parentCatagory3 ? "- Remove other parent catagories" : "+ Add another Parent Catagory (optional)"} </button>
+                    <button type="button" onClick={handleAddRemoveParentCatagory} className="text-[15px] text-black font-medium font-palanquin mt-5"> {parentCatagory3 ? "- Remove other parent categories" : "+ Add another Parent Category (optional)"} </button>
                     {/* DESCRIPTION */}
                     <FormField
                     control={form.control}
@@ -175,7 +175,7 @@ export default function CreateBlogCatagoryForm() {
                     )}
                     />
                     <div className="flex max-sm:flex-col max-sm:items-start sm:items-center gap-7 mt-10">
-                        <p className="text-base text-black font-semibold font-palanquin"> Add page to catagory </p>
+                        <p className="text-base text-black font-semibold font-palanquin"> Add page to category </p>
                         <AutoComplete
                         options={pageOptions}
                         emptyMessage="No pages found"
