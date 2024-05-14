@@ -24,7 +24,7 @@ export default function Navbar() {
     const [searchValue, setSearchValue] = useState("")
     const {isAuthenticated, isLoading, data} = useSelector((state: RootState) => state.user)
     const searchParams = useSearchParams()
-    const {replace, push} = useRouter()
+    const {replace} = useRouter()
     const pathname = usePathname()
     const queryString = searchParams.get(QUERY_PARAMS.search)
 
@@ -82,8 +82,8 @@ export default function Navbar() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleSearch()
-                }} className={`flex items-center justify-between bg-button ${isAuthenticated && data ? "max-md:w-[350px] md:w-[420px]" : "max-md:w-[250px] md:w-[490px]"} h-[48px] max-lg:ml-10 ml-24 max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
-                    <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button max-sm:w-[100px] md:w-[180px] lg:w-[w-300px] xl:w-[400px] p-2 text-sm focus-visible:outline-none" />
+                }} className={`flex items-center justify-between bg-button ${isAuthenticated && data ? "max-md:w-[360px] md:w-[420px]" : "max-md:w-[300px] md:w-[490px]"} h-[48px] max-lg:ml-10 ml-24 max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
+                    <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button max-sm:w-[100px] md:w-[180px] lg:w-[w-300px] xl:w-[400px] p-2 max-sm:text-xs sm:text-sm focus-visible:outline-none" />
                     <button type="submit" onClick={handleSearch} className="mr-5">
                         <CiSearch className="w-5 h-5" />
                     </button>

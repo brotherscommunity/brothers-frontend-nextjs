@@ -29,7 +29,7 @@ export default async function page() {
         ]
     }
     return (
-        <main className="max-md:px-10 md:px-7 xl:px-24 mb-28">
+        <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
             <TopPageHeader pageCode="PG32" pageName="Notifications Page" pageDescription="Displays reminders and notifications from managers and system" />
             <Notifications notifications={notifications} />
         </main>

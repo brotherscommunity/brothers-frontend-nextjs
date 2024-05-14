@@ -9,6 +9,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { GiLinkedRings } from "react-icons/gi";
 import { FiAnchor } from "react-icons/fi";
 import { MdOutlineContentCopy } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
 import { SlLogout } from "react-icons/sl";
 import {
@@ -26,6 +27,7 @@ import { useRouter } from "next/navigation";
 export default function NavButtons(){
 
     const [openPopUp, setOpenPopUp] = useState<boolean>(false)
+    const [openCreatePost, setOpenCreatePost] = useState<boolean>(false)
     const {isAuthenticated, data} = useSelector((state: RootState) => state.user)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const {push} = useRouter()
@@ -37,14 +39,41 @@ export default function NavButtons(){
         // TODO: Make an http request to hit the logout endpoint
     }
 
+    function handleCreatePostClick(route: string ){
+        setOpenCreatePost(false)
+        push(route)
+    }
+
     function handleNavigation(route: string){
         setOpenPopUp(false)
         push(route)
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 xl:ml-28 text-sm`}>
-            <Link href={`${isAuthenticated ? "/create-post" : "/register"} `} className="max-lg:hidden border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> {`${isAuthenticated ? "Create Post" : "Get Started"}`} </Link>
+        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 xl:ml-20 text-sm`}>
+            {isAuthenticated ? (
+                <Popover>
+                    <PopoverTrigger>
+                        <div className="max-lg:hidden w-[135px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold flex items-center gap-3">
+                            <p> Create Post </p>
+                            <button onClick={() => setOpenCreatePost(true)}>
+                                <MdKeyboardArrowDown className="w-4 h-4 text-navy" />
+                            </button>
+                        </div>
+                    </PopoverTrigger>
+                    {openCreatePost && <PopoverContent className="w-[180px] h-auto mt-2 bg-white border-none rounded-md px-4 py-3 flex flex-col items-start gap-1">
+                        <button onClick={() => handleCreatePostClick("/create-post")} className="hover:bg-blue-300 hover:bg-opacity-60 px-4 py-2 rounded-md text-sm text-black font-palanquin">
+                            Create Blog Post
+                        </button>
+                        <button onClick={() => handleCreatePostClick("/create-video-blog")} className="hover:bg-blue-300 hover:bg-opacity-60 px-4 py-2 rounded-md text-sm text-black font-palanquin">
+                            Create Video Blog
+                        </button>
+                    </PopoverContent>
+                    }
+                </Popover>
+            ) : (
+                <Link href="/register" className="max-lg:hidden w-[130px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> Get Started </Link>
+            ) }
             {isAuthenticated && data ? (
                 <div className="flex items-center gap-4">
                     {/* TODO: Create a route for Notifications */}

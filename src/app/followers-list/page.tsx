@@ -13,7 +13,7 @@ export default async function page({searchParams} : Props) {
     //TODO: Fetch the followers and followings of the current user, It should recieve the page parameter for Pagination
     
     return (
-        <main className="max-md:px-10 md:px-7 xl:px-24 mb-20">
+        <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
             <TopPageHeader pageCode="PG32" pageName="Followers List" pageDescription="Explore those who follows you and those whom you follow" />
             {/* TODO: pass the followers and following array to this component */}
             <FollowersAndFollowing />

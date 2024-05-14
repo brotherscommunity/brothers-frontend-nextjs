@@ -10,9 +10,9 @@ export default async function page() {
             <div className="max-md:px-7 md:px-10 xl:px-20 ">
                 <TopPageHeader pageCode="PG32" pageName="Terms and Conditions Page" pageDescription="Our Home" />
             </div>
-            <div className="mt-6 w-full h-[200px] flex items-center justify-start bg-navy border-none focus-visible:outline-none max-md:px-7 md:px-10 xl:px-20">
+            <div className="mt-12 w-full max-lg:h-[100px] lg:h-[150px] flex items-center justify-start bg-navy border-none focus-visible:outline-none max-md:px-7 md:px-10 xl:px-20">
                 <CiSquareChevLeft className="w-10 h-10 text-white" />
-                <p className="max-sm:text-lg text-[26px] w-full text-white text-center font-semibold font-palanquin"> Terms and Conditions Agreement </p>
+                <p className="max-sm:text-lg sm:text-xl md:text-2xl xl:text-[26px] w-full text-white text-center font-semibold font-palanquin"> Terms and Conditions Agreement </p>
             </div>
             <div className="mt-14 max-md:px-7 md:px-10 xl:px-20 ">
                 <p className="mt-4 text-base max-sm:text-justify font-palanquin"> 

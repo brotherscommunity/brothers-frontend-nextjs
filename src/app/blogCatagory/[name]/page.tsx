@@ -19,7 +19,7 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
     const catagoryPath = ["World", "Continets", "Africa", "Nigeria", "Nigerian Festivals"]
 
     return (
-        <main className="max-md:mx-5 md:mx-7 xl:mx-20">
+        <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
             <TopPageHeader pageCode="PG32" pageName={`Blog Category Description Page - ${blogCatagoryName}`} pageDescription="Blog Category Description and discussion for improvement in this page." />
              {/* FAKE DATA */}
             <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} code="Bc21" />
