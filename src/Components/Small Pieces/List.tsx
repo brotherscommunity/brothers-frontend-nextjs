@@ -6,16 +6,17 @@ import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 interface ListProps {
     title: string,
     children: React.ReactNode,
-    pagination?: React.ReactNode
+    pagination?: React.ReactNode,
+    subList?: boolean
 }
 
-export default function List({title, children, pagination} : ListProps) {
+export default function List({title, children, pagination, subList=false} : ListProps) {
 
     const [expand, setExpand] = useState<boolean>(false)
     
     return (
-        <section className='mt-8'>
-            <div className="ListBar">
+        <section className={`${subList ? "mt-3" : "mt-8"}`}>
+            <div className={`${subList ? "px-2" : "max-sm:px-5 sm:px-7 md:px-10 "} bg-button w-full h-auto py-5 border-none rounded-md focus-visible:outline-none`}>
                 <div className="flex items-start gap-6">
                     <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="p-3 rounded-full bg-green-50 flex justify-center">
                         {expand ?  <CiSquareMinus className="w-4 h-4 text-black" /> : <CiSquarePlus className="w-5 h-5 text-black" />}
@@ -25,8 +26,8 @@ export default function List({title, children, pagination} : ListProps) {
                     </button>
                 </div>
             </div>
-            {expand && <div className="mt-6">
-                <div className="ListBar">
+            {expand && <div className={`${subList ? "mt-1" : "mt-6"}`}>
+                <div className={`${subList ? "px-2" : "max-sm:px-5 sm:px-7 md:px-10 "} bg-button w-full h-auto py-5 border-none rounded-md focus-visible:outline-none`}>
                     {children}
                 </div>
                 {pagination}

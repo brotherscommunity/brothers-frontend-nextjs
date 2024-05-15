@@ -113,10 +113,10 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
                                         <TableCell className="border border-gray-300"> {element.description} </TableCell>
                                         <TableCell className="border border-gray-300 text-center">
                                             <div className="flex flex-col items-start gap-3">
-                                                <button disabled={isLoading} onClick={() => handleApproveBlogCatagory(element.catagory)} className="bg-navy w-[80px] h-auto p-2 text-sm text-white rounded-md focus-visible:outline-none">
+                                                <button disabled={isLoading} onClick={() => handleApproveBlogCatagory(element.catagory)} className="bg-navy w-[80px] h-auto disabled:cursor-not-allowed p-2 text-sm text-white rounded-md focus-visible:outline-none">
                                                     Accept
                                                 </button>
-                                                <button disabled={isLoading} onClick={() => handleRejectBlogCatagory(element.catagory)} className="border border-navy w-[80px] h-auto p-2 rounded-md focus-visible:outline-none text-sm text-navy">
+                                                <button disabled={isLoading} onClick={() => handleRejectBlogCatagory(element.catagory)} className="border border-navy disabled:cursor-not-allowed w-[80px] h-auto p-2 rounded-md focus-visible:outline-none text-sm text-navy">
                                                     Reject
                                                 </button>
                                             </div>
@@ -132,20 +132,20 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
             {/* F6: ASSIGN AND REMOVE BLOG CATAGORY MANGER */}
             <div className="max-sm:mt-14 sm:mt-7">
                 <h3 className="text-base text-black font-semibold"> F6: Assign and Remove Blog Category Manager</h3>
-                <p className="mt-7 text-base text-black font-palanquin"> Assign Manager </p>
+                <p className="mt-10 text-base text-black font-semibold font-palanquin"> Assign Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} onChange={(e) => setManagerUsername(e.target.value)} placeholder="Enter username" className="functionsInput" />
                     <input type="text" disabled={isLoading} onChange={(e) => setCatagoryCode(e.target.value)} placeholder="Enter category code" className="functionsInput" />
                 </div>
-                <button disabled={isLoading} onClick={handleAssignManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleAssignManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Assign
                 </button>
-                <p className="mt-7 text-base text-black font-palanquin"> Remove Manager </p>
+                <p className="mt-7 text-base text-black font-semibold font-palanquin"> Remove Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} placeholder="Enter username" className="functionsInput" />
                     <input type="text" disabled={isLoading} placeholder="Enter category code" className="functionsInput" />
                 </div>
-                <button disabled={isLoading} onClick={handleRemoveManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleRemoveManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Remove
                 </button>
             </div>

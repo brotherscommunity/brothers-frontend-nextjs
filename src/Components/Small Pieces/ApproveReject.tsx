@@ -21,7 +21,7 @@ export default function ApproveReject({list, handleApprove, handleReject, handle
                 return (
                     <div key={index} className="mt-10">
                         <h4 className="tet-lg text-navy font-palanquin"> {index + 1}.  {name} </h4>
-                        {details && handleDetails && <button onClick={() => handleDetails(name)} className="flex items-center gap-3 mt-4 mb-6">
+                        {details && handleDetails && <button disabled={isLoading} onClick={() => handleDetails(name)} className="flex items-center gap-3 mt-4 mb-6 disabled:cursor-not-allowed ">
                             <CiSquarePlus className="w-5 h-5 rounded-[4px]" />
                             <p className="text-sm text-navy font-palanquin"> Details </p>
                         </button>}

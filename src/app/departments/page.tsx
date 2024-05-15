@@ -7,7 +7,7 @@ export default async function page() {
         <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
             <TopPageHeader pageCode="PG32" pageName="Functions Page" pageDescription="In this page different managers of the website can assess their functions" />
             <div className="mt-6">
-
+                <p className="text-xl text-black font-palanquin"> No Departments have been created yet </p>
             </div>
         </main>
     )

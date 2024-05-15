@@ -205,18 +205,18 @@ export default function AdministrationManagement() {
             {/* F1: CREATE AND EDIT DEPARTMENT */}
             <div>
                 <h3 className="text-base text-black font-semibold"> F1: Create and Edit Department </h3>
-                <p className="mt-7 text-base text-black font-palanquin"> Create Department </p>
-                <div className="flex flex-wrap items-center justify-start gap-6 mt-4">
+                <p className="mt-10 text-base text-black font-semibold font-palanquin"> Create Department </p>
+                <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, createDepartmentName: e.target.value})} placeholder="Enter Department name" className="functionsInput" />
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, createManagerName: e.target.value})} placeholder="Enter Manager name" className="functionsInput" />
                 </div>
-                <button disabled={isLoading} onClick={handleCreateDepartment} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleCreateDepartment} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Create
                 </button>
-                <p className="mt-7 text-base text-black font-palanquin"> Edit Department </p>
+                <p className="mt-10 text-base text-black font-semibold font-palanquin"> Edit Department </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, editSelectDepartment: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                             <SelectValue placeholder="Select Depatment" />
                         </SelectTrigger>
                         <SelectContent className="">
@@ -230,18 +230,18 @@ export default function AdministrationManagement() {
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, editNewManagerUsername: e.target.value})} placeholder="New Manager username" className="functionsInput" />
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, editNewDepartmentName: e.target.value})} placeholder="New Department name" className="functionsInput" />
                 </div>
-                <button disabled={isLoading} onClick={handleUpdateDepartment} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleUpdateDepartment} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Update
                 </button>
             </div>
             {/* F2: ASSIGN AND REMOVE MANAGER */}
             <div className="mt-10">
                 <h3 className="text-base text-black font-semibold"> F2 : Assign and Remove Manager </h3>
-                <p className="mt-7 text-base text-black font-palanquin"> Assign Manager </p>
+                <p className="mt-7 text-base text-black font-semibold font-palanquin"> Assign Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-4">
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, assignUsername: e.target.value})} placeholder="Enter username" className="functionsInput" />
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, assignSelectManager : value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Manager" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -250,13 +250,13 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                 </div>
-                <button disabled={isLoading} onClick={handleAssignManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleAssignManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Assign
                 </button>
-                <p className="mt-7 text-base text-black font-palanquin"> Remove Manager </p>
-                <div className="flex flex-wrap items-center justify-start gap-6 mt-4">
+                <p className="mt-7 text-base text-black font-semibold font-palanquin"> Remove Manager </p>
+                <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, removeSelectManager : value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Manager" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -266,17 +266,17 @@ export default function AdministrationManagement() {
                     </Select>
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state,  removeUsername: e.target.value})} placeholder="Enter username" className="functionsInput" />
                 </div>
-                <button disabled={isLoading} onClick={handleRemoveManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleRemoveManager} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Remove
                 </button>
             </div>
             {/* F3: ASSIGN AND REMOVE FUNCTION AUTHORITY */}
             <div className="mt-10">
                 <h3 className="text-base text-black font-semibold"> F3: Assign and Remove Function Authority </h3>
-                <p className="mt-7 text-base text-black font-palanquin"> Assign Function Authority </p>
-                <div className="flex items-center justify-start gap-6 mt-4">
+                <p className="mt-10 text-base text-black font-semibold font-palanquin"> Assign Function Authority </p>
+                <div className="flex items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authoritySelectUsername: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Username" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -292,13 +292,13 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                 </div>
-                <button disabled={isLoading} onClick={handleAssignFunctionAuthority} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleAssignFunctionAuthority} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Assign
                 </button>
-                <p className="mt-7 text-base text-black font-palanquin"> Remove Function Authority </p>
-                <div className="flex items-center justify-start gap-6 mt-4">
+                <p className="mt-10 text-base text-black font-semibold font-palanquin"> Remove Function Authority </p>
+                <div className="flex items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authorityRemoveFunction: value})}>
-                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Function" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -306,7 +306,7 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authorityRemoveUsername: value})}>
-                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Username" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -314,7 +314,7 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                 </div>
-                <button disabled={isLoading} onClick={handleRemoveFunctionAuthority} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleRemoveFunctionAuthority} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Remove
                 </button>
             </div>
@@ -332,7 +332,7 @@ export default function AdministrationManagement() {
                 {/* TODO: the hero section can have around 7 images or more. we can delete one current image and put a new image. that's what we do here. */}
                 {/* FAKE FEATURED IMAGE */}
                 <Image src={FeaturedImage} alt="featured-image" width={180} height={130} className="rounded-sm mt-4" />
-                <button disabled={isLoading} onClick={handleHeroAddPage} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2.5 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleHeroAddPage} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2.5 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Add Page
                 </button>
                 <p className="mt-7 text-base text-black font-palanquin"> Hero section page list </p>
@@ -347,7 +347,7 @@ export default function AdministrationManagement() {
                         <Checkbox  checked={state.heroRemovePage === "page2"} onChange={() => setState({...state, heroRemovePage: "page2"})} className="w-4 h-4 rounded-[4px]" />
                     </button>
                 </div>
-                <button disabled={isLoading} onClick={handleRemoveHeroSectionPage} className="bg-navy mt-8 w-[140px] h-auto px-4 py-2.5 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleRemoveHeroSectionPage} className="bg-navy mt-8 w-[140px] h-auto px-4 py-2.5 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                     Remove Page
                 </button>
             </div>

@@ -88,7 +88,7 @@ export default function LegislationManagement({history, termsAndConditions} : Pr
                     <Table className="border border-gray-300">
                         <TableHeader>
                             <TableRow className="text-base font-medium">
-                                <TableHead className="text-start w-[150px]"> Date </TableHead>
+                                <TableHead className="text-start md:w-[150px]"> Date </TableHead>
                                 <TableHead className="text-center"> Manager </TableHead>
                                 <TableHead className="text-center"> Article </TableHead>
                                 <TableHead className="text-center"> Reason </TableHead>
@@ -128,7 +128,7 @@ export default function LegislationManagement({history, termsAndConditions} : Pr
                         )
                     })}
                 </div>
-                <button disabled={isLoading} onClick={handleUpdateTermsAndConditions} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+                <button disabled={isLoading} onClick={handleUpdateTermsAndConditions} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white disabled:cursor-not-allowed">
                     Update
                 </button>
             </div>

@@ -132,8 +132,7 @@ export default function BlogCatagoryManagement() {
         <section>
             {/* F7: APPROVE OR REJECT BLOG TO CATAGORY */}
             <div>
-                <h3 className="text-base text-black font-semibold"> F7: Approve Blog to Category </h3>
-                <p className="mt-7 text-base text-black font-palanquin"> Approve Waitlist </p>
+                <h3 className="text-base text-black font-semibold"> F7: Approve or Reject Blog to Category </h3>
                 {/* TODO: FAKE DATA */}
                 <ApproveReject list={BLOG_CATAGORY_APPROVAL_LIST} handleApprove={handleApproveBlogCatagory} handleReject={handleRejectBlogCatagory} isLoading={isLoading}/>
             </div>
@@ -159,7 +158,7 @@ export default function BlogCatagoryManagement() {
             <div className="mt-14">
                 <h3 className="text-base text-black font-semibold"> F9: Create new sub category </h3>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, selectParantCatagory : value})}>
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select parent category" />
                     </SelectTrigger>
                     <SelectContent className="">
@@ -169,7 +168,7 @@ export default function BlogCatagoryManagement() {
                 <p className="mt-7 text-base text-black font-palanquin"> Category name </p>
                 <input type="text" disabled={isLoading} onChange={(e) => setState({...state, subCatagoryName: e.target.value})} placeholder="catergoy name" className="functionsInput mt-4" />
                 <p className="mt-7 text-base text-black font-palanquin"> Description </p>
-                <textarea disabled={isLoading} onChange={(e) => setState({...state, subCatagoryDescription: e.target.value})} className="w-[300px] h-[120px] mt-4 bg-button border border-gray-400 rounded-l-md px-4 py-2.5 text-sm text-black focus-visible:outline-none" />
+                <textarea disabled={isLoading} onChange={(e) => setState({...state, subCatagoryDescription: e.target.value})} className="w-[300px] h-[120px] mt-4 bg-button disabled:cursor-not-allowed border border-gray-400 rounded-l-md px-4 py-2.5 text-sm text-black focus-visible:outline-none" />
                 <p className="mt-7 text-base text-black font-palanquin"> Select pages to be included in the sub category </p>
                 <div className="w-[260px] h-[250px] mt-6 border border-gray-400 overflow-y-scroll overflow-x-hidden rounded-md px-8 py-3 focus:outline-none">
                     {/* TODO: FAKE PAGES FOR NOW , ALL THE PAGES THAT THE USER HAS CREATED SHOULD BE PLACED HERE */}
@@ -196,7 +195,7 @@ export default function BlogCatagoryManagement() {
                 <p className="mt-10 text-base text-black font-palanquin"> Manager username </p>
                 <input type="text" disabled={isLoading} onChange={(e) => setState({...state, subCatagoryManagerUsername: e.target.value})} placeholder="Manager username" className="functionsInput mt-4" />
             </div>
-            <button disabled={isLoading} onClick={handleCreateSubCategory} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-emerald-50 text-sm text-white">
+            <button disabled={isLoading} onClick={handleCreateSubCategory} className="bg-navy mt-8 w-[100px] h-auto px-4 py-2 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-sm text-white">
                 Create
             </button>
         </section>

@@ -368,6 +368,10 @@ export enum FOLLOW_STATE {
     following = "following",
     followers = "followers"
 }
+export enum MemberPositionType {
+    coordinator = "coordinator",
+    volunteer = "volunteer"
+}
 export const PREVIEW_BUTTON_DATA = "preview"
 
 export const BUTTON_ATTRIBUTE_NAME = "data-button-data"
