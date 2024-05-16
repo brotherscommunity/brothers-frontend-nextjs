@@ -1,7 +1,8 @@
 import Pagination from "@/Components/Main/Pagination"
 import PostList from "@/Components/Main/Post/PostList"
 import Catagory from "@/Components/Small Pieces/Catagory"
-import Comment from "@/Components/Small Pieces/Comment"
+import CommentForm from "@/Components/Small Pieces/CommentForm"
+import CommentList from "@/Components/Small Pieces/CommentList"
 import FollowersProfile from "@/Components/Small Pieces/FollowersProfile"
 import List from "@/Components/Small Pieces/List"
 import TopPageHeader from "@/Components/Small Pieces/TopPageHeader"
@@ -15,7 +16,65 @@ interface BlogCatagoryDetailsProps {
 export default async function page({params} : BlogCatagoryDetailsProps) {
 
     const blogCatagoryName = params.name.replace("_", " ")
-    //TODO: Make an HTTP request to fetch details of the Blog Catagory. the endpoint that does this task should recieve the name of the catagory as a parameter and query the Catagory table.
+    //TODO: Make an HTTP request to fetch details of the Blog Catagory including it's comments. the endpoint that does this task should recieve the name of the catagory as a parameter and query the Catagory table.
+    // FAKE DATA
+    const comments = [
+        {
+            id: 3,
+            content: "Egbon, I'm so glad I stumbled on this blog! I've been searching for the perfect Osun Osogbo festival outfit inspiration and your post on 'Top 10 Ankara Styles to Rock at Osun Osogbo' is a lifesaver! I'm definitely trying out the 5th style with the yellow and blue combo.",
+            blogCategoryId: 5,
+            userId: '3',
+            parentId: null,
+            createdAt: '2023-02-20 14:30:45',
+            likes: 12,
+            dislikes: 1,
+            comments: 1,
+            user: {
+                avatar: "",
+                firstName: "Abrsh",
+                lastName: "Jhon",
+                email: "abrsh4@gmail.com",
+                sex: "male",
+                city: "addis ababa",
+                userName: "abrhs_jhon",
+                birthDate: "2/02/2000",
+                telegramUsername: "abrsh",
+                languageSpoken: ["Amharic", "English"],
+                languagesWishToLearn: ["Japaneese", "Haitian"]
+            },
+        },
+        {
+            id: 7,
+            content: "Aww, thank you so much! I'm glad I could help with your Osun Osogbo festival prep. You're going to rock that Ankara style! Don't forget to share your festival photos with us",
+            blogCategoryId: 5,
+            userId: '10',
+            parentId: 3,
+            createdAt: '2023-02-23 14:30:45',
+            likes: 2,
+            dislikes: 0,
+            comments: 0,
+            parent: {
+                user: {
+                    firstName: "Abrsh",
+                    lastName: "Jhon",
+                    userName: "abrhs_jhon"
+                }
+            },
+            user: {
+                avatar: "",
+                firstName: "Nadia",
+                lastName: "Kumar",
+                email: "nadia.kumar23@yahoo.com",
+                sex: "female",
+                city: "Mumbai",
+                userName: "nadia_kumar23",
+                birthDate: "12/15/1995",
+                telegramUsername: "nadia_kumar",
+                languageSpoken: ["Hindi", "English", "Marathi"],
+                languagesWishToLearn: ["Spanish", "French", "Mandarin"]
+            }
+        }
+    ]
     const catagoryPath = ["World", "Continets", "Africa", "Nigeria", "Nigerian Festivals"]
 
     return (
@@ -66,7 +125,9 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
                 </div>
             </div>
             <div className="mt-5">
-                <Comment blogCatagoryName={blogCatagoryName} />
+                {/* TODO: Fake blog category id */}
+                <CommentForm parentId={null} blogCategoryId={2} />
+                <CommentList comments={comments} />
             </div>
         </main>
     )

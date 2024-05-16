@@ -4,6 +4,7 @@ import { useState } from "react"
 import ApproveReject from "../Small Pieces/ApproveReject"
 
 export type USERINFO = {
+    avatar?: string,
     firstName: string,
     lastName: string,
     email: string,

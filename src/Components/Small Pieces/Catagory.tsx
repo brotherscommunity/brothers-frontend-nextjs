@@ -54,7 +54,7 @@ export default function Catagory({name, followers, members, posts, catagoryPath,
                     </button>
                     {catagoryPath.map((catagory, index) => {
                         return (
-                            <button onClick={handleCatagoryClick} className="text-navy text-sm font-semibold flex items-center">
+                            <button key={index} onClick={handleCatagoryClick} className="text-navy text-sm font-semibold flex items-center">
                                 <p> {catagory} </p>
                                 {index !== catagoryPath.length - 1 && <span> 
                                     <FaAngleRight className="w-4 h-4 text-navy" />
@@ -63,7 +63,7 @@ export default function Catagory({name, followers, members, posts, catagoryPath,
                         )
                     })}
                 </div>
-                <button onClick={handleJoin} className="bg-navy w-[100px] h-auto text-white text-sm px-6 py-2 rounded-md focus-visible:outline-none">
+                <button onClick={handleJoin} className="border border-navy w-[100px] h-auto text-navy text-sm font-semibold px-6 py-2 rounded-md focus-visible:outline-none">
                     {isJoining ? <Spinner loading={isJoining} /> : "Join"}
                 </button>
             </div>

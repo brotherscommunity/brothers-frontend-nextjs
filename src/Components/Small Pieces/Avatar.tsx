@@ -9,11 +9,12 @@ interface AvatarProps {
     height?: string,
     iconWidth?: string,
     iconHeight?: string,
-    closePopUp?: boolean
+    closePopUp?: boolean,
+    navigateToProfile?: boolean,
     setOpenPopUp?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Avatar({width, height, iconWidth, iconHeight, closePopUp, setOpenPopUp} :  AvatarProps) {
+export default function Avatar({width, height, iconWidth, iconHeight, closePopUp, setOpenPopUp, navigateToProfile=false} :  AvatarProps) {
 
     const {push} = useRouter()
 
@@ -21,6 +22,10 @@ export default function Avatar({width, height, iconWidth, iconHeight, closePopUp
         // Close The pop-up before redirecting to the profile page
         if(closePopUp && setOpenPopUp){
             setOpenPopUp(false)
+            push("/profile")
+        }
+
+        if(navigateToProfile){
             push("/profile")
         }
     }

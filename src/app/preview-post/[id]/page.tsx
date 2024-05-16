@@ -6,7 +6,7 @@ import DisplayContent from "@/Components/Main/Post/DisplayContent"
 import PostFooter from "@/Components/Small Pieces/PostFooter"
 import { formatNumber } from "@/utils"
 import Link from "next/link"
-import Comment from "@/Components/Small Pieces/Comment"
+import Comment from "@/Components/Small Pieces/CommentForm"
 import Decide from "@/Components/Small Pieces/Decide"
 
 interface Props {

@@ -23,7 +23,7 @@ export default async function page() {
                     return (
                         <div key={term.title} className="flex flex-col justify-start mt-6 text-black font-palanquin">
                             <h4 className="text-lg font-semibold"> {index + 1}. {term.title} </h4>
-                            <p className="mt-3 text-base max-lg:break-all"> {term.description} </p>
+                            <p className="mt-3 text-base"> {term.description} </p>
                             {term.additional_info && <p className="mt-3"> {term.additional_info} </p>}
                         </div>
                     )

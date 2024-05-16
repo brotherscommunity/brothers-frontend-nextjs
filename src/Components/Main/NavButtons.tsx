@@ -50,7 +50,7 @@ export default function NavButtons(){
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} max-sm:ml-5 sm:ml-10 md:ml-16 lg:ml-20 xl:ml-20 text-sm`}>
+        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} text-sm`}>
             {isAuthenticated ? (
                 <Popover>
                     <PopoverTrigger>
@@ -72,16 +72,17 @@ export default function NavButtons(){
                     }
                 </Popover>
             ) : (
-                <Link href="/register" className="max-lg:hidden w-[130px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> Get Started </Link>
+                <Link href="/register" className="max-lg:hidden w-[110px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold"> Get Started </Link>
             ) }
             {isAuthenticated && data ? (
-                <div className="flex items-center gap-4">
-                    {/* TODO: Create a route for Notifications */}
+                <div className="flex items-center max-sm:gap-2 sm:gap-4">
                     <Link href={"/notifications"} className="relative">
                         <IoMdNotifications className="w-7 h-7 text-navy" />
                         <div className="absolute right-1.5 top-0 rounded-full w-2 h-2 bg-orangeRed" />
                     </Link>
-                    <Avatar />
+                    <div className="hover:cursor-pointer">
+                        <Avatar navigateToProfile={true} />
+                    </div>
                     <div className="flex gap-2">
                         <h3 className="text-base text-black font-semibold"> {data.firstName} </h3>
                         <Popover>

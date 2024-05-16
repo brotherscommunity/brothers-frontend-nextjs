@@ -83,14 +83,14 @@ export default function NotificationItem({topic, message, from, created_at, read
 
     return (
         <div onMouseOver={() => setShowOptions(true)} onMouseLeave={() => setShowOptions(false)} className="bg-button mt-1.5 w-full border-none rounded-md focus:outline-none max-sm:px-3 sm:px-6 pt-4 max-sm:pb-5 sm:pb-3">
-            <div className="flex flex-wrap items-start gap-2">
+            <div className="flex sm:flex-wrap items-start gap-2">
                 <Checkbox checked={selectAll ? selectAll : checkState } onClick={() => setCheckState((state) => !state)} className="w-4 h-4 rounded-[4px] mt-1.5 mr-3 checked:text-blue-600" />
-                <h3 className="text-base text-navy font-semibold font-palanquin"> {topic} </h3> -
-                <p className="text-[15px] text-black font-palanquin"> {message} </p>
+                <h3 className="max-sm:text-sm sm:text-base text-navy font-semibold font-palanquin"> {topic} </h3> -
+                <p className="max-sm:text-sm sm:text-[15px] text-black font-palanquin"> {message} </p>
             </div>
-            {showOptions && <div className="flex items-start justify-between mt-1">
-                <p className="text-sm text-navy font-semibold mt-2 ml-9"> From: {from} </p>
-                <div className="flex items-center justify-end gap-3">
+            {showOptions && <div className="flex items-center justify-between mt-1">
+                <p className="max-sm:text-xs sm:text-sm text-navy font-semibold opacity-80 mt-2 ml-9"> From: {from} </p>
+                <div className="flex items-center justify-end gap-3 mt-1.5">
                     <button disabled={isProcessing} onClick={() => handleDelete()}>
                         <FaRegTrashAlt className="w-4 h-4" />
                     </button>

@@ -47,12 +47,9 @@ export default function ProfileHeader({children}: ProfileHeaderProps){
                         })}
                     </div>
                 </div>
-                <section className="mt-5">
+                <section className="mt-5 mb-16">
                     {children}
                 </section>
-                <div className="mb-24">
-                    <Ad title="Google Ad Spot" buttonLabel="View" />
-                </div>
             </div>
         </main>
     )
