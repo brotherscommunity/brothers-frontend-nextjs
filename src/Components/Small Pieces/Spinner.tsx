@@ -9,7 +9,7 @@ interface SpinnerProps {
 
 export default function Spinner({color, loading, size=14} : SpinnerProps) {
     return (
-        <div>
+        <span>
             <ClipLoader
                 color={color || "#ffffff"}
                 loading={loading}
@@ -18,6 +18,6 @@ export default function Spinner({color, loading, size=14} : SpinnerProps) {
                 data-testid="loader"
                 className="flex items-center justify-center"
             />
-        </div>
+        </span>
     )
 }

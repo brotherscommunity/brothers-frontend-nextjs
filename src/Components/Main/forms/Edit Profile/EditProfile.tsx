@@ -78,7 +78,7 @@ export default function EditProfile({userData} : EditProfileProps) {
                     render={({ field }) => (
                         <FormItem>
                         <FormControl>
-                            <AvatarUploader firstName={userData?.firstName!} lastName={userData?.lastName!} city={userData?.city!} country={userData?.country!} fieldchange={field.onChange} mediaUrl="/Images/profile-uploader.png" />
+                            <AvatarUploader firstName={userData?.firstName!} lastName={userData?.lastName!} city={userData?.city!} country={userData?.country!} fieldchange={field.onChange} mediaUrl="/Images/profile-uploader.png" username={userData?.userName!} />
                         </FormControl>
                         <FormMessage className='text-sm text-red-500' />
                         </FormItem>
@@ -425,10 +425,10 @@ export default function EditProfile({userData} : EditProfileProps) {
                             </div>
                         </section>
                     </div>
-                    <span className="flex justify-center mt-20">
+                    <div className="flex justify-center mt-20">
                         <button type="submit" className="bg-navy w-[180px] h-auto text-white text-base rounded-md px-6 py-2.5"> 
                         {isLoading ? <Spinner loading={isLoading} /> : "Save Changes"} </button>
-                    </span>
+                    </div>
                 </form>
             </Form>
         </section>

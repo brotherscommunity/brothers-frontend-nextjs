@@ -31,7 +31,7 @@ export default function VisitorsContent({stats} : VisitorsTabelProps) {
                     <TableRow>
                         {Object.values(stats).map((value) => {
                             return (
-                                <TableCell key={value} className="text-center"> {value} </TableCell>
+                                <TableCell key={value} className="text-center border border-gray-300"> {value} </TableCell>
                             )
                         })}
                     </TableRow>

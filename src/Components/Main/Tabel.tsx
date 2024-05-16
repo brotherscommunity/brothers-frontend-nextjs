@@ -32,10 +32,10 @@ export default function Tabel({referals} : TableProbs) {
                     {referals.map((referal) => {
                         return (
                             <TableRow key={referal.id}>
-                                <TableCell className="font-medium"> {referal.id} </TableCell>
-                                <TableCell> {referal.name} </TableCell>
-                                <TableCell> {referal.joinedDate} </TableCell>
-                                <TableCell className="text-right"> {referal.country} </TableCell>
+                                <TableCell className="font-medium border border-gray-300"> {referal.id} </TableCell>
+                                <TableCell className="border border-gray-300"> {referal.name} </TableCell>
+                                <TableCell className="border border-gray-300"> {referal.joinedDate} </TableCell>
+                                <TableCell className="text-right border border-gray-300"> {referal.country} </TableCell>
                             </TableRow>
                         )
                     })}

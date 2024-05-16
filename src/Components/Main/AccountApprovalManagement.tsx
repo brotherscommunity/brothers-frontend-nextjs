@@ -1,19 +1,32 @@
 'use client'
 
-import Pagination from "./Pagination"
 import { useState } from "react"
 import ApproveReject from "../Small Pieces/ApproveReject"
 
+export type USERINFO = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    sex: string,
+    city: string,
+    userName: string,
+    birthDate: string,
+    telegramUsername: string,
+    languageSpoken: string[],
+    languagesWishToLearn: string[]
+}
 interface Props {
-    accountsLits: string[]
+    accountsLits: USERINFO[]
 }
 
 export default function AccountApprovalManagement({accountsLits} : Props) {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [openDetails, setOpenDetails] = useState<number | null>(null)
 
 
-    async function handleApproveAccount(name: string){
+    async function handleApproveAccount(username: string | null){
+        if(!username) return
         //TODO: Make an HTTP request to approve the user's account
         setIsLoading(true)
         try{
@@ -28,7 +41,8 @@ export default function AccountApprovalManagement({accountsLits} : Props) {
         
     }
 
-    async function handleRejectAccount(name: string) {
+    async function handleRejectAccount(username: string | null) {
+        if(!username) return
         setIsLoading(true)
         //TODO: Make an HTTP request to Reject the account
         try{
@@ -42,16 +56,12 @@ export default function AccountApprovalManagement({accountsLits} : Props) {
         }
     }
 
-    function handleDetails(name: string){
-        //TODO: handle the details
-    }
-
     return (
         <section>
             <div className="mt-7">
                 <h3 className="text-base text-black font-semibold"> F16: Approve and Reject Profile </h3>
                 <div className="mt-6">
-                    <ApproveReject list={accountsLits} handleApprove={handleApproveAccount} handleReject={handleRejectAccount} isLoading={isLoading} details={true} handleDetails={handleDetails} />
+                    <ApproveReject list={accountsLits} handleApprove={handleApproveAccount} handleReject={handleRejectAccount} isLoading={isLoading} details={true} setOpenDetails={setOpenDetails} openDetails={openDetails} />
                 </div>
             </div>
         </section>

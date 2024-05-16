@@ -29,7 +29,45 @@ export default function page() {
     ]
     //TODO: FETCH ALL THE ACCOUNTS LIST THAT NEED TO BE APPROVED OR REJECTED
     // FAKE DATA
-    const accountsList = ["Jhon Albert", "Smith david"]
+    const accountsList = [
+        {   
+            firstName: "Joe",
+            lastName: "Shmoe",
+            email: "joeshmoe123@gmail.com",
+            sex: "male",
+            city: "cape town",
+            userName: "joe_shmoe",
+            birthDate: "2/03/2000",
+            telegramUsername: "joe_shmoe",
+            languageSpoken: [
+                "English",
+                "French"
+            ],
+            languagesWishToLearn:  [
+                "Spanish",
+                "Korean"
+            ]
+        }
+        , 
+        {
+            firstName: "Joe",
+            lastName: "Shmoe",
+            email: "joeshmoe123@gmail.com",
+            sex: "male",
+            city: "lagos",
+            userName: "joe_shmoe",
+            birthDate: "2/03/2000",
+            telegramUsername: "joe_shmoe",
+            languageSpoken: [
+                "English",
+                "French"
+            ],
+            languagesWishToLearn:  [
+                "Spanish",
+                "Korean"
+            ]
+        }
+    ]
     //TODO: FETCH THE LEGAL TERMS UPDATE HISTORY
     // FAKE DATA
     const updateHistory = [

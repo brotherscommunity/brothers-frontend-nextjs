@@ -7,8 +7,10 @@ export default async function page() {
         firstName: "Abebe",
         lastName: "Balcha",
         city: "Addis Ababa",
-        country: "Ethiopia"
+        country: "Ethiopia",
+        userName: "abebe1234"
     }
+    
     return (
         <main className="max-md:px-5 md:px-7 xl:px-20 mt-20 mb-28">
             <EditProfile userData={userData} />

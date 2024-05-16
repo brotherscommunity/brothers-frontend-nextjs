@@ -2,9 +2,7 @@
 
 import { BLOG_CATAGORY_APPROVAL_LIST } from "@/constants"
 import { useState } from "react"
-import { FaCheckCircle } from "react-icons/fa"
 import { MdCancel } from "react-icons/md"
-import Pagination from "./Pagination"
 import { Select, SelectTrigger, SelectContent, SelectValue, SelectItem } from "../ui/select"
 import { Checkbox } from "../ui/checkbox"
 import toast from "react-hot-toast"
@@ -36,7 +34,8 @@ export default function BlogCatagoryManagement() {
     
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    async function handleApproveBlogCatagory(name: string) {
+    async function handleApproveBlogCatagory(name: string | null) {
+        if(!name) return
         // TODO: Make an HTTP request to the endpoint the approves this blog catagory
         setIsLoading(true)
         try{
@@ -50,7 +49,8 @@ export default function BlogCatagoryManagement() {
         }
     }
 
-    async function handleRejectBlogCatagory(name: string) {
+    async function handleRejectBlogCatagory(name: string | null) {
+        if(!name) return
         // TODO: Make an HTTP request to the endpoint the approves this blog catagory
         setIsLoading(true)
         try{

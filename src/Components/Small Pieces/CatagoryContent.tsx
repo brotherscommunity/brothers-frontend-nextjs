@@ -64,10 +64,10 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                     {contents.map((element) => {
                         return (
                             <TableRow key={element.id}>
-                                <TableCell> {element.id} </TableCell>
-                                <TableCell> {element.type} </TableCell>
-                                <TableCell> {element.name} </TableCell>
-                                <TableCell className="text-right"> {element.publishedDate} </TableCell>
+                                <TableCell className="border border-gray-300"> {element.id} </TableCell>
+                                <TableCell className="border border-gray-300"> {element.type} </TableCell>
+                                <TableCell className="border border-gray-300"> {element.name} </TableCell>
+                                <TableCell className="border border-gray-300 text-right"> {element.publishedDate} </TableCell>
                             </TableRow>
                         )
                     })}

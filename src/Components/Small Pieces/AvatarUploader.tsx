@@ -10,10 +10,11 @@ interface AvatarUploaderProps{
     firstName: string,
     lastName: string,
     country: string,
+    username: string,
     city: string
 }
 
-export default function AvatarUploader({fieldchange, mediaUrl, firstName, lastName, country, city}: AvatarUploaderProps) {
+export default function AvatarUploader({fieldchange, mediaUrl, firstName, lastName, username, country, city}: AvatarUploaderProps) {
     const [file, setFile] = useState<File[]>([])
     const [fileUrl , setFileUrl] = useState(mediaUrl)
     const [isImageSelected, setIsImageSelected] = useState<boolean>(false)
@@ -42,7 +43,8 @@ export default function AvatarUploader({fieldchange, mediaUrl, firstName, lastNa
             ) : <Avatar width="w-[75px]" height="h-[75px]" iconWidth="w-[45px]" iconHeight="h-[35px]" />}
             <div className="flex flex-col justify-start gap-4">
                 <h2 className="text-2xl text-black font-semibold"> {firstName} {lastName}</h2>
-                <p className="text-sm"> {city} , {country} </p>
+                <p className="text-sm text-stone-500"> @{username} </p>
+                <p className="text-sm text-stone-500"> {city} , {country} </p>
                 <button {...getRootProps()} className="bg-orangeRed mt-3 px-3 py-2 text-white text-sm rounded-md"> Change Avatar </button>
             </div>
             <input {...getInputProps()} className='cursor-pointer ' />
