@@ -54,14 +54,14 @@ export default function NavButtons(){
             {isAuthenticated ? (
                 <Popover>
                     <PopoverTrigger>
-                        <div className="max-lg:hidden w-[135px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold flex items-center gap-3">
+                        <div onClick={() => setOpenCreatePost(true)} className="max-lg:hidden w-[135px] h-auto border border-navy px-3 py-2 text-sm text-navy rounded-md focus-visible:outline-none font-semibold flex items-center gap-3">
                             <p> Create Post </p>
-                            <button onClick={() => setOpenCreatePost(true)}>
+                            <div>
                                 <MdKeyboardArrowDown className="w-4 h-4 text-navy" />
-                            </button>
+                            </div>
                         </div>
                     </PopoverTrigger>
-                    {openCreatePost && <PopoverContent className="mt-2 bg-white border-none rounded-md px-4 py-3 flex flex-col items-end gap-1">
+                    {openCreatePost && <PopoverContent className="mt-2 w-[180px] h-auto bg-white border-none rounded-md px-4 py-3 flex flex-col items-start gap-1">
                         <button onClick={() => handleCreatePostClick("/create-post")} className="hover:bg-blue-300 hover:bg-opacity-60 px-4 py-2 rounded-md text-sm text-black font-palanquin">
                             Create Blog Post
                         </button>

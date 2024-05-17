@@ -29,7 +29,7 @@ export default function FollowersAndFollowing({followers, following} : Props) {
         <main className='mt-10 mb-20'>
             {/* TO prevent content shifting */}
             <header className="w-full h-[50px]">
-                {data?.followers && <div className="flex items-center justify-between pr-5">
+                {data?.followers && <div className="flex items-center max-sm:justify-between max-sm:pr-5 sm:gap-16 md:gap-28">
                     <div>
                         <button onClick={() => setState(FOLLOW_STATE.followers)} className={`max-sm:text-sm sm:text-base md:text-xl ${state === FOLLOW_STATE.followers ? "text-blue-600" : "text-black"} pl-8 font-semibold focus-visible:outline-none`}>
                             {data?.followers} Followers

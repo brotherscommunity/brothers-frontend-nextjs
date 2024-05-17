@@ -21,9 +21,7 @@ export default function Home({searchParams} : Props) {
   const catagoryPath = ["World", "Continets", "Africa", "Nigeria", "Nigerian Festivals"]
   return (
     <main className="max-md:mx-5 md:mx-7 xl:mx-20">
-        <div className="lg:mr-6">
-          <TopPageHeader pageCode="PG-32" pageName="Home Page" pageDescription="Our Home" />
-        </div>
+        <TopPageHeader pageCode="PG-32" pageName="Home Page" pageDescription="Our Home" />
         <Header />
         <div className="xl:mx-7 max-md:mt-8 md:mt-10 lg:mt-20 mb-28">
           <div className="w-full -ml-2 px-10 max-sm:py-3 sm:py-7 md:py-10 bg-button rounded-xl">
