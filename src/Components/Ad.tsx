@@ -1,5 +1,4 @@
 import { MdOutlineClear } from "react-icons/md";
-// import ad from "/public/Ad.png"
 
 interface AdProps {
     title: string,

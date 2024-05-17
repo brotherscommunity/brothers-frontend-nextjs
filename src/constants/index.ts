@@ -1,6 +1,6 @@
-import slide1 from "/public/slides/slide1.jpg"
-import slide2 from "/public/slides/slide2.png"
-import slide3 from "/public/slides/slide3.png"
+import slide1 from "../../public/slides/slide1.jpg"
+import slide2 from "../../public/slides/slide2.png"
+import slide3 from "../../public/slides/slide3.png"
 
 export const Languages = [
     'English',

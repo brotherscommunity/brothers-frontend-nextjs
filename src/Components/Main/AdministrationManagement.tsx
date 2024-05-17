@@ -1,9 +1,8 @@
 'use client'
 
 import { Checkbox } from "@/Components/ui/checkbox"
-import FeaturedImage from "/public/blogPostHeader.jpg"
+import FeaturedImage from "./../../../public/blogPostHeader.jpg"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem  } from "@/Components/ui/select"
-import { DEPARTMENTS } from "@/constants"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
 import Image from "next/image"

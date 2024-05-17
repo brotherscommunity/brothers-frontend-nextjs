@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import postImage from "/public/postImage.png"
-import VideoImage from "/public/videoImage.jpg"
+import postImage from "../../../../public/postImage.png"
+import VideoImage from "../../../../public/videoImage.jpg"
 import { AiOutlineLike, AiOutlineDislike, AiOutlineComment } from "react-icons/ai";
 import { IoStatsChartOutline } from "react-icons/io5";
 import { FaRegTrashAlt } from "react-icons/fa";
