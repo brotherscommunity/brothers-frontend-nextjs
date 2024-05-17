@@ -50,7 +50,7 @@ export default function References({fieldchange} : ReferencesProps) {
             </div>
             {references.length !== 3 && <span className="flex flex-col items-start mt-10">
                 <input value={inputControlledValue} onChange={(e) => setInputControlledValue(e.target.value)} type="text" placeholder="Add links for citation" className="max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] border border-gray-400 px-4 py-2.5 bg-button focus-visible:outline-none rounded-md" />
-                <button type="button" onClick={handleAddNewReference} className="bg-navy rounded-md w-[150px] focus-visible:outline-none text-base text-white px-4 py-2 mt-8">
+                <button type="button" onClick={handleAddNewReference} className="bg-navy rounded-md w-[150px] focus-visible:outline-none max-sm:text-sm sm:text-base text-white px-4 py-2 mt-8">
                     Add Citation
                 </button>
             </span>}

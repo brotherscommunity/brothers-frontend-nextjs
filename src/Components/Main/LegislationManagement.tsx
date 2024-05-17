@@ -89,9 +89,9 @@ export default function LegislationManagement({history, termsAndConditions} : Pr
                         <TableHeader>
                             <TableRow className="text-base font-medium">
                                 <TableHead className="text-start md:w-[150px]"> Date </TableHead>
-                                <TableHead className="text-center"> Manager </TableHead>
-                                <TableHead className="text-center"> Article </TableHead>
-                                <TableHead className="text-center"> Reason </TableHead>
+                                <TableHead className="text-center max-sm:text-sm"> Manager </TableHead>
+                                <TableHead className="text-center max-sm:text-sm"> Article </TableHead>
+                                <TableHead className="text-center max-sm:text-sm"> Reason </TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>

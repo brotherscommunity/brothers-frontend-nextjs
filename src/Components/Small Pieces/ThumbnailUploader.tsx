@@ -43,7 +43,7 @@ export default function ThumbnailUploader({fieldchange, title, mediaUrl}: Thumbn
                 </div>
             }
             <div className="mt-6">
-                <button type="button" {...getRootProps()} className="bg-navy px-6 py-2.5 text-white text-base rounded-md"> Upload / Change Featured Image </button>
+                <button type="button" {...getRootProps()} className="bg-navy px-6 py-2.5 text-white max-sm:text-sm text-base rounded-md"> Upload / Change Featured Image </button>
             </div>
             <input {...getInputProps()} className='cursor-pointer ' />
         </div>

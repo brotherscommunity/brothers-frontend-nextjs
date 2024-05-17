@@ -90,7 +90,7 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
         <section>
             {/* F5: APPROVE AND DELETE BLOG CATAGORY */}
             <div>
-                <h3 className="text-base text-black font-semibold"> F5: Approve and Delete Blog Category </h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-7"> F5: Approve and Delete Blog Category </h3>
                 {/* TABLE */}
                 <div className="mt-7">
                     <Table className="border border-gray-300">
@@ -131,7 +131,7 @@ export default function BlogCatagoryGeneralManagement({blogCatagoryLists} : Prop
             </div>
             {/* F6: ASSIGN AND REMOVE BLOG CATAGORY MANGER */}
             <div className="max-sm:mt-14 sm:mt-7">
-                <h3 className="text-base text-black font-semibold"> F6: Assign and Remove Blog Category Manager</h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-7"> F6: Assign and Remove Blog Category Manager</h3>
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Assign Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <input type="text" disabled={isLoading} onChange={(e) => setManagerUsername(e.target.value)} placeholder="Enter username" className="functionsInput" />

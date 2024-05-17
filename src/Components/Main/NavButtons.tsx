@@ -84,14 +84,14 @@ export default function NavButtons(){
                         <Avatar navigateToProfile={true} />
                     </div>
                     <div className="flex gap-2">
-                        <h3 className="text-base text-black font-semibold"> {data.firstName} </h3>
+                        <h3 className="max-sm:hidden sm:block text-base text-black font-semibold"> {data.firstName} </h3>
                         <Popover>
-                            <PopoverTrigger>
+                            <PopoverTrigger className="max-sm:pr-3">
                                 <div onClick={() => setOpenPopUp(true)}>
                                     <IoIosArrowDown className="mt-2" />
                                 </div>
                             </PopoverTrigger>
-                            {openPopUp && <PopoverContent className="max-sm:w-[200px] sm:w-[250px] h-auto py-5 my-5 focus-visible:outline-none">
+                            {openPopUp && <PopoverContent className="max-sm:w-[200px] sm:w-[250px] h-auto max-sm:mr-4 py-5 my-5 focus-visible:outline-none">
                                     <div className="flex flex-col justify-start px-6">
                                         <Avatar closePopUp={true} setOpenPopUp={setOpenPopUp} />
                                         <div className="flex items-start gap-10 mt-4">
@@ -102,22 +102,22 @@ export default function NavButtons(){
                                     <hr className="border-t border-gray-400 w-full my-4" />
                                     {/* LINKS TO OTHER PAGES */}
                                     <div className="flex flex-col justify-start ml-4 gap-3 mt-3">
-                                        <span className="flex items-center gap-2">
+                                        <div className="flex items-center gap-2">
                                             <FiAnchor className="w-4 h-4" />
                                             <button onClick={() => handleNavigation("/functions")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> Functions </button>
-                                        </span>
-                                        <span className="flex items-center gap-2">
+                                        </div>
+                                        <div className="flex items-center gap-2">
                                             <GiLinkedRings className="w-4 h-4" />
                                             <button onClick={() => handleNavigation("/referals")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> My Referals </button>
-                                        </span>
-                                        <span className="flex items-center gap-2">
+                                        </div>
+                                        <div className="flex items-center gap-2">
                                             <MdOutlineContentCopy className="w-4 h-4" />
                                             <button onClick={() => handleNavigation("/my-pages")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> My Pages </button>
-                                        </span>
-                                        <span className="flex items-center gap-2">
+                                        </div>
+                                        <div className="flex items-center gap-2">
                                             <IoSettingsOutline className="w-4 h-4" />
                                             <button onClick={() => handleNavigation("/privacy-settings")} className="text-[15px] text-black font-palanquin hover:text-blue-600"> Privacy Setting </button>
-                                        </span>
+                                        </div>
                                     </div>
                                     <button className="max-sm:w-[100px] sm:w-[150px] flex justify-center items-center py-2.5 mx-6 mt-6 bg-navy text-sm text-white rounded-md">
                                         {isLoading ?

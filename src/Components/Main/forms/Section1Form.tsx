@@ -35,6 +35,19 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
     })
 
     function onSubmit(values: z.infer<typeof Section1FormSchema>){
+        // check if the user is atleast 15 years old
+        const birthdate = new Date(values.birthDate);
+        // get today's date
+        const today = new Date();
+        const age = today.getFullYear() - birthdate.getFullYear();
+        // compare if the user is at least 15 years old
+        const isAtLeast15 = age >= 15;
+        if(!isAtLeast15){
+            form.setError("birthDate", {
+                message: "You have to be at least 15 years old"
+            })
+            return
+        }
         // Check if comma is used to seprate each languages
         const LanguageSpokenComma = /,/.test(values.languagesSpoken)
         if(!LanguageSpokenComma){
@@ -79,8 +92,8 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                         control={form.control}
                         name="sex"
                         render={({ field }) => (
-                            <FormItem className="formContainer">
-                            <FormLabel className="formLabel"> 
+                            <FormItem className="formContainer xl:gap-7">
+                            <FormLabel className="formLabel xl:mt-5"> 
                             Sex
                             <span className="astrics"> * </span>
                             </FormLabel>
@@ -112,7 +125,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                             <FormControl>
                                 <div className="flex flex-col justify-start gap-2">
                                     <p className="text-xs"> use comma to separate each entries </p>
-                                    <input type="text" placeholder="English , French, German"  className="formInput" {...field}/> 
+                                    <input type="text" placeholder="English , French, German"  className="formInput mt-2" {...field}/> 
                                 </div>
                             </FormControl>
                             <FormMessage  className='text-sm text-red-500' />
@@ -134,7 +147,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                             <FormControl>
                                 <div className="flex flex-col justify-start gap-2">
                                     <p className="text-xs"> use comma to separate each entries </p>
-                                    <input type="text" placeholder="English , French, German" className="formInput" {...field}/> 
+                                    <input type="text" placeholder="English , French, German" className="formInput mt-2" {...field}/> 
                                 </div>
                             </FormControl>
                             <FormMessage className='text-sm text-red-500' />
@@ -146,7 +159,7 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                         control={form.control}
                         name="birthDate"
                         render={({ field }) => (
-                            <FormItem className="formContainer">
+                            <FormItem className="formContainer xl:mt-8">
                             <FormLabel className="formLabel"> 
                             Birth Date
                             <span className="astrics"> * </span>
@@ -159,9 +172,9 @@ export default function Section1Form({userData, setUserData, setFilledSection, s
                         )}
                         />
                     </div>
-                    <span className="mt-14 w-full flex justify-end">
+                    <div className="mt-14 max-sm:w-[260px] sm:w-[300px] md:w-[350px] lg:w-[380px] xl:w-full flex justify-end">
                         <button type="submit" className="formNextButton"> Next </button>
-                    </span>
+                    </div>
                 </form>
             </Form>
         </section>

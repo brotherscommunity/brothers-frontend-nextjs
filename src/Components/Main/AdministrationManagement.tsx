@@ -216,7 +216,7 @@ export default function AdministrationManagement() {
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Edit Department </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, editSelectDepartment: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                             <SelectValue placeholder="Select Depatment" />
                         </SelectTrigger>
                         <SelectContent className="">
@@ -241,7 +241,7 @@ export default function AdministrationManagement() {
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-4">
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, assignUsername: e.target.value})} placeholder="Enter username" className="functionsInput" />
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, assignSelectManager : value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-xs sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Manager" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -256,7 +256,7 @@ export default function AdministrationManagement() {
                 <p className="mt-7 text-base text-black font-semibold font-palanquin"> Remove Manager </p>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, removeSelectManager : value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-xs sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Manager" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -276,7 +276,7 @@ export default function AdministrationManagement() {
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Assign Function Authority </p>
                 <div className="flex items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authoritySelectUsername: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-xs sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Username" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -284,7 +284,7 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authoritySelectFunction: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-sm sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 rounded-md max-sm:text-xs sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Function" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -298,7 +298,7 @@ export default function AdministrationManagement() {
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Remove Function Authority </p>
                 <div className="flex items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authorityRemoveFunction: value})}>
-                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none max-sm:text-xs focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Function" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">
@@ -306,7 +306,7 @@ export default function AdministrationManagement() {
                         </SelectContent>
                     </Select>
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state,  authorityRemoveUsername: value})}>
-                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="w-[250px] bg-button border border-gray-400 rounded-md px-3 py-2.5 focus-visible:outline-none max-sm:text-xs focus-visible:ring-0 disabled:cursor-not-allowed focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Username" />
                         </SelectTrigger>
                         <SelectContent className="-pl-5">

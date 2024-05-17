@@ -10,6 +10,7 @@ import { USER } from "./Registrationform";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 interface Section3FormProps {
     userData: USER | undefined,
@@ -54,7 +55,7 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
 
     return (
         <section className='registrationFormContainer'>
-            <h2 className="text-navy text-xl text-center font-semibold"> Account Information </h2>
+            <h2 className="text-navy text-xl text-center font-semibold max-sm:pr-6"> Account Information </h2>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col items-center gap-3 mt-14">
                     <div className="flex flex-col gap-3">
@@ -105,22 +106,22 @@ export default function Section3Form({userData, setCurrentlySelected, setFilledS
                             </FormItem>
                         )}
                         />
-                        <span className="flex items-center gap-6 mt-8 xl:ml-12">
-                            <Checkbox onClick={() => setAcceptedTos((accepted) => !accepted)} className="rounded-full text-navy w-5 h-5" />
-                            <p className="text-base max-sm:w-[200px] sm:w-[250px] md:w-[300px] xl:w-[360px]"> I have read and accepted the terms and conditions of this community </p>
-                        </span>
+                        <div className="flex items-start gap-6 mt-8">
+                            <Checkbox onClick={() => setAcceptedTos((accepted) => !accepted)} className="rounded-full text-navy w-5 h-5 mt-1" />
+                            <p className="text-base max-sm:w-[200px] sm:w-[250px] md:w-[300px] xl:w-[360px] pr-3"> I have read and accepted <Link href={"/terms-and-conditions"} className="text-blue-600 mx-1"> the terms and conditions </Link> of this community </p>
+                        </div>
                     </div>
-                    <div className="mt-16 xl:px-20 flex items-center justify-center gap-28">
-                        <span>
+                    <div className="mt-10 xl:px-20 flex items-center justify-center max-sm:gap-10 sm:gap-28">
+                        <div>
                             <button type="button" onClick={handleBack} className="formBackButton">
                                 Back
                             </button>
-                        </span>
-                        <span>
+                        </div>
+                        <div>
                             <button type="submit" className="formNextButton">
                                 Done
                             </button>
-                        </span>
+                        </div>
                     </div>
                 </form>
             </Form>

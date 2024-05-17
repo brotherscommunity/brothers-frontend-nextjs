@@ -19,24 +19,24 @@ interface RankingTableProps {
 
 export default function RankingTable({rankData} : RankingTableProps) {
     return (
-        <section className='mt-16'>
+        <section className='max-sm:mt-10 sm:mt-16'>
             <Table className="border border-gray-300">
                 <TableHeader className="pb-3">
                     <TableRow className="text-base font-medium">
-                        <TableHead className="w-[100px]"> Rank </TableHead>
-                        <TableHead> Founder Name </TableHead>
-                        <TableHead> Country </TableHead>
-                        <TableHead className="text-right"> Date </TableHead>
+                        <TableHead className="max-sm:text-sm sm:w-[100px] md:w-[120x]"> Rank </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Founder Name </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Country </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Date </TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {rankData.map((data) => {
                         return (
                             <TableRow key={data.rank} className="mt-6">
-                                <TableCell className="font-medium"> {data.rank} </TableCell>
-                                <TableCell> {data.founderName} </TableCell>
-                                <TableCell> {data.country} </TableCell>
-                                <TableCell className="text-right"> {data.date} </TableCell>
+                                <TableCell className="border border-gray-300"> {data.rank} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {data.founderName} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {data.country} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {data.date} </TableCell>
                             </TableRow>
                         )
                     })}

@@ -9,7 +9,7 @@ interface SettingOptions {
 
 export default function SettingOptions({settings, data, handleClick} : SettingOptions) {
     return (
-        <div className="flex flex-wrap items-start justify-between max-sm:gap-7 sm:gap-14 md:gap-20 mt-7">
+        <div className="flex flex-wrap items-start justify-between max-sm:gap-10 sm:gap-14 md:gap-20 mt-7">
             {settings.map((setting) => {
                 return (
                     <div key={setting.value} className="mt-5">

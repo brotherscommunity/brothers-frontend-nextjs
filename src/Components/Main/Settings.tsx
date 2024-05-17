@@ -94,7 +94,7 @@ export default function Settings(){
                 <SettingOptions settings={PUBLIC_DATA_SETTINGS} data={publicData} handleClick={handlePublicDataClick} />
             </div>
             <div className="mt-24 w-full flex items-center justify-center">
-                <button onClick={handleSaveChanges} className="bg-navy w-[200px] h-auto px-7 py-3 rounded-md text-base text-white focus-visible:outline-none">
+                <button onClick={handleSaveChanges} className="bg-navy w-[200px] h-auto px-7 py-3 rounded-md max-sm:text-sm sm:text-base text-white focus-visible:outline-none">
                     {isSavingChages ? <Spinner loading={isSavingChages} /> : "Save Changes"}
                 </button>
             </div>

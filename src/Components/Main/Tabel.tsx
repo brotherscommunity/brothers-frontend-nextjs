@@ -23,9 +23,9 @@ export default function Tabel({referals} : TableProbs) {
                 <TableHeader>
                     <TableRow className="text-base font-medium">
                         <TableHead className="w-[100px]"> S/N </TableHead>
-                        <TableHead> Name </TableHead>
-                        <TableHead> Joined Date </TableHead>
-                        <TableHead className="text-right"> Country </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Name </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Joined Date </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Country </TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -33,9 +33,9 @@ export default function Tabel({referals} : TableProbs) {
                         return (
                             <TableRow key={referal.id}>
                                 <TableCell className="font-medium border border-gray-300"> {referal.id} </TableCell>
-                                <TableCell className="border border-gray-300"> {referal.name} </TableCell>
-                                <TableCell className="border border-gray-300"> {referal.joinedDate} </TableCell>
-                                <TableCell className="text-right border border-gray-300"> {referal.country} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {referal.name} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {referal.joinedDate} </TableCell>
+                                <TableCell className="text-center border border-gray-300"> {referal.country} </TableCell>
                             </TableRow>
                         )
                     })}

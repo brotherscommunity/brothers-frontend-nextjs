@@ -17,12 +17,12 @@ export default function List({title, children, pagination, subList=false} : List
     return (
         <section className={`${subList ? "mt-3" : "mt-8"}`}>
             <div className={`${subList ? "px-2" : "max-sm:px-5 sm:px-7 md:px-10 "} bg-button w-full h-auto py-5 border-none rounded-md focus-visible:outline-none`}>
-                <div className="flex items-start gap-6">
+                <div className="flex items-start max-sm:gap-3 sm:gap-6">
                     <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="p-3 rounded-full bg-green-50 flex justify-center">
                         {expand ?  <CiSquareMinus className="w-4 h-4 text-black" /> : <CiSquarePlus className="w-5 h-5 text-black" />}
                     </button>
                     <button onClick={() => setExpand((isExpanded) => !isExpanded)} className="focus-visible:outline-none border-none">
-                        <h3 className="text-lg text-black font-palanquin pt-2"> {title} </h3>
+                        <h3 className="max-sm:text-base sm:text-lg text-black font-palanquin pt-2"> {title} </h3>
                     </button>
                 </div>
             </div>

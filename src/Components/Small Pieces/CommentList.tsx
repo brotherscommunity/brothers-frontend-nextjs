@@ -44,7 +44,7 @@ export default async function CommentList({comments}: CommentListProps) {
     });
 
     return (
-        <div className="my-10 ml-2">
+        <div className="my-10">
             {renderedComments}
         </div>
     );

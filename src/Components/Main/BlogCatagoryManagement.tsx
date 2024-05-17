@@ -132,16 +132,16 @@ export default function BlogCatagoryManagement() {
         <section>
             {/* F7: APPROVE OR REJECT BLOG TO CATAGORY */}
             <div>
-                <h3 className="text-base text-black font-semibold"> F7: Approve or Reject Blog to Category </h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-7"> F7: Approve or Reject Blog to Category </h3>
                 {/* TODO: FAKE DATA */}
                 <ApproveReject list={BLOG_CATAGORY_APPROVAL_LIST} handleApprove={handleApproveBlogCatagory} handleReject={handleRejectBlogCatagory} isLoading={isLoading}/>
             </div>
             {/* F8: DELETE BLOG FROM CATAGORY */}
-            <div className="mt-10">
-                <h3 className="text-base text-black font-semibold"> F8: Delete blog from Category </h3>
+            <div className="max-sm:mt-14 sm:mt-10">
+                <h3 className="text-base text-black font-semibold max-sm:leading-7"> F8: Delete blog from Category </h3>
                 <div className="flex flex-wrap items-center justify-start gap-6 mt-6">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, deleteSelectCatagory: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                             <SelectValue placeholder="Select Category" />
                         </SelectTrigger>
                         <SelectContent className="">
@@ -158,7 +158,7 @@ export default function BlogCatagoryManagement() {
             <div className="mt-14">
                 <h3 className="text-base text-black font-semibold"> F9: Create new sub category </h3>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, selectParantCatagory : value})}>
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[250px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select parent category" />
                     </SelectTrigger>
                     <SelectContent className="">
@@ -168,13 +168,13 @@ export default function BlogCatagoryManagement() {
                 <p className="mt-7 text-base text-black font-palanquin"> Category name </p>
                 <input type="text" disabled={isLoading} onChange={(e) => setState({...state, subCatagoryName: e.target.value})} placeholder="catergoy name" className="functionsInput mt-4" />
                 <p className="mt-7 text-base text-black font-palanquin"> Description </p>
-                <textarea disabled={isLoading} onChange={(e) => setState({...state, subCatagoryDescription: e.target.value})} className="w-[300px] h-[120px] mt-4 bg-button disabled:cursor-not-allowed border border-gray-400 rounded-l-md px-4 py-2.5 text-sm text-black focus-visible:outline-none" />
-                <p className="mt-7 text-base text-black font-palanquin"> Select pages to be included in the sub category </p>
+                <textarea disabled={isLoading} onChange={(e) => setState({...state, subCatagoryDescription: e.target.value})} className="max-sm:w-[290px] sm:w-[300px] h-[120px] mt-4 bg-button disabled:cursor-not-allowed border border-gray-400 rounded-l-md px-4 py-2.5 text-sm text-black focus-visible:outline-none" />
+                <p className="mt-7 text-base text-black font-palanquin max-sm:leading-6"> Select pages to be included in the sub category </p>
                 <div className="w-[260px] h-[250px] mt-6 border border-gray-400 overflow-y-scroll overflow-x-hidden rounded-md px-8 py-3 focus:outline-none">
                     {/* TODO: FAKE PAGES FOR NOW , ALL THE PAGES THAT THE USER HAS CREATED SHOULD BE PLACED HERE */}
                     {Array.from({length: 6}, (_, index) => index + 1).map((index) => {
                     return (
-                        <div key={index} className="flex items-center gap-4 mt-3">
+                        <div key={index} className="flex items-center max-md:gap-6 md:gap-8 mt-3">
                             <p> Page {index} </p>
                             <Checkbox checked={state.subCatagoryPages.includes(`page${index.toString()}`)} onClick={() => handleAddPageToCategory(`page${index.toString()}`)} className="w-5 h-5 rounded-[4px]" />
                         </div>

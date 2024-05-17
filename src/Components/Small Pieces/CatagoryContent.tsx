@@ -50,14 +50,14 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
     }
 
     return (
-        <section className='my-6 px-6'>
+        <section className='my-6 sm:px-6'>
             <Table className="border border-gray-300">
                 <TableHeader>
                     <TableRow className="text-base font-medium">
-                        <TableHead> S/N </TableHead>
-                        <TableHead> Type </TableHead>
-                        <TableHead> Category </TableHead>
-                        <TableHead className="text-right"> Added date </TableHead>
+                        <TableHead className="max-sm:text-sm"> S/N </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Type </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Category </TableHead>
+                        <TableHead className="text-center max-sm:text-sm"> Added date </TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -65,9 +65,9 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                         return (
                             <TableRow key={element.id}>
                                 <TableCell className="border border-gray-300"> {element.id} </TableCell>
-                                <TableCell className="border border-gray-300"> {element.type} </TableCell>
-                                <TableCell className="border border-gray-300"> {element.name} </TableCell>
-                                <TableCell className="border border-gray-300 text-right"> {element.publishedDate} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {element.type} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {element.name} </TableCell>
+                                <TableCell className="border border-gray-300 text-center"> {element.publishedDate} </TableCell>
                             </TableRow>
                         )
                     })}
@@ -96,8 +96,8 @@ export default function CatagoryContent({totalResults, contents, postsNotSubmitt
                 </button>
             </div>
             <div className="mt-10">
-                <h3 className="text-black text-base font-semibold"> List of pending category submissions </h3>
-                <div className="mt-6 w-[350px] h-[200px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-l-md focus-visible:outline-none focus:border-none px-6 pt-2 pb-4"> 
+                <h3 className="text-black max-sm:text-sm sm:text-base font-semibold"> List of pending category submissions </h3>
+                <div className="mt-6 max-sm:w-[250px] sm:w-[350px] h-[200px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-l-md focus-visible:outline-none focus:border-none max-sm:px-3 sm:px-6 pt-2 pb-4"> 
                     {/* All the posts that the user submitted to be included in the catagory, but they are in the pending state are placeed here. the user can remove them if he/she wants/  */}
                     {postsPending.map((postTitle) => {
                         return (

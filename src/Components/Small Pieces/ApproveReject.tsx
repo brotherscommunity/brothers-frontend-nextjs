@@ -38,7 +38,7 @@ export default function ApproveReject({list, handleApprove, handleReject, setOpe
                             <p className="my-3"> Telegram username : &nbsp; {user.telegramUsername} </p>
                         </div>
                         }
-                        <div className="flex items-center gap-7 mt-4">
+                        <div className="flex flex-wrap max-sm:gap-5 items-center gap-7 mt-4">
                             <button disabled={isLoading} onClick={() => handleApprove(typeof user == "string" ? user : typeof user == "object" ? user.userName : null)} className="bg-green-100 w-[150px] h-auto px-7 py-2.5 rounded-md disabled:cursor-not-allowed focus-visible:outline border-none flex items-center gap-3">
                                 <FaCheckCircle className="w-4 h-4 text-green-500" />
                                 <p className="text-base text-black font-semibold"> Aprrove </p>

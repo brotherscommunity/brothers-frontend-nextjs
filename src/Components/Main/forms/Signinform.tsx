@@ -28,7 +28,7 @@ export default function Signinform() {
     return (
         <section className="mainContainer">
             <h2 className="text-2xl text-black text-center font-semibold mt-10"> Welcome Back! </h2>
-            <p className="mt-3 ml-16 w-[250px] max-sm:text-sm sm:text-base text-center leading-6"> Becoming a Member is Just a Few Steps Away. Register Now </p>
+            <p className="mt-3 max-sm:ml-4 sm:ml-8 md:ml-14 lg:ml-20 w-[250px] max-sm:text-sm sm:text-base text-center leading-6"> Becoming a Member is Just a Few Steps away. Register Now </p>
             <div className="mt-10 ml-6">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -63,7 +63,7 @@ export default function Signinform() {
                             )}
                             />
                             <div className="flex justify-end mt-6">
-                                <Link href="/forgot-password" className="text-sm text-navy font-semibold"> Forgot password ? </Link>
+                                <Link href="/forgot-password" className="text-sm text-navy font-semibold max-sm:pr-2"> Forgot password ? </Link>
                             </div>
                             <button type="submit" className="bg-navy w-full mt-7 rounded-md text-white py-2"> 
                                 {isLoading ? <Spinner loading={isLoading} /> : "SIGN IN"} 

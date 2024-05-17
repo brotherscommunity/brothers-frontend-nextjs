@@ -84,7 +84,7 @@ export default function EditProfile({userData} : EditProfileProps) {
                         </FormItem>
                     )}
                     />
-                    <div className="max-lg:ml-14">
+                    <div className="max-lg:ml-8">
                         {/* SECTION 1 */}
                         <section className="mt-16">
                             <h2 className="text-xl text-black mb-4 font-semibold"> Personal Information </h2>
@@ -150,7 +150,7 @@ export default function EditProfile({userData} : EditProfileProps) {
                                     </FormLabel>
                                     <Select onValueChange= {field.onChange} defaultValue={field.value}>
                                             <FormControl className="focus:border-none focus-visible:outline-none py-4">
-                                                <SelectTrigger {...field} className="bg-button max-sm:w-[280px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button">
+                                                <SelectTrigger {...field} className="bg-button max-sm:w-[260px] sm:w-[300px] md:w-[350px] lg:w-[380px] px-3 py-2.5 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus:ring-0">
                                                     <SelectValue placeholder="Select gender"/>
                                                 </SelectTrigger>
                                             </FormControl>

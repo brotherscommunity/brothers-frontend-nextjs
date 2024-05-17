@@ -15,7 +15,7 @@ export default function TextEditor({fieldchange} : TextEdtorProps) {
 
     // To prevent content shifting
     return (
-        <div className='mt-5 w-full h-[500px]'>
+        <div className='mt-5 w-full max-sm:h-[250px] sm:h-[300px] md:h-[500px]'>
             <Editor
                 apiKey={API_KEY}
                 onEditorChange={(newValue, editor) => fieldchange(newValue)}

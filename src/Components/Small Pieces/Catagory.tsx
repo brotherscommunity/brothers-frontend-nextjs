@@ -38,11 +38,11 @@ export default function Catagory({name, followers, members, posts, catagoryPath,
         <section className='bg-button mt-5 rounded-md px-5 pt-4 pb-6 border-none focus:outline-none'>
             <div className="flex items-center justify-between">
                 <Link href={`/blogCategory/${name.replace(" ", "_")}`} className="text-lg text-navy font-semibold"> {name} </Link>
-                <button onClick={handleFollow} className="bg-navy w-[100px] h-auto text-white text-sm px-6 py-2 rounded-md focus-visible:outline-none"> 
+                <button onClick={handleFollow} className="bg-navy max-sm:w-[80px] sm:w-[100px] h-auto text-white text-sm max-sm:px-4 sm:px-6 py-2 rounded-md focus-visible:outline-none"> 
                     {isFollowing ? <Spinner loading={isFollowing} /> : "Follow"}
                 </button>
             </div>
-            <div className="flex items-center gap-3 mt-3 text-sm text-blue-600 font-semibold">
+            <div className="flex flex-wrap items-center gap-3 max-sm:mt-5 sm:mt-3 text-sm text-blue-600 font-semibold">
                 <p> {followers} followers </p>
                 <p> {members} members </p>
                 <p> {posts} posts </p>
@@ -56,16 +56,16 @@ export default function Catagory({name, followers, members, posts, catagoryPath,
                         return (
                             <button key={index} onClick={handleCatagoryClick} className="text-navy text-sm font-semibold flex items-center">
                                 <p> {catagory} </p>
-                                {index !== catagoryPath.length - 1 && <span> 
+                                {index !== catagoryPath.length - 1 && <div> 
                                     <FaAngleRight className="w-4 h-4 text-navy" />
-                                </span>}
+                                </div>}
                             </button>
                         )
                     })}
                 </div>
-                <button onClick={handleJoin} className="border border-navy w-[100px] h-auto text-navy text-sm font-semibold px-6 py-2 rounded-md focus-visible:outline-none">
+                <div onClick={handleJoin} className="border border-navy max-sm:w-[80px] sm:w-[100px] h-auto text-navy text-sm font-semibold max-sm:px-4 sm:px-6 py-2 rounded-md focus-visible:outline-none">
                     {isJoining ? <Spinner loading={isJoining} /> : "Join"}
-                </button>
+                </div>
             </div>
             { code && <p className="flex items-start justify-end mt-8 text-sm text-stone-400 font-semibold">
                 Code {code}

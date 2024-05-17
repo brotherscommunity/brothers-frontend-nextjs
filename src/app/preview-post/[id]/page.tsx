@@ -8,6 +8,8 @@ import { formatNumber } from "@/utils"
 import Link from "next/link"
 import Comment from "@/Components/Small Pieces/CommentForm"
 import Decide from "@/Components/Small Pieces/Decide"
+import CommentForm from "@/Components/Small Pieces/CommentForm"
+import TopPageHeader from "@/Components/Small Pieces/TopPageHeader"
 
 interface Props {
     params: {
@@ -30,9 +32,7 @@ export default async function page({params} : Props) {
 
     return (
         <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
-            <div className="max-md:-ml-5">
-                <Ad title="Ad Spot" buttonLabel="View" />
-            </div>
+            <TopPageHeader pageCode="PG32" pageName="Preview post page" pageDescription="Here you can preview you post before publishing it" />
             <div className="mt-20 flex items-center gap-6">
                 <Avatar width="w-[50px]" height="h-[50px]" iconWidth="w-[20px]" iconHeight="h-[20px]" />
                 <div className="flex items-center gap-3">
@@ -45,9 +45,9 @@ export default async function page({params} : Props) {
             <div className="max-w-[900px] max-h-[150px] pb-56">
                 <Image src={PostHeader} alt="blog-post-header" width={700} height={100} className="mt-7 rounded-2xl"/>
             </div>
-            <div className="max-sm:mt-10 sm:mt-36 md:mt-52 xl:mt-56">
+            <div className="sm:mt-48 md:mt-52 xl:mt-56">
                 {/* DUMMY HTML STRING */}
-                <DisplayContent content="<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, nisi sed consequat cursus, lectus justo ullamcorper quam, id tincidunt nisl risus vel velit. Sed eu nulla sed leo convallis vestibulum. Quisque non quam euismod, sollicitudin ex id, mattis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus vel nisi dictum, cursus elit ut, fermentum justo. Integer rutrum tortor vel sapien dapibus ullamcorper. Cras in nisi consequat, varius risus at, molestie enim. Nullam fermentum diam et dui vehicula, sit amet hendrerit justo suscipit. Nunc auctor mauris vitae sapien vehicula, in interdum lacus vestibulum. Curabitur ac nunc in felis feugiat tempor. </p>" />
+                <DisplayContent content="<p> Lorem ipsum <strong> dolor sit amet</strong>, consectetur adipiscing elit. Nulla convallis, nisi sed consequat cursus, lectus ullamcorper quam, id tincidunt nisl risus vel velit. Sed eu nulla sed leo convallis vestibulum. Quisque non quam euismod, sollicitudin ex id, mattis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus vel nisi dictum, cursus elit ut, fermentum justo. Integer rutrum tortor vel sapien dapibus ullamcorper. Cras in nisi consequat, varius risus at, molestie enim. Nullam fermentum diam et dui vehicula, sit amet hendrerit justo suscipit. Nunc auctor mauris vitae sapien vehicula, in interdum lacus vestibulum. Curabitur ac nunc in felis feugiat tempor. </p>" />
             </div>
             <PostFooter tags={["tech", "freelance"]} likes={25} dislikes={0} comments={5} views={formatNumber(1200)}  />
             <div className="mt-14">
@@ -63,7 +63,8 @@ export default async function page({params} : Props) {
                     })}
                 </div>
             </div>
-            <Comment />
+            {/* TODO: FIX THIS LATER */}
+            <CommentForm parentId={3} blogCategoryId={4} />
             <Decide postId={postId} />
         </main>
     )

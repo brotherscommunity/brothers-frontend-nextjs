@@ -82,7 +82,7 @@ export default async function page({params} : BlogCatagoryDetailsProps) {
             <TopPageHeader pageCode="PG32" pageName={`Blog Category Description Page - ${blogCatagoryName}`} pageDescription="Blog Category Description and discussion for improvement in this page." />
              {/* FAKE DATA */}
             <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} code="Bc21" />
-            <div className="bg-button w-full h-auto px-10 py-6 mt-10 border-none rounded-md focus-visible:outline-none">
+            <div className="bg-button w-full h-auto max-sm:px-5 sm:px-10 py-6 mt-10 border-none rounded-md focus-visible:outline-none">
                 {/* RULES FOR THE BLOG CATAGORY ARE LISTED HERE. AND THIS IS JUST A DUMMY DATA */}
                 <p className="text-sm text-stone-600 leading-6"> 
                     This blog category is for Nigerian festivals. Members who submit posts in this category should only post with Nigerian festival exclusive content. Rules for posting content here is  1

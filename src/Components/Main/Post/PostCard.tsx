@@ -56,7 +56,7 @@ export default function PostCard({postedBy, date, title, description, tags, like
                 <Image src={postImage} alt="post-image" width={200} height={200} className="max-lg:hidden rounded-sm" />
             )}
             <div className="flex flex-1 flex-col justify-start">
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap max-sm:gap-4 items-start justify-between">
                     <span className="flex items-center gap-3 text-sm">
                         <h5> By {postedBy} </h5>
                         <p className="text-stone-600"> {date} </p>
@@ -69,13 +69,13 @@ export default function PostCard({postedBy, date, title, description, tags, like
                 </div>
                 <span className="mt-4">
                     <h2 className="text-[20px] text-black font-bold"> {title} </h2>
-                    <p className="max-sm:text-sm text-[15px] mt-2 leading-6 max-w-[750px]"> 
+                    <p className="max-sm:text-xs sm:text-[15px] mt-2 leading-6 max-w-[750px]"> 
                         {description}
                     </p>
                 </span>
                 {/* TODO: Add the route for the post details */}
                 <Link href={'/'} className="text-sm text-orangeRed font-semibold mt-3"> Continue reading </Link>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap max-sm:gap-5 items-center justify-between">
                     <span className="flex items-center gap-4 mt-4">
                         {tags.map((tag) => {
                             return (
@@ -91,7 +91,7 @@ export default function PostCard({postedBy, date, title, description, tags, like
                     </span>}
 
                 </div>
-                <span className="flex items-center gap-7 mt-5">
+                <span className="flex items-center max-sm:gap-4 sm:gap-7 max-sm:mt-7 sm:mt-5">
                     <div className="flex items-center gap-2">
                         {/* TODO: Add the route for the post to make a comment */}
                         <Link href={"/"}>

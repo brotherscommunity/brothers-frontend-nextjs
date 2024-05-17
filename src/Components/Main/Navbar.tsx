@@ -58,10 +58,10 @@ export default function Navbar() {
     }       
 
     return (
-        <nav className='relative inset-x-0 top-0 w-full mt-5 max-md:px-7 md:px-7 xl:px-20'>
+        <nav className='relative inset-x-0 top-0 mt-5 max-md:px-7 md:px-7 xl:px-20'>
             <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                    <button onClick={() => setOpenSidebarNav(true)}>
+                <div className="flex items-start">
+                    <button onClick={() => setOpenSidebarNav(true)} className="max-sm:mr-2.5">
                         <RiMenuLine className="md:hidden w-8 h-8 text-navy" />
                     </button>
                     <div className="max-md:hidden flex items-center">
@@ -70,16 +70,16 @@ export default function Navbar() {
                         </Link>
                         <Popover >
                             <PopoverTrigger className="ml-4">
-                                <button onClick={() => setIconPopOver((open) => !open)}>
+                                <div onClick={() => setIconPopOver((open) => !open)}>
                                     <RiArrowDropDownLine className="w-4 h-4" />
-                                </button>
+                                </div>
                             </PopoverTrigger>
                             {iconPopOver && <PopoverContent className="w-[150px] h-auto mt-4">
                                 <p> specific pages will be placed here</p>
                             </PopoverContent> }
                         </Popover>
                     </div>
-                    <div className="max-md:hidden px-3 py-2 ml-7 bg-button flex items-center gap-1">
+                    <div className="max-md:hidden px-3 py-2.5 ml-7 bg-button flex items-center gap-1">
                         <TfiWorld className="w-4 h-3" />
                         <select value={selectedLanguage} onChange={handleChange} className="bg-button focus-visible:outline-none text-sm">
                             {Languages.map((language) => {
@@ -93,14 +93,14 @@ export default function Navbar() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleSearch()
-                }} className={`flex items-center justify-between bg-button ${isAuthenticated && data ? "max-sm:ml-5 max-sm:w-[200px] sm:w-[300px] md:w-[250px] lg:w-[350px]" : "max-md:w-[250px] md:w-[330px]"} h-[48px] max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
+                }} className={`flex items-center bg-button ${isAuthenticated && data ? "max-sm:w-[200px] sm:w-[300px] md:w-[250px] lg:w-[350px]" : "max-md:w-[250px] md:w-[330px]"} h-[48px] max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
                     <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button max-sm:w-[100px] md:w-[180px] lg:w-[w-300px] xl:w-[400px] p-2 max-sm:text-xs sm:text-sm focus-visible:outline-none" />
                     <button type="submit" onClick={handleSearch} className="mr-5">
                         <CiSearch className="w-5 h-5" />
                     </button>
                 </form>
                 {/* PREVENT LAYOUT SHIFT */}
-                <div className="max-sm:w-[300px] sm:w-[350px] md:w-[370px] lg:[400px]">
+                <div className="max-sm:w-[125px] sm:w-[350px] md:w-[400px]">
                     {!isLoading && <NavButtons />}
                     {openSidebarNav && <SidebarNav setOpenSidebarNav={setOpenSidebarNav} isAuthenticated={isAuthenticated} />}
                 </div>

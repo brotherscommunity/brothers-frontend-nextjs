@@ -42,7 +42,7 @@ export default function CommentShow({ commentId, comments }: CommentShowProps) {
     }
 
     return (
-        <div className="bg-button rounded-md pl-7 max-sm:pr-7 sm:pr-14 py-6 md:ml-10 mt-2 mb-1">
+        <div className="bg-button rounded-md max-sm:pl-4 sm:pl-7 max-sm:pr-4 sm:pr-14 py-6 md:ml-10 mt-2 mb-1">
             <div className="flex items-start gap-6">
                 {mainComment.user.avatar ? <Image
                 src={mainComment.user.avatar || ""}
@@ -51,8 +51,8 @@ export default function CommentShow({ commentId, comments }: CommentShowProps) {
                 height={40}
                 className="w-10 h-10 rounded-full"
                 /> : <Avatar />}
-                <div className="flex-1 max-sm:space-y-1 space-y-3">
-                    <div className="flex items-center gap-4">
+                <div className="flex-1 max-sm:space-y-1 sm:space-y-3">
+                    <div className="flex flex-wrap items-center gap-4">
                         <p className="text-lg text-black font-medium font-palanquin ">
                             {mainComment.user.firstName}
                         </p>
@@ -92,7 +92,7 @@ export default function CommentShow({ commentId, comments }: CommentShowProps) {
                     {openReplyBox && <CommentForm parentId={mainComment.parentId} blogCategoryId={mainComment.blogCategoryId} />}
                 </div>
             </div>
-            { showComments && children.length > 0 && <div className="pl-4">
+            { showComments && children.length > 0 && <div className="sm:pl-4">
                 {renderedChildren}
             </div>}
         </div>

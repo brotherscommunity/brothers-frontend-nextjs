@@ -38,7 +38,7 @@ export default function Search({queryParameter, placeholder, background="bg-whit
     }
 
     return (
-        <div className={`max-sm:w-[170px] sm:w-[200px] flex items-start ${background} border-none rounded-md px-3 py-2.5 text-sm`}>
+        <div className={`max-sm:w-[150px] sm:w-[200px] flex items-start ${background} border-none rounded-md px-3 py-2.5 text-sm`}>
             <form onSubmit={(e) => {
                 e.preventDefault()
                 handleSearch()

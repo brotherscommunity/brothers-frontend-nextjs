@@ -21,7 +21,7 @@ export default function Home({searchParams} : Props) {
   const catagoryPath = ["World", "Continets", "Africa", "Nigeria", "Nigerian Festivals"]
   return (
     <main className="max-md:mx-5 md:mx-7 xl:mx-20">
-        <div className="mr-6">
+        <div className="lg:mr-6">
           <TopPageHeader pageCode="PG-32" pageName="Home Page" pageDescription="Our Home" />
         </div>
         <Header />
@@ -32,13 +32,13 @@ export default function Home({searchParams} : Props) {
               </div>
           </div>
           <div className="mt-10">
-            <Search queryParameter={QUERY_PARAMS.catagory} placeholder="Search catagories" background="bg-button" />
+            <Search queryParameter={QUERY_PARAMS.catagory} placeholder="Search categories" background="bg-button" />
           </div>
           {/* FAKE DATA */}
           <Catagory name="Nigerian Festivals" followers={200} members={15} posts={156} catagoryPath={catagoryPath} />
           <PostList />
           {/* FAKE VALUE TO SIMULATE TOTAL NUMBER OF POSTS */}
-          <div className="mr-10">
+          <div className="md:mr-10">
             <Pagination TotalNumberOfResults={15} pageSize={5}/>
           </div>
           {/* <Ad title="Google Ad Spot" buttonLabel="View" /> */}

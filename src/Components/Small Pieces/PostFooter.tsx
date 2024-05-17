@@ -12,7 +12,7 @@ interface PostFooter {
 
 export default function PostFooter({tags, likes, dislikes, comments, views} : PostFooter) {
     return (
-        <section className="mt-16 flex items-center justify-between">
+        <section className="mt-16 flex flex-wrap gap-5 items-center justify-between">
             <div className="flex items-center gap-4">
                 <h3 className="text-base text-black font-semibold"> Tags: </h3>
                 <span className="flex items-center gap-3">
@@ -23,7 +23,7 @@ export default function PostFooter({tags, likes, dislikes, comments, views} : Po
                     })}
                 </span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center max-sm:gap-6 gap-3">
                 {/* TODO: Refactor this likes, dislikes, comments */}
                 <span className="flex items-center gap-2">
                     <IoStatsChartOutline className="w-5 h-5 text-black font-semibold" />

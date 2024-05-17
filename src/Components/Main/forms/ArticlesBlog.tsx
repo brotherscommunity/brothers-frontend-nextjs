@@ -159,15 +159,15 @@ export default function ArticlesBlog() {
                         </FormItem>
                     )}
                     />
-                    <div className="flex items-center gap-16 mt-14">
-                        <button type="button" onClick={handlePreview} className="border border-orangeRed w-[180px] h-auto text-base text-orangeRed font-semibold px-4 py-2 rounded-md focus-visible:outline-none" >
+                    <div className="flex flex-wrap items-center gap-16 mt-14">
+                        <button type="button" onClick={handlePreview} className="border border-orangeRed w-[180px] h-auto max-sm:text-sm sm:text-base text-orangeRed font-semibold px-4 py-2 rounded-md focus-visible:outline-none" >
                             {isPreviewLoading ? <Spinner loading={isPreviewLoading} color="#000000" size={15} /> : "Preview Page"}
                         </button>
                         <div className="flex items-center gap-6">
-                            <button type="button" onClick={handleClearForm} className="border border-navy text-navy text-base font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
+                            <button type="button" onClick={handleClearForm} className="border border-navy text-navy max-sm:text-sm sm:text-base font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
                                 Cancel
                             </button>
-                            <button type="submit" className="bg-navy w-[100px] h-auto text-base text-white font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
+                            <button type="submit" className="bg-navy w-[100px] h-auto max-sm:text-sm sm:text-base text-white font-semibold px-4 py-2 rounded-md focus-visible:outline-none">
                                 {isSaveLoading ? <Spinner loading={isSaveLoading} size={15} /> : "Save"}
                             </button>
                         </div>

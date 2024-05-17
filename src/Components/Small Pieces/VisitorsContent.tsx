@@ -16,7 +16,7 @@ interface VisitorsTabelProps {
 
 export default function VisitorsContent({stats} : VisitorsTabelProps) {
     return (
-        <section className='mt-6 px-6'>
+        <section className='mt-6 max-sm:px-3 sm:px-6 max-sm:pb-7'>
             <Table className="border border-gray-300">
                 <TableHeader>
                     <TableRow className="text-base font-medium">

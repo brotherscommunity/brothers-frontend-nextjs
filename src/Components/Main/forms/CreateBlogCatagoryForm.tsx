@@ -99,7 +99,7 @@ export default function CreateBlogCatagoryForm() {
                         <span className="astrics"> * </span>
                         </FormLabel>
                         <FormControl>
-                            <input type="text" disabled={isLoading} placeholder="name of the category"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                            <input type="text" disabled={isLoading} placeholder="name of the category"  className="max-sm:w-[200px] sm:w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                         </FormControl>
                         <FormMessage  className='text-sm text-red-500' />
                         </FormItem>
@@ -116,7 +116,7 @@ export default function CreateBlogCatagoryForm() {
                         <span className="astrics"> * </span>
                         </FormLabel>
                         <FormControl>
-                            <input type="text" disabled={isLoading} placeholder="Parent category code"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                            <input type="text" disabled={isLoading} placeholder="Parent category code"  className="max-sm:w-[200px] sm:w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                         </FormControl>
                         <FormMessage  className='text-sm text-red-500' />
                         </FormItem>
@@ -132,7 +132,7 @@ export default function CreateBlogCatagoryForm() {
                             Parent Category Code 2
                             </FormLabel>
                             <FormControl>
-                                <input type="text" disabled={isLoading} placeholder="Parent category code 2"  className="w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                                <input type="text" disabled={isLoading} placeholder="Parent category code 2"  className="max-sm:w-[200px] sm:w-[280px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                             </FormControl>
                             <FormMessage  className='text-sm text-red-500' />
                             </FormItem>
@@ -156,7 +156,7 @@ export default function CreateBlogCatagoryForm() {
                         )}
                         />
                     )}
-                    <button type="button" onClick={handleAddRemoveParentCatagory} className="text-[15px] text-black font-medium font-palanquin mt-5"> {parentCatagory3 ? "- Remove other parent categories" : "+ Add another Parent Category (optional)"} </button>
+                    <button type="button" onClick={handleAddRemoveParentCatagory} className="max-sm:text-sm sm:text-[15px] text-black font-medium font-palanquin mt-5"> {parentCatagory3 ? "- Remove other parent categories" : "+ Add another Parent Category (optional)"} </button>
                     {/* DESCRIPTION */}
                     <FormField
                     control={form.control}
@@ -168,7 +168,7 @@ export default function CreateBlogCatagoryForm() {
                         <span className="astrics"> * </span>
                         </FormLabel>
                         <FormControl>
-                            <textarea disabled={isLoading} className="w-[340px] h-[180px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
+                            <textarea disabled={isLoading} className="max-sm:w-[300px] sm:w-[340px] h-[180px] px-3 py-2.5 bg-button border border-gray-400 rounded-md focus-visible:outline-none disabled:cursor-not-allowed text-black text-sm" {...field}/> 
                         </FormControl>
                         <FormMessage  className='text-sm text-red-500' />
                         </FormItem>
@@ -188,7 +188,7 @@ export default function CreateBlogCatagoryForm() {
                         value={value}
                         />
                     </div>
-                    <div className="w-[340px] h-[150px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-md px-6 pb-6 pt-4 mt-10">
+                    <div className="max-sm:w-[300px] sm:w-[340px] h-[150px] overflow-y-scroll overflow-x-hidden border border-gray-400 rounded-md px-6 pb-6 pt-4 mt-10">
                         {catagories.length > 0 && catagories.map((catagory) => {
                             return (
                                 <div key={catagory.value} className="mt-2 w-fit px-4 py-2 -z-30 flex items-center gap-3 bg-button">

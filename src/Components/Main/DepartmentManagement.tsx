@@ -227,13 +227,22 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
 
     return (    
         <section>
+            {/* TODO: Create a new state for this */}
+            <Select disabled={isLoading} onValueChange={(value) => setState({...state, createSelectDepartment: value})}>
+                <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectValue placeholder="Select Depatment" />
+                </SelectTrigger>
+                <SelectContent className="">
+                    {/* <SelectItem key={department} value={department} className="text-sm text-black font-palanquin"> {department} </SelectItem> */}
+                </SelectContent>
+            </Select>
             {/* F11: CREATE AND EDIT DEPARTMENT POSITIONS */}
-            <div>
-                <h3 className="text-base text-black font-semibold"> F11: Create and Edit Department Position </h3>
+            <div className="mt-8">
+                <h3 className="text-base text-black font-semibold max-sm:leading-8"> F11: Create and Edit Department Position </h3>
                 {/* CREATE DEPARTMENT POSITION */}
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Create new department position </p>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, createSelectDepartment: value})}>
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Depatment" />
                     </SelectTrigger>
                     <SelectContent className="">
@@ -258,7 +267,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                 {/* EDIT DEPARTMENT POSITION */}
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Edit department position </p>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, updateSelectDepartment: value})} >
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Depatment" />
                     </SelectTrigger>
                     <SelectContent className="">
@@ -285,14 +294,14 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
             <div className="mt-12">
                 <h3 className="text-base text-black font-semibold"> F12: Edit Department Details </h3>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, editSelectDetails: value})}>
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[180px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Depatment" />
                     </SelectTrigger>
                     <SelectContent className="">
                         {/* <SelectItem key={department} value={department} className="text-sm text-black font-palanquin"> {department} </SelectItem> */}
                     </SelectContent>
                 </Select>
-                <div className="flex flex-wrap w-[400px] items-center max-sm:gap-8 sm:justify-between mt-10">
+                <div className="flex flex-wrap max-sm:w-[300px] sm:w-[400px] items-center max-sm:gap-8 sm:justify-between mt-10">
                     <label className="text-base text-black font-palanquin"> New Department Name </label>
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, editDetailsName: e.target.value})}  className="functionsInput" />
                 </div>
@@ -306,17 +315,17 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
             </div>
             {/* F13: CREATE AND DELETE SUB DEPARTMENT */}
             <div className="mt-12">
-                <h3 className="text-base text-black font-semibold"> F13: Create and Delete Sub department </h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-8"> F13: Create and Delete Sub department </h3>
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Create sub department </p>
                 <Select disabled={isLoading} onValueChange={(value) => setState({...state, subSelectDepartment: value})}>
-                    <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] mt-6 bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                    <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] mt-6 bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                         <SelectValue placeholder="Select Parent Depatment" />
                     </SelectTrigger>
                     <SelectContent className="">
                         {/* <SelectItem key={department} value={department} className="text-sm text-black font-palanquin"> {department} </SelectItem> */}
                     </SelectContent>
                 </Select>
-                <div className="flex flex-wrap w-[390px] items-center max-sm:gap-8 sm:justify-between mt-10">
+                <div className="flex flex-wrap max-sm:w-[300px] sm:w-[390px] items-center max-sm:gap-8 sm:justify-between mt-10">
                     <label className="text-base text-black font-palanquin"> Sub Department Name </label>
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, subDepartmentName: e.target.value})}  className="functionsInput" />
                 </div>
@@ -324,7 +333,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                     <label className="text-base text-black font-palanquin"> Description </label>
                     <textarea disabled={isLoading} onChange={(e) => setState({...state, subDescription: e.target.value})} className="w-[280px] h-[140px] bg-button disabled:cursor-not-allowed border border-gray-400 focus-visible:outline-none px-5 py-2.5 rounded-md" />
                 </div>
-                <div className="flex flex-wrap w-[360px] items-center max-sm:gap-8 sm:justify-between mt-10">
+                <div className="flex flex-wrap max-sm:w-[300px] sm:w-[360px] items-center max-sm:gap-8 sm:justify-between mt-10">
                     <label className="text-base text-black font-palanquin"> Manager username </label>
                     <input type="text" disabled={isLoading} onChange={(e) => setState({...state, subManagerUsername: e.target.value})} placeholder="Enter the new postion title" className="functionsInput" />
                 </div>
@@ -332,7 +341,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                     Create
                 </button>
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Delete sub department </p>
-                <div className="flex flex-wrap w-[390px] items-center max-sm:gap-8 sm:justify-between mt-10">
+                <div className="flex flex-wrap max-sm:w-[300px] sm:w-[390px] items-center max-sm:gap-8 sm:justify-between mt-10">
                     <label className="text-base text-black font-palanquin"> Sub Department Name </label>
                     <input type="text" placeholder="Name of the department" disabled={isLoading} onChange={(e) => setState({...state, subDeleteDepartmentName: e.target.value})}  className="functionsInput" />
                 </div>
@@ -342,12 +351,12 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
             </div>
             {/* F14: ASSIGN AND DISMISS SUB DEPARTMENT MANAGER */}
             <div className="mt-12">
-                <h3 className="text-base text-black font-semibold"> F14: Assign and Dismiss Sub department Manager </h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-8"> F14: Assign and Dismiss Sub department Manager </h3>
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Assign sub department manager </p>
                 {/* ASSIGN SUB DEPARTMENT MANAGER */}
                 <div className="flex flex-wrap items-start gap-10 mt-10">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, selectSubDepartmentManager: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                             <SelectValue placeholder="Select Sub Depatment" />
                         </SelectTrigger>
                         <SelectContent className="">
@@ -363,7 +372,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                 <p className="mt-10 text-base text-black font-semibold font-palanquin"> Remove sub department manager </p>
                 <div className="flex flex-wrap items-start gap-10 mt-10">
                     <Select disabled={isLoading} onValueChange={(value) => setState({...state, selectSubDepartmentManager: value})}>
-                        <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] bg-button border border-gray-400 max-sm:text-sm rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
+                        <SelectTrigger className="max-sm:w-[150px] sm:w-[200px] bg-button border border-gray-400 max-sm:text-xs rounded-md sm:px-3 py-2.5 focus-visible:outline-none disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-button focus:ring-0">
                             <SelectValue placeholder="Select Sub Depatment" />
                         </SelectTrigger>
                         <SelectContent className="">
@@ -378,7 +387,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
             </div>
             {/* F15: ADD AND REMOVE DEPARTMENT MEMBER POSITION */}
             <div className="mt-12">
-                <h3 className="text-base text-black font-semibold"> F15: Add and Remove Department Member Position </h3>
+                <h3 className="text-base text-black font-semibold max-sm:leading-8"> F15: Add and Remove Department Member Position </h3>
                 <List title="Member Application History" subList={true}>
                     <Table className="border border-gray-300">
                             <TableHeader>
@@ -405,7 +414,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                                             <TableCell className="border border-gray-300 text-center w-[150px]">
                                                 {element.position === MemberPositionType.volunteer ? (
                                                 <div className="flex flex-col items-start gap-3">
-                                                    <p className="text-base text-black font-palanquin"> Not Vacant </p>
+                                                    <p className="max-sm:text-sm sm:text-base text-black font-palanquin"> Not Vacant </p>
                                                     <button disabled={isLoading} className="border border-navy w-[80px] h-auto p-2 rounded-md focus-visible:outline-none text-sm text-navy">
                                                         Remove
                                                     </button>
@@ -453,7 +462,7 @@ export default function DepartmentManagement({memeberApplication, memberJoin} : 
                                         <TableCell className="border border-gray-300 text-center"> {element.position} </TableCell>
                                         <TableCell className="border border-gray-300 text-center w-[150px]">
                                             { element.removedAt ? (
-                                            <p className="text-base text-black font-semibold font-palanquin"> Removed at {element.removedAt} </p>
+                                            <p className="max-sm:text-sm sm:text-base text-black font-semibold font-palanquin"> Removed at {element.removedAt} </p>
                                             ) : 
                                             (
                                             <button disabled={isLoading}  className="bg-navy w-[80px] h-auto p-2 text-sm text-white rounded-md focus-visible:outline-none">

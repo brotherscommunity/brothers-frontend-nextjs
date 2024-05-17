@@ -63,17 +63,17 @@ export default function Section2Form({userData, setUserData, setFilledSection, s
                     <FormRow fieldname1="facebookId" fieldname2="country" control={form.control} label1="Facebook Id" label2="Country" inputType1="text" inputType2="text" placeholder1="123456789012345" placeholder2="USA" optional1={true}/>
                     <FormRow fieldname1="instagramUsername" fieldname2="state" control={form.control} label1="Instagram username" label2="State" inputType1="text" inputType2="text" placeholder1="sand_smith" placeholder2="Texas" optional1={true}/>
                     <FormRow fieldname1="weChatId" fieldname2="city" control={form.control} label1="Wechat Id" label2="City" inputType1="text" inputType2="text" placeholder1="unionid=1234567890" placeholder2="Austin" optional1={true} optional2={true}/>
-                    <div className="flex items-center gap-28 mt-14 ">
-                        <span>
+                    <div className="flex items-center max-sm:gap-10 gap-28 mt-14">
+                        <div>
                             <button type="button" onClick={handleBack} className="formBackButton"> 
                                 Back 
                             </button>
-                        </span>
-                        <span>
+                        </div>
+                        <div>
                             <button type="submit" className="formNextButton"> 
                                 Next 
                             </button>
-                        </span>
+                        </div>
                     </div>
                 </form>
             </Form>

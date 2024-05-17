@@ -1,5 +1,4 @@
 import { AUTHENTICATED_SIDEBAR_NAV_LINKS, NON_AUTHENTICATED_SIDEBAR_NAV_LINKS } from "@/constants";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { IoCloseOutline } from "react-icons/io5";
 
@@ -24,7 +23,7 @@ export default function SidebarNav({setOpenSidebarNav, isAuthenticated} : Sideba
     }
 
     return (
-        <section className='absolute inset-0 left-0 w-[190px] min-h-screen z-30 -mt-5 bg-button flex flex-col justify-start px-5 pt-16'>
+        <section className='absolute inset-0 left-0 w-[180px] min-h-screen z-30 -mt-5 bg-button flex flex-col justify-start px-5 pt-10'>
             <button onClick={() => setOpenSidebarNav(false)} className="flex justify-end">
                 <IoCloseOutline className="w-6 h-6 text-black" />
             </button>
