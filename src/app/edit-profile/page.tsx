@@ -1,4 +1,5 @@
 import EditProfile from "@/Components/Main/forms/Edit Profile/EditProfile";
+import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
 
 
 export default async function page() {
@@ -12,8 +13,11 @@ export default async function page() {
     }
     
     return (
-        <main className="max-md:px-5 md:px-7 xl:px-20 mt-20 mb-28">
-            <EditProfile userData={userData} />
+        <main className="max-md:px-5 md:px-7 xl:px-20 mb-28">
+            <TopPageHeader pageCode="PG32" pageName="Edit profile page" pageDescription="Update your profile information" />
+            <div className="mt-14">
+                <EditProfile userData={userData} />
+            </div>
         </main>
     )
 }

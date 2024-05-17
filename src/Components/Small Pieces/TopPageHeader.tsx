@@ -11,7 +11,7 @@ interface TopPageHeaderProps {
 export default function TopPageHeader({pageCode, pageName, pageDescription} : TopPageHeaderProps) {
 
     return (
-        <section className="mt-7 w-full h-auto rounded-lg bg-header px-6 py-4">
+        <section className="max-sm:mt-3 sm:mt-7 w-full h-auto rounded-lg bg-header px-6 py-4">
             <div className="flex flex-wrap max-sm:gap-3 items-center justify-between">
                 <p className="max-sm:text-[15px] sm:text-base text-navy font-semibold"> Page Code: {pageCode} </p>
                 <Search queryParameter="code" placeholder="Search by code" />

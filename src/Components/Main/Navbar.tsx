@@ -59,7 +59,7 @@ export default function Navbar() {
 
     return (
         <nav className='relative inset-x-0 top-0 mt-5 max-md:px-7 md:px-7 xl:px-20'>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between sm:gap-20 md:gap-10">
                 <div className="flex items-start">
                     <button onClick={() => setOpenSidebarNav(true)} className="max-sm:mr-2.5">
                         <RiMenuLine className="md:hidden w-8 h-8 text-navy" />
@@ -93,8 +93,8 @@ export default function Navbar() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleSearch()
-                }} className={`flex items-center bg-button ${isAuthenticated && data ? "max-sm:w-[200px] sm:w-[300px] md:w-[250px] lg:w-[350px]" : "max-md:w-[250px] md:w-[330px]"} h-[48px] max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
-                    <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button max-sm:w-[100px] md:w-[180px] lg:w-[w-300px] xl:w-[400px] p-2 max-sm:text-xs sm:text-sm focus-visible:outline-none" />
+                }} className={`flex items-center bg-button ${isAuthenticated && data ? "max-sm:w-[160px] sm:w-[300px] md:w-[250px] lg:w-[350px]" : "max-sm:w-[150px] sm:w-[300px] md:w-[350px] lg:-w[450px]"} h-[48px] max-md:px-2 max-sm:py-2 md:px-5 rounded-md`}>
+                    <input type="text" placeholder="Type to Search..." onChange={(e) => setSearchValue(e.target.value)} className="bg-button max-sm:w-[120px] sm:w-[260px] md:w-[300px] p-2 max-sm:text-xs sm:text-sm focus-visible:outline-none" />
                     <button type="submit" onClick={handleSearch} className="mr-5">
                         <CiSearch className="w-5 h-5" />
                     </button>

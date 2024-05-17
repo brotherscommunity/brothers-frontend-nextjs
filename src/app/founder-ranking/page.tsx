@@ -1,5 +1,6 @@
 import Pagination from "@/Components/Main/Pagination";
 import RankingTable from "@/Components/Main/RankingTable";
+import TopPageHeader from "@/Components/Small Pieces/TopPageHeader";
 
 interface FounderRankingProps {
     searchParams: {
@@ -50,8 +51,8 @@ export default async function page({searchParams} : FounderRankingProps) {
         },
     ]
     return (
-        <main className="max-md:px-5 md:px-7 xl:px-20 mt-16">
-            <h2 className="max-sm:text-lg sm:text-xl md:text-2xl text-black font-semibold"> Founder Ranking Page </h2>
+        <main className="max-md:px-5 md:px-7 xl:px-20">
+            <TopPageHeader pageCode="PG32" pageName="Founder ranking page" pageDescription="Members who register for the first 3 months or the first 1000 members get." />
             <RankingTable rankData={rankData} />
             <Pagination TotalNumberOfResults={rankData.length} pageSize={3} />
         </main>

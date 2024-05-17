@@ -50,7 +50,7 @@ export default function NavButtons(){
     }
 
     return (
-        <section className={`flex items-center ${isAuthenticated && data ? "gap-7" : "gap-10"} text-sm`}>
+        <section className={`flex items-center justify-end ${isAuthenticated && data ? "gap-7" : "max-sm:ml-6 gap-10"}  text-sm`}>
             {isAuthenticated ? (
                 <Popover>
                     <PopoverTrigger>
@@ -61,7 +61,7 @@ export default function NavButtons(){
                             </button>
                         </div>
                     </PopoverTrigger>
-                    {openCreatePost && <PopoverContent className="w-[180px] h-auto mt-2 bg-white border-none rounded-md px-4 py-3 flex flex-col items-start gap-1">
+                    {openCreatePost && <PopoverContent className="mt-2 bg-white border-none rounded-md px-4 py-3 flex flex-col items-end gap-1">
                         <button onClick={() => handleCreatePostClick("/create-post")} className="hover:bg-blue-300 hover:bg-opacity-60 px-4 py-2 rounded-md text-sm text-black font-palanquin">
                             Create Blog Post
                         </button>

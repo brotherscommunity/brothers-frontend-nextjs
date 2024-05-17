@@ -22,7 +22,7 @@ export const UserSlice = createSlice({
     reducers: {
         set_current_user: (state, action: PayloadAction<USER>) => {
             // Let's mutate the original state, since redux toolkit allows us to do that
-            state.isAuthenticated = true
+            state.isAuthenticated = true,
             state.data = action.payload
         },
         stop_loading: (state) => {
